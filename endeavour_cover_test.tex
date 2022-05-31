@@ -27,10 +27,14 @@
 \begin{document}
 	\thispagestyle{empty}
 	\begin{center}
-	\vspace*{0.6ex}
+%	\vspace*{0.75cm}
 	\begin{tikzpicture}
 %		\node[fill=black, minimum width=\pagewidth] () at (0,0) {\textcolor{LCARS4}{ENDEAVOUR}};
-		\node[fill=LCARS4, minimum width=\pagewidth] () at (0,0) {\textcolor{LCARS5}{ENDEAVOUR}};
+	\path (0,0) -- (0, -\pageheight);
+		\node[fill=LCARS4, minimum width=\pagewidth, anchor=north] () at (0,-1cm) {\textcolor{LCARS5}{ENDEAVOUR}};
+		\setmainfont[Scale=2.0]{Futura}
+		\node[fill=LCARS5, minimum width=\pagewidth, anchor=south, minimum height=1.75cm] () at (0,-\pageheight) {\textcolor{LCARS4}{A PARAGON Playset by Michael Purcell}};
+
 	\end{tikzpicture}
 	\end{center}
 \end{document}
