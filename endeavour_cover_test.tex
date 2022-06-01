@@ -28,9 +28,12 @@
 %	\vspace*{0.75cm}
 	\begin{tikzpicture}[remember picture, overlay]
 		\node () at (current page.center) {\includegraphics[height=\paperheight, width=\paperwidth]{retro_endeavour_cover_bg.png}};
-%		\node[fill=black, minimum width=\pagewidth] () at (0,0) {\textcolor{LCARS4}{ENDEAVOUR}};
-	\path (0,0) -- (0, -\pageheight);
-		\node[fill=LCARS4, minimum width=\pagewidth, anchor=north] () at (0,-1cm) {\textcolor{LCARS5}{ENDEAVOUR}};
+%		\setmainfont[Scale=6.75]{TTMussels-DemiBoldItalic}
+%		\node[fill=LCARS4, minimum width=\pagewidth, anchor=north] () at (0,-0.75cm) {\textcolor{LCARS5}{ENDEAVOUR}};
+		\setmainfont[Scale=6.5]{TTMussels-BoldItalic}
+		\node[fill=LCARS4, minimum width=\pagewidth, anchor=north] () at (0,-0.8cm) {\textcolor{LCARS5}{ENDEAVOUR}};
+%		\setmainfont[Scale=6.15]{TTMussels-BlackItalic}
+%		\node[fill=LCARS4, minimum width=\pagewidth, anchor=north] () at (0,-1cm) {\textcolor{LCARS5}{ENDEAVOUR}};
 		\setmainfont[Scale=2.0]{Futura}
 		\node[fill=LCARS5, minimum width=\pagewidth, anchor=south, minimum height=2cm] () at (0,-\pageheight+0.5ex) {\textcolor{LCARS4}{A PARAGON Playset by Michael Purcell}};
 
