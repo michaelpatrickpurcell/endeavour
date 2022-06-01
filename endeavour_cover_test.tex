@@ -15,21 +15,19 @@
 
 \usepackage{tikz}
 \usetikzlibrary{tikzmark}
-\usetikzlibrary{calc}
+%\usetikzlibrary{calc}
 
-\usepackage{eso-pic}
+%\usepackage{eso-pic}
 
-\usepackage{contour}
-\contournumber{128}
-\contourlength{16pt}
 %\pagecolor{black}
-\AddToShipoutPictureBG{\includegraphics[height=\paperheight, width=\paperwidth]{retro_endeavour_cover_bg.png}}
+%\AddToShipoutPictureBG{\includegraphics[height=\paperheight, width=\paperwidth]{retro_endeavour_cover_bg.png}}
 
 \begin{document}
 	\thispagestyle{empty}
 	\begin{center}
 %	\vspace*{0.75cm}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node () at (current page.center) {\includegraphics[height=\paperheight, width=\paperwidth]{retro_endeavour_cover_bg.png}};
 %		\node[fill=black, minimum width=\pagewidth] () at (0,0) {\textcolor{LCARS4}{ENDEAVOUR}};
 	\path (0,0) -- (0, -\pageheight);
 		\node[fill=LCARS4, minimum width=\pagewidth, anchor=north] () at (0,-1cm) {\textcolor{LCARS5}{ENDEAVOUR}};
