@@ -72,7 +72,7 @@
 }}
 
 \tikzset{diety/.pic={
-	\node[short_header_box] () at (0,0) {#1\,\,};
+	\node[short_header_box, fill=white] () at (0,0) {#1\,\,};
 	\node[divine_favor] () at (-0.022cm, -0.05cm) {};
 	\node[divine_favor] () at (-0.022cm, -0.55cm) {};
 }}
@@ -193,16 +193,19 @@
 \path (current page.north west) --++ (27.9cm, -2.25cm) node[fate_dot] {};
 
 
-
+% Bonds
 \path (current page.north west) --++ (17.975cm, -3.5cm) pic {subheader=Bonds};
 
 \foreach \i in {0,1,...,8}
 	\path (current page.north west) --++ (17.975cm, -4.0cm - \i*1.25cm) node[endeavour_box, anchor=north, minimum height = 1cm, minimum width = 4.25cm] {};
 
+% Discoveries
 \path (current page.north west) --++ (24.575cm, -3.5cm) pic {subheader=Artifacts and Discoveries};
 
-\foreach \i in {0,1,...,8}
+\foreach \i in {0,1,...,8} {
 	\path (current page.north west) --++ (24.575cm, -4.0cm - \i*1.25cm) node[endeavour_box, anchor=north, minimum height = 1cm, minimum width = 8.0cm] {};
+	\path (current page.north west) --++ (21.25cm, -4.0cm - \i*1.25cm - 0.5cm) node[fate] {};
+}
 
 %Virtues
 \path (current page.north west) --++ (22.205cm, -16cm) pic {subheader={Core Values}};
