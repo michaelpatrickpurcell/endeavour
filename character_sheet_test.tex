@@ -8,35 +8,63 @@
 \usetikzlibrary{tikzmark}
 \usetikzlibrary{calc}
 
+\usepackage{contour}
+\contourlength{4pt}
+
 \usepackage{fontspec}
 \setmainfont{Futura}
 
+\definecolor{LCARS0}{HTML}{FFAA00}
+\definecolor{LCARS1}{HTML}{7190C6}
+\definecolor{LCARS2}{HTML}{B24F46}
+\definecolor{LCARS3}{HTML}{41444F}
+\definecolor{LCARS4}{HTML}{DE8443}
+\definecolor{LCARS5}{HTML}{25272E}
+
+%\colorlet{blackfillcolor}{black}
+%\colorlet{darkfillcolor}{lightgray}
+%\colorlet{lightfillcolor}{white}
+%\colorlet{borderfillcolor}{lightgray}
+%\colorlet{subheadercolor}{black}
+%\colorlet{starcolor}{white}
+%\colorlet{bgcolor}{white}
+%\pagecolor{bgcolor}
+
+
+\colorlet{blackfillcolor}{black}
+\colorlet{darkfillcolor}{LCARS1}
+\colorlet{lightfillcolor}{lightgray!25}
+\colorlet{borderfillcolor}{lightgray}
+\colorlet{subheadercolor}{lightfillcolor}
+\colorlet{starcolor}{LCARS3}
+\colorlet{bgcolor}{LCARS5}
+\pagecolor{bgcolor}
+
 % Define tikz styles
-\tikzstyle{divine_favor}=[draw, very thick, diamond, anchor = north, inner sep = 0pt, minimum size=0.4cm, fill=white]
-\tikzstyle{fate}=[draw, very thick, inner sep=0pt, minimum size=0.4cm]
+\tikzstyle{divine_favor}=[draw, very thick, diamond, anchor = north, inner sep = 0pt, minimum size=0.4cm, fill=lightfillcolor]
+\tikzstyle{fate}=[draw, very thick, inner sep=0pt, minimum size=0.4cm, fill=lightfillcolor]
 \tikzstyle{fate_dot}=[draw, very thick, inner sep=0pt, minimum size=0.125cm, circle, fill=black]
-\tikzstyle{pathos}=[fate, circle]
+\tikzstyle{pathos}=[fate, circle, fill=lightfillcolor]
 
-\tikzstyle{endeavour_box}=[draw, very thick, double=lightgray, inner sep=0.1cm, minimum height=1.0cm, chamfered rectangle, chamfered rectangle sep=0.1cm,text height=1.5ex, text depth=0ex]
+\tikzstyle{endeavour_box}=[draw, very thick, double=borderfillcolor, double distance=2pt, fill=lightfillcolor, inner sep=0.1cm, minimum height=1.0cm, chamfered rectangle, chamfered rectangle sep=0.1cm,text height=1.5ex, text depth=0ex]
 
-\tikzstyle{short_header_box}=[endeavour_box, fill=lightgray, anchor=north east, text width=2.25cm, chamfered rectangle corners={north west, south west}, align=right]
+\tikzstyle{short_header_box}=[endeavour_box, fill=darkfillcolor, anchor=north east, text width=2.125cm, chamfered rectangle corners={north west, south west}, align=right]
 
-%\tikzstyle{medium_header_box}=[endeavour_box, fill=lightgray, anchor=north east, text width=3.5cm, chamfered rectangle corners={north west, south west}, align=right]
-\tikzstyle{medium_header_box}=[endeavour_box, fill=lightgray, anchor=north east, text width=2.5cm, chamfered rectangle corners={north west, south west}, align=right]
+\tikzstyle{medium_header_box}=[endeavour_box, fill=darkfillcolor, anchor=north east, text width=2.5cm, chamfered rectangle corners={north west, south west}, align=right]
 
-\tikzstyle{long_header_box}=[endeavour_box, anchor=north east, fill=lightgray, text width=6.25cm, chamfered rectangle corners={north west, south west}, align=right]
+\tikzstyle{long_header_box}=[endeavour_box, anchor=north east, fill=darkfillcolor, text width=6.25cm, chamfered rectangle corners={north west, south west}, align=right]
 
-\tikzstyle{tall_header_box}=[endeavour_box, anchor=north east, fill=lightgray, text width=2.5cm, minimum height=1.75cm, chamfered rectangle corners={north west, south west}, align=right]
+\tikzstyle{tall_header_box}=[endeavour_box, anchor=north east, fill=darkfillcolor, text width=2.5cm, minimum height=1.75cm, chamfered rectangle corners={north west, south west}, align=right]
 
-\tikzstyle{d_bar}=[fill=black, anchor=north west, minimum height=1.0cm, inner sep=0.1cm]
+\tikzstyle{d_bar}=[fill=blackfillcolor, anchor=north west, minimum height=1.0cm, inner sep=0.1cm, fill=blackfillcolor]
 
 \tikzstyle{attribute_field}=[endeavour_box, anchor=north west, text width=4.75cm, align=left, chamfered rectangle corners={north east, south east}]
 
-\tikzstyle{tall_attribute_field}=[endeavour_box, anchor=north west, text width=9.25cm, align=left, minimum height=1.75cm, chamfered rectangle corners={north east, south east}]
+\tikzstyle{tall_attribute_field}=[endeavour_box, anchor=north west, text width=9.125cm, align=left, minimum height=1.75cm, chamfered rectangle corners={north east, south east}]
 
 \tikzstyle{aspect_field}=[endeavour_box, anchor=north west, text width=4.55cm, align=left, chamfered rectangle corners=none]
 
-\tikzstyle{virtue_field}=[endeavour_box, anchor=north west, text width=2.6cm, align=left, chamfered rectangle corners={north east, south east}]
+\tikzstyle{virtue_field}=[endeavour_box, anchor=north west, text width=2.45cm, align=left, chamfered rectangle corners={north east, south east}]
 
 \tikzstyle{long_attribute_field}=[endeavour_box, anchor=north, text width=7.57cm, align=left, chamfered rectangle corners=all]
 
@@ -47,52 +75,71 @@
 }}
 
 \tikzset{subheader/.pic={
-	\node[text height=1.5ex, text depth=0ex] at (0,0) {{\setmainfont{Futura} \Large #1}};
+	\node[text height=1.5ex, text depth=0ex,, fill=bgcolor,inner sep=8pt] at (0,0) {{\setmainfont{Futura} \Large \textcolor{subheadercolor}{#1}}};
 }}
 
 
 % Define tikzpictures
 \tikzset{character_attribute/.pic={
-	\node[short_header_box] () at (0,0) {#1\,\,};
-	\node[d_bar] () at (3.875,0) {\textcolor{white}{d}};
+	\node[short_header_box] () at (-0.125,0) {#1\,};
 	\node[attribute_field] () at (0.125, 0) {};
+	\node[d_bar] () at (3.875,0) {\textcolor{white}{d}};
+	\node[attribute_field, fill=none] () at (0.125, 0) {};
 }}
 
 \tikzset{character_aspect/.pic={
-	\node[short_header_box] () at (0,0) {#1\,\,};
+	\node[short_header_box] () at (-0.125,0) {#1\,};
 	\node[aspect_field] () at (0.125cm, 0) {};
 	\node[divine_favor] () at (5.096cm,-0.05cm) {};
 	\node[divine_favor] () at (5.096cm,-0.55cm) {};
 }}
 
 \tikzset{domain/.pic={
-	\node[long_header_box] () at (0,0) {#1\,\,};
-	\node[d_bar] () at (-0.125, 0) {\textcolor{white}{d}};
 	\node[long_attribute_field] () at (-2.6875, 0) {};
+	\node[long_header_box] () at (0,0) {#1\,};
+	\node[d_bar] () at (-0.125, 0) {\textcolor{white}{d}};
+	\node[long_attribute_field, fill=none] () at (-2.6875, 0) {};
 }}
 
 \tikzset{diety/.pic={
-	\node[short_header_box, fill=white] () at (0,0) {#1\,\,};
+	\node[short_header_box, fill=lightfillcolor] () at (0,0) {#1\,};
 	\node[divine_favor] () at (-0.022cm, -0.05cm) {};
 	\node[divine_favor] () at (-0.022cm, -0.55cm) {};
 }}
 
 \tikzset{value/.pic={
-	\node[medium_header_box] () at (0,0) {#1\,\,};
+	\node[medium_header_box] () at (-0.125,0) {#1\,};
 	\node[virtue_field] () at (0.125, 0cm) {};
 }}
 
+\tikzset{distinction/.pic={
+	\node[tall_header_box] () at (-0.125,0) {Distinction\,};
+	\node[tall_attribute_field] () at (0.125, 0) {};
+}}
+
+\pgfmathsetseed{2046}%{2044}%{2040}
 \begin{document}
 \thispagestyle{empty}
 \Large
 \begin{tikzpicture}[remember picture, overlay]
 %\path[draw, ultra thick] (current page.north) -- (current page.south);
 
+
+\foreach \i in {0,1,...,250}
+	\path (current page.north west) -- (rand*30cm-0.175cm, rand*22cm-0.75cm) node[circle, fill=starcolor, inner sep=2pt] {};
+
+\foreach \i in {0,1,...,100}
+	\path (current page.north west) -- (rand*30cm+0.2cm, rand*22cm-0.6cm) node[circle, fill=starcolor, inner sep=3pt] {};
+
+\foreach \i in {0,1,...,2000}
+	\path (current page.north west) -- (rand*30cm+0.05cm, rand*22cm-0.85cm) node[circle, fill=starcolor, inner sep=1pt] {};
+
 \path (current page.north west) --++ (14.8cm, 0cm) node (north) {};
 \path (current page.north west) --++ (14.8cm, -21cm) node (south) {};
-\draw[ultra thick] (north) -- (south);
+%\draw[ultra thick] (north) -- (south);
 
 \path (current page.north west) --++ (1cm, -1.125cm) pic[anchor=north west] {title_header={ENDEAVOUR}};
+\path (current page.north west) --++ (7.41cm, -1cm) node[endeavour_box, text height=1.25cm, text depth=0pt, anchor=north, minimum width=12.675cm, minimum height=1.75cm, fill=darkfillcolor] {\setmainfont[Scale=2.5]{TT Mussels-BoldItalic} \huge ENDEAVOUR};
 
 \path (current page.north west) --++ (3.75cm, -4cm) pic {character_attribute=Role};
 \path (current page.north west) --++ (3.75cm, -5.25cm) pic {character_attribute=Name};
@@ -114,7 +161,7 @@
 \path (current page.north west) --++ (7.75cm, -14.0cm) pic {domain={Strategy \& Tactics}};
 
 % Stress
-\path (current page.north west) --++ (10.125cm, -9.75cm) pic {subheader=Stress};
+\path (current page.north west) --++ (10.125cm, -9.75cm) pic {subheader={\,Stress\,}};
 
 \path (current page.north west) --++ (10.125cm, -10.25cm) node[endeavour_box, anchor=north, minimum height = 4.75cm, minimum width = 1.25cm] {};
 
@@ -172,21 +219,18 @@
 \path (current page.north west) --++ (13.8cm, -19cm) pic {diety};
 
 
-
-%\path (current page.north west) --++ (22.2cm, -1cm) node[endeavour_box, anchor=north, minimum height = 1.75cm, minimum width = 12.8cm, align=left] {};
-%\path (current page.north west) --++ (22.2cm, -1cm) node[endeavour_box, anchor=north, minimum height = 1.75cm, text width = 12.4cm, align=left] {Distinction};
-\path (current page.north west) --++ (18.775cm, -1cm) node[tall_header_box] {Distinction};
-\path (current page.north west) --++ (18.9cm, -1cm) node[tall_attribute_field] {};
+%Distinction
+\path (current page.north west) --++ (18.9cm, -1cm) pic {distinction};
 
 \foreach \i in {0, 1, ..., 11}
 	\path (current page.north west) --++ (19.65cm + \i*0.75cm, -1.5cm) node[fate] (g\i) {};
 \foreach \i/\j in {0/1, 1/2, 2/3, 3/4, 4/5, 5/6, 6/7, 7/8, 8/9, 9/10, 10/11}
-	\draw (g\i) -- (g\j);
+	\draw[very thick] (g\i) -- (g\j);
 
 \foreach \i in {0,1,...,11}
 	\path (current page.north west) --++ (19.65cm + \i*0.75cm, -2.25cm) node[fate] (h\i) {};
 \foreach \i/\j in {0/1, 1/2, 2/3, 3/4, 4/5, 5/6, 6/7, 7/8, 8/9, 9/10, 10/11}
-	\draw (h\i) -- (h\j);
+	\draw[very thick] (h\i) -- (h\j);
 
 \path (current page.north west) --++ (24.9cm, -1.5cm) node[fate_dot] {};
 \path (current page.north west) --++ (21.9cm, -2.25cm) node[fate_dot] {};
@@ -194,7 +238,7 @@
 
 
 % Bonds
-\path (current page.north west) --++ (17.975cm, -3.5cm) pic {subheader=Bonds};
+\path (current page.north west) --++ (17.975cm, -3.5cm) pic {subheader={Bonds}};
 
 \foreach \i in {0,1,...,8}
 	\path (current page.north west) --++ (17.975cm, -4.0cm - \i*1.25cm) node[endeavour_box, anchor=north, minimum height = 1cm, minimum width = 4.25cm] {};
@@ -208,19 +252,16 @@
 }
 
 %Virtues
-\path (current page.north west) --++ (22.205cm, -16cm) pic {subheader={Core Values}};
+\path (current page.north west) --++ (22.205cm, -16cm) pic {subheader={\,Core Values\,}};
 
-%\path (current page.north west) --++ (22.205cm, -16.5cm) node[endeavour_box, anchor=north, minimum height = 3.5cm, minimum width = 12.73cm] {};
+\path (current page.north west) --++ (18.9cm, -16.5cm) pic {value=Curiosity};
+\path (current page.north west) --++ (25.55cm, -16.5cm) pic {value=Integrity};
 
-\path (current page.north west) --++ (18.775cm, -16.5cm) pic {value=Curiosity};
-\path (current page.north west) --++ (25.425cm, -16.5cm) pic {value=Integrity};
+\path (current page.north west) --++ (18.9cm, -17.75cm) pic {value=Fairness};
+\path (current page.north west) --++ (25.55cm, -17.75cm) pic {value=Courage};
 
-\path (current page.north west) --++ (18.775cm, -17.75cm) pic {value=Fairness};
-\path (current page.north west) --++ (25.425cm, -17.75cm) pic {value=Courage};
-
-\path (current page.north west) --++ (18.775cm, -19cm) pic {value=\phantom{abcde}};
-\path (current page.north west) --++ (25.425cm, -19cm) pic{value=\phantom{abcde}};
-
+\path (current page.north west) --++ (18.9cm, -19cm) pic {value=\phantom{abcde}};
+\path (current page.north west) --++ (25.55cm, -19cm) pic{value=\phantom{abcde}};
 
 \end{tikzpicture}
 \end{document}
