@@ -14,12 +14,14 @@
 \usepackage{fontspec}
 \setmainfont{Futura}
 
-\definecolor{LCARS0}{HTML}{FFAA00}
-\definecolor{LCARS1}{HTML}{7190C6}
-\definecolor{LCARS2}{HTML}{B24F46}
-\definecolor{LCARS3}{HTML}{41444F}
-\definecolor{LCARS4}{HTML}{DE8443}
-\definecolor{LCARS5}{HTML}{25272E}
+\definecolor{LCARS_GOLD}{HTML}{FFAA00}
+\definecolor{LCARS_BLUE}{HTML}{577a83}%{7190C6}
+\definecolor{LCARS_RED}{HTML}{B24F46}
+\definecolor{LCARS_GREEN}{HTML}{929a76}%{C2C69C}%{009E60}
+\definecolor{LCARS_ORANGE}{HTML}{DE8443}
+\definecolor{LCARS_PINK}{HTML}{FFB7C5}
+\definecolor{LCARS_LIGHTGRAY}{HTML}{41444F}
+\definecolor{LCARS_DARKGRAY}{HTML}{25272E}
 
 %\colorlet{blackfillcolor}{black}
 %\colorlet{darkfillcolor}{lightgray}
@@ -32,12 +34,12 @@
 
 
 \colorlet{blackfillcolor}{black}
-\colorlet{darkfillcolor}{LCARS2}
+\colorlet{darkfillcolor}{LCARS_BLUE}
 \colorlet{lightfillcolor}{lightgray!25}
 \colorlet{borderfillcolor}{lightgray}
 \colorlet{subheadercolor}{lightfillcolor}
-\colorlet{starcolor}{LCARS3}
-\colorlet{bgcolor}{LCARS5}
+\colorlet{starcolor}{LCARS_LIGHTGRAY}
+\colorlet{bgcolor}{LCARS_DARKGRAY}
 \pagecolor{bgcolor}
 
 % Define tikz styles
@@ -131,7 +133,7 @@
 \foreach \i in {0,1,...,100}
 	\path (current page.north west) -- (rand*30cm+0.2cm, rand*22cm-0.6cm) node[circle, fill=starcolor, inner sep=3pt] {};
 
-\foreach \i in {0,1,...,2000}
+\foreach \i in {0,1,...,1977}
 	\path (current page.north west) -- (rand*30cm+0.05cm, rand*22cm-0.85cm) node[circle, fill=starcolor, inner sep=1pt] {};
 
 \path (current page.north west) --++ (14.8cm, 0cm) node (north) {};
