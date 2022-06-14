@@ -42,7 +42,7 @@
 \tikzstyle{fate_dot}=[draw, very thick, inner sep=0pt, minimum size=0.125cm, circle, fill=black]
 \tikzstyle{pathos}=[fate, circle, fill=lightfillcolor]
 
-\tikzstyle{endeavour_box}=[draw, very thick, double=borderfillcolor, double distance=0.1cm, fill=lightfillcolor, inner sep=0.1cm, outer sep=0pt, minimum height=1.0cm, chamfered rectangle, chamfered rectangle sep=0.1cm,text height=1.5ex, text depth=-0.5ex]
+\tikzstyle{endeavour_box}=[draw, very thick, double=borderfillcolor, double distance=0.05cm, fill=lightfillcolor, inner sep=0.1cm, outer sep=0pt, minimum height=1.0cm, chamfered rectangle, chamfered rectangle sep=0.1cm,text height=1.5ex, text depth=-0.5ex]
 
 \tikzstyle{short_header_box}=[endeavour_box, fill=darkfillcolor, anchor=north east, text width=2.125cm, chamfered rectangle corners={north west, south west}, align=right]
 
@@ -123,7 +123,7 @@
 %  \path (current page.south west) --++ (0cm, 1.0cm) coordinate (lb) {};
 %  \path (current page.north east) --++ (0cm, -1.0cm) coordinate (rt) {};
 %  \path (current page.south east) --++ (0cm, 1.0) coordinate (rb) {};
-
+%
 %  \draw (tl) -- (bl);
 %  \draw (tr) -- (br);
 %  \draw (lt) -- (rt);
@@ -253,17 +253,17 @@
 \path (nw) --++ (13.05cm, -2.3cm) node[fate_dot] {};
 
 % Bonds
-\path (nw) --++ (3.225cm, -3.45cm) pic {subheader={Bonds}};
+\path (nw) --++ (3.2cm, -3.45cm) pic {subheader={Bonds}};
 
 \foreach \i in {0,1,...,8}
-	\path (nw) --++ (3.225cm, -3.95cm - \i*1.25cm) node[endeavour_box, anchor=north, minimum height = 1cm, minimum width = 4.25cm] {};
+	\path (nw) --++ (3.2cm, -3.95cm - \i*1.25cm) node[endeavour_box, anchor=north, minimum height = 1cm, minimum width = 4.25cm] {};
 
 % Discoveries
-\path (ne) --++ (-4.975cm, -3.45cm) pic {subheader=Artifacts and Discoveries};
+\path (ne) --++ (-4.95cm, -3.45cm) pic {subheader=Artifacts and Discoveries};
 
 \foreach \i in {0,1,...,8} {
-	\path (ne) --++ (-4.975cm, -3.95cm - \i*1.25cm) node[endeavour_box, anchor=north, minimum height = 1cm, minimum width = 7.75cm] {};
-	\path (ne) --++ (-8.3cm, -3.95cm - \i*1.25cm - 0.5cm) node[fate] {};
+	\path (ne) --++ (-4.95cm, -3.95cm - \i*1.25cm) node[endeavour_box, anchor=north, minimum height = 1cm, minimum width = 7.75cm] {};
+	\path (ne) --++ (-8.275cm, -3.95cm - \i*1.25cm - 0.5cm) node[fate] {};
 }
 
 %Virtues
