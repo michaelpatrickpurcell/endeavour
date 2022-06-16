@@ -21,7 +21,7 @@
 
 \usepackage{scrlayer-scrpage} % Manage headers and footers in Koma-Script document classes
 
-\usepackage[bmargin=1.66cm, lmargin=2cm, rmargin=2cm, tmargin=1.66cm, footskip=1.4cm]{geometry} % Set margins and footer placement
+\usepackage[bmargin=1.66cm, lmargin=2cm, rmargin=2cm, tmargin=1.66cm, footskip=1.33cm]{geometry} % Set margins and footer placement
 
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta} % Customize arrowheads in in Write the Outline example
@@ -30,8 +30,9 @@
 %\usepackage[skins]{tcolorbox} % Add background image to tikz node in color cover
 
 \usepackage{fontspec} % Use system fonts.  Not compatible with pdflatex. Use XeLaTeX instead!
-\setmainfont{TeX Gyre Pagella}
+\setmainfont{TeX Gyre Schola}
 \usepackage{cinzel} % I haven't been able to get the cinzel font on my machine to display bold weight. This one works.
+\newcommand{\futura}{\setmainfont{Futura}}
 
 \usepackage{enumitem} % Adjust formatting of description environment items
 \usepackage{multicol} % Format list of playtesters in two columns
@@ -54,9 +55,9 @@
 % Set header and footer text
 \clearpairofpagestyles
 \makeatletter
-\chead*{\setmainfont{Futura} \normalshape \footnotesize \colorbox{bgcolor}{\textcolor{lightfillcolor}{Version \@version}}}
+\chead*{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{lightfillcolor}{Version \@version}}}
 \makeatother
-\cfoot{\setmainfont{Futura} \normalshape \colorbox{bgcolor}{\textcolor{lightfillcolor}{\arabic{page}}}}
+\cfoot{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{lightfillcolor}{\arabic{page}}}}
 
 % Adjust spacing before and after section headings
 \RedeclareSectionCommand[
@@ -166,13 +167,13 @@
 \tikzset{starfield/.pic={
 \pgfmathsetseed{6}%{2000}
 		\foreach \i in {0,1,...,100}
-			\path (current page.north west) -- (rand*16cm, rand*22cm-0.05cm) node[circle, fill=starcolor, inner sep=2pt] {};
+			\path (current page.north west) -- (rand*16cm+0.1cm, rand*22cm+0.15cm) node[circle, fill=starcolor, inner sep=2pt] {};
 
 		\foreach \i in {0,1,...,19}
 			\path (current page.north west) -- (rand*16cm, rand*22cm-0.075cm) node[circle, fill=starcolor, inner sep=3pt] {};
 
 		\foreach \i in {0,1,...,1250}
-			\path (current page.north west) -- (rand*16cm-0.35cm, rand*22cm-0.06cm) node[circle, fill=starcolor, inner sep=1pt] {};
+			\path (current page.north west) -- (rand*16cm-0.35cm, rand*22cm-0.04cm) node[circle, fill=starcolor, inner sep=1pt] {};
 }}
 
 \AddToShipoutPictureBG{
@@ -196,7 +197,7 @@ The players first decide the basic outline of the story, describing events that 
 
 Throughout these rules, a variety of common words are used as technical terms to describe how the game is played.
 These terms will be \emph{italicised} when they are first introduced.
-References to sections of the rules will be written in the same font as the \hyperref[section:introduction]{\cinzel \small Section Headings}.
+References to sections of the rules will be written in the same font as the \hyperref[section:introduction]{\futura Section Headings}.
 
 \subsection*{Materials} \label{subsection:materials}
 To play the game the players will need a few materials that they will use to take notes and determine outcomes.
@@ -205,29 +206,36 @@ They will need:
 	\item[Index Cards:] Approximately fifty index cards should be placed within easy reach of all players. 
 	\item[Sticky Notes:] Approximately one hundred sticky notes should be placed within easy reach of all players.
 	\item[Butcher Paper:] One large sheet of butcher paper should be placed in the middle of the play area.  A whiteboard can be used instead if desired. This is the \emph{story board}.
-	\item[Markers:] Each player should have a marker% to write on the index cards, sticky notes, and story board.
-%	\item[Dice:] Approximately twelve six-sided dice should be placed within easy reach of all players. 
+	\item[Markers:] Each player should have a marker to write on the index cards, sticky notes, and story board.
+	\item[Dice:] Approximately twelve six-sided dice% should be placed within easy reach of all players. 
 \end{description}
 
 \newpage
 \ClearShipoutPicture
-\setmainfont{Futura}
-\Large
 \AddToShipoutPictureBG{
 	\begin{tikzpicture}[remember picture, overlay]
 	\pic () at (current page.center) {starfield};
-%		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
 	\end{tikzpicture}
 }
 
+{%
+\thispagestyle{empty}
+\setmainfont{Futura}
+\Large
 \begin{tikzpicture}[overlay, remember picture]
 \pic () at (current page.north west) {character_sheet_1};
 \end{tikzpicture}
+}
 
 \newpage
+{%
+\thispagestyle{empty}
+\setmainfont{Futura}
+\Large
 \begin{tikzpicture}[overlay, remember picture]
 \pic () at (current page.north west) {character_sheet_2};
 \end{tikzpicture}
+}
 
 %\newpage
 %
