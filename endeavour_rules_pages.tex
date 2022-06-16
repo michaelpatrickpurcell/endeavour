@@ -1,0 +1,404 @@
+\documentclass[11pt, a5paper, parskip=half-, DIV=12]{scrartcl}
+
+\usepackage{endeavour}
+\colorlet{blackfillcolor}{black}
+\colorlet{darkfillcolor}{LCARS_ORANGE}
+\colorlet{lightfillcolor}{lightgray!25}
+\colorlet{borderfillcolor}{lightgray}
+\colorlet{subheadercolor}{lightfillcolor}
+\colorlet{starcolor}{LCARS_LIGHTGRAY}
+\colorlet{bgcolor}{LCARS_DARKGRAY}
+\pagecolor{bgcolor}
+
+%\colorlet{blackfillcolor}{black}
+%\colorlet{darkfillcolor}{lightgray}
+%\colorlet{lightfillcolor}{white}
+%\colorlet{borderfillcolor}{lightgray}
+%\colorlet{subheadercolor}{black}
+%\colorlet{starcolor}{white}
+%\colorlet{bgcolor}{white}
+%\pagecolor{bgcolor}
+
+\usepackage{scrlayer-scrpage} % Manage headers and footers in Koma-Script document classes
+
+\usepackage[bmargin=1.66cm, lmargin=2cm, rmargin=2cm, tmargin=1.66cm, footskip=1.4cm]{geometry} % Set margins and footer placement
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta} % Customize arrowheads in in Write the Outline example
+\usetikzlibrary{shapes} % Draw the node in the fancy \pagemark
+
+%\usepackage[skins]{tcolorbox} % Add background image to tikz node in color cover
+
+\usepackage{fontspec} % Use system fonts.  Not compatible with pdflatex. Use XeLaTeX instead!
+\setmainfont{TeX Gyre Pagella}
+\usepackage{cinzel} % I haven't been able to get the cinzel font on my machine to display bold weight. This one works.
+
+\usepackage{enumitem} % Adjust formatting of description environment items
+\usepackage{multicol} % Format list of playtesters in two columns
+
+\usepackage[type={CC}, version={4.0}, modifier={by}]{doclicense} % Add text and icons for creative commons license
+
+\usepackage{eso-pic}
+
+\usepackage[hidelinks]{hyperref} % Add hyperlinks to the pdf file. This should usually be the last package loaded before \begin{document}
+\usepackage[xspace]{ellipsis} % Properly typeset ellipses. This package is one of the few packages that must be loaded after hyperref
+
+
+% Define command to set value of a variable that contains the version number
+% This is meant to mimic the syntax used for the built-in \title{} and \author{} commands.
+\makeatletter
+\newcommand{\version}[1]{\newcommand{\@version}{#1}}
+\makeatother
+
+
+% Set header and footer text
+\clearpairofpagestyles
+\makeatletter
+\chead*{\setmainfont{Futura} \normalshape \footnotesize \colorbox{bgcolor}{\textcolor{lightfillcolor}{Version \@version}}}
+\makeatother
+\cfoot{\setmainfont{Futura} \normalshape \colorbox{bgcolor}{\textcolor{lightfillcolor}{\arabic{page}}}}
+
+% Adjust spacing before and after section headings
+\RedeclareSectionCommand[
+  runin=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=-0.0\baselineskip
+]{section}
+
+% Adjust spacing before and after subsection headings
+\RedeclareSectionCommand[
+  runin=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=-0.0\baselineskip
+]{subsection}
+
+% Adjust spacing before and after subsubsection headings
+\RedeclareSectionCommand[
+  runin=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=-0.0\baselineskip
+]{subsubsection}
+
+% Adjust formatting of description environment
+\setlist[description]{labelindent=0.25cm, leftmargin=\widthof{\hspace{0.25cm}\textbullet\space}, font=\normalfont\textbullet\bfseries\space}
+
+% Adjust formatting of itemize environment
+%itemize environments should be followed immediately by a \vspace{1ex} command.
+\setlist[itemize]{noitemsep,nolistsep,  leftmargin=0.68cm,topsep=-1ex}
+
+\setkomafont{section}{\color{LCARS_ORANGE}\setmainfont{Futura}\Large}
+\setkomafont{subsection}{\color{LCARS_ORANGE}\setmainfont{Futura}\large}
+\setkomafont{subsubsection}{\color{LCARS_ORANGE}\setmainfont{Futura}\normalsize}
+
+%\setkomafont{section}{\large\cinzel\bfseries}
+%\setkomafont{subsection}{\cinzel\bfseries}
+%\setkomafont{subsubsection}{\small\cinzel\bfseries}
+
+% Set some environment variables for use in the title page
+\title{ENDEAVOUR}
+\subtitle{A PARAGON Playset}
+\author{Michael Purcell}
+\version{0.1}
+
+\begin{document}
+
+% Colour Cover
+%\begin{titlepage}
+%		\makeatletter
+%		\thispagestyle{plain}
+%		\enlargethispage{3.5\baselineskip} % Move the bottom line (author and date) down a bit
+%
+%	\AddToShipoutPictureBG*{
+%		\begin{tikzpicture}[remember picture, overlay]
+%			\draw[fill stretch image=Images/black_marble_texture_vertical.jpg]  (current page.south west) rectangle (current page.north east);
+%		\end{tikzpicture}
+%	}
+%
+%%		\pagecolor{black}		
+%		
+%         \setmainfont{Cinzel Decorative}
+%	    \centering{
+%			{\fontsize{60}{72}\selectfont \textcolor{violet!75}{\@title}}
+%		}
+%
+%		\setmainfont{URWClassico}
+%		\vspace{5mm}
+%		\centering{\Large{{\textcolor{lightgray}{\@subtitle}}}}
+%
+%
+%		\vfill
+%
+%		\includegraphics[scale=3.81]{Images/comet_diagram_violet.pdf}
+%
+%		\vfill
+%		
+%		\Large{{\textcolor{lightgray}{\@author}}}
+%		\makeatother
+%\end{titlepage}
+
+% BW Cover
+%\begin{titlepage}
+%	\makeatletter
+%	\thispagestyle{plain}
+%		\enlargethispage{3.5\baselineskip} % Move the bottom line (author and date) down a bit
+%		
+%        \setmainfont{TTMussels-BoldItalic}
+%	    \centering{
+%			{\fontsize{50}{60}\selectfont
+%			{\textcolor{black}{\@title}}}
+%		}
+%
+%
+%		\setmainfont{Futura}
+%		\vspace{5mm}
+%%		\centering{\Large{{\textcolor{black}{\@subtitle}}}}
+%
+%		\vfill
+%
+%%		\includegraphics[scale=3.81]{Images/comet_diagram_black.pdf}
+%
+%		\vfill
+%		
+%		\Large{{\textcolor{black}{\@author}}}\\
+%		\makeatother
+%\end{titlepage}
+%
+\tikzset{starfield/.pic={
+\pgfmathsetseed{6}%{2000}
+		\foreach \i in {0,1,...,100}
+			\path (current page.north west) -- (rand*16cm, rand*22cm-0.05cm) node[circle, fill=starcolor, inner sep=2pt] {};
+
+		\foreach \i in {0,1,...,19}
+			\path (current page.north west) -- (rand*16cm, rand*22cm-0.075cm) node[circle, fill=starcolor, inner sep=3pt] {};
+
+		\foreach \i in {0,1,...,1250}
+			\path (current page.north west) -- (rand*16cm-0.35cm, rand*22cm-0.06cm) node[circle, fill=starcolor, inner sep=1pt] {};
+}}
+
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+
+\setcounter{page}{1}
+\setmainfont{TeX Gyre Schola}
+\normalsize
+\raggedright
+\section*{Introduction} \label{section:introduction}
+Prophecy is a GM-less roleplaying game for three to six people that can be played in under three hours.
+During the game, the players receive a prophecy that describes an impending catastrophe for some fictional world and tell a story about characters whose lives will be affected by that catastrophe. 
+
+The players first decide the basic outline of the story, describing events that are fated to occur. 
+ They then fill in the details of the story, describing how the characters try to shape their destiny.
+
+Throughout these rules, a variety of common words are used as technical terms to describe how the game is played.
+These terms will be \emph{italicised} when they are first introduced.
+References to sections of the rules will be written in the same font as the \hyperref[section:introduction]{\cinzel \small Section Headings}.
+
+\subsection*{Materials} \label{subsection:materials}
+To play the game the players will need a few materials that they will use to take notes and determine outcomes.
+They will need:
+\begin{description}
+	\item[Index Cards:] Approximately fifty index cards should be placed within easy reach of all players. 
+	\item[Sticky Notes:] Approximately one hundred sticky notes should be placed within easy reach of all players.
+	\item[Butcher Paper:] One large sheet of butcher paper should be placed in the middle of the play area.  A whiteboard can be used instead if desired. This is the \emph{story board}.
+	\item[Markers:] Each player should have a marker% to write on the index cards, sticky notes, and story board.
+%	\item[Dice:] Approximately twelve six-sided dice should be placed within easy reach of all players. 
+\end{description}
+
+\newpage
+\ClearShipoutPicture
+\setmainfont{Futura}
+\Large
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+%		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\begin{tikzpicture}[overlay, remember picture]
+\pic () at (current page.north west) {character_sheet_1};
+\end{tikzpicture}
+
+\newpage
+\begin{tikzpicture}[overlay, remember picture]
+\pic () at (current page.north west) {character_sheet_2};
+\end{tikzpicture}
+
+%\newpage
+%
+%\section*{Modules} \label{section:modules}
+%The first thing that the players do is \hyperref[subsection:receive-a-prophecy]{\cinzel \small Receive a Prophecy}.  \\
+%This is the inciting incident for everything that happens in the story.
+%%It's important!
+%By describing the catastrophe, the players establish the foundation on which the rest the game will be built.
+%
+%A \emph{module} is a pre-written prophecy designed to help the players get started.
+%Each module describes a catastrophe as it might be presented to characters who are hearing the prophecy for the first time.  The players should read the module aloud and populate the world that it implies with objects and aspects.
+%
+%\subsection*{The Tachyonic Antitelephone} \label{subsection:the-tachyonic-antitelephone}
+%I am, well \ldots I'm you.  That is, I was. Or, you will be.  Or, something like that. Anyway, I'm afraid that I've got some bad news. Really bad. You see, it turns out that the work that you did for DARPA last year was used to create something that we used to think impossible.
+%They built a time machine. 
+%
+%Fortunately, it's pretty limited.  It can only send messages back in time, and then only to times after they turned it on.  That's why I'm talking to you now instead of earlier when it might have done some good.
+%
+%Unfortunately, it turns out that messing around with time is a bad idea.
+%Really bad. It didn't take long before strange things started to happen.
+%Then the Time Eaters came.
+%
+%It's too late for us. 
+%Maybe, though, its not too late for you.
+%If nothing else, you might be able to pass this message along in turn when you get here. 
+%Eventually, one of us is sure to figure a way out of this mess.
+%Right?
+%
+%\newpage
+%
+%\subsection*{Project Spaceguard} \label{subsection:project-spaceguard}
+%My fellow Americans, it is with a heavy heart that I come to you tonight. 
+%As you are doubtless aware, last year the initial survey conducted as a part of Project Spaceguard discovered a large Near Earth Object that was projected to collide with the Earth later this month.
+%Ever since, the primary focus of this administration has been to prevent that from occurring. Earlier this evening, the director of Project Spaceguard informed me that we have failed.
+%
+%Now, we must shift our focus from preventing a collision to surviving its aftermath.
+%Effective immediately, I am declaring a nationwide state of emergency. 
+%National Guard units will be activated and deployed in support of local law enforcement. 
+%
+%Going forward, the Federal Emergency Management Agency will be leading our response.
+%I'll turn the microphone over to the director of that agency now and he can provide details about what you can expect.
+%Goodnight and Godspeed.
+%
+%
+%\subsection*{She's Having a Baby} \label{subsection:shes-having-a-baby}
+%Congratulations! It looks like you're at about eight weeks now.
+%Everything looks great, both mum and bub are doing fine. 
+%So, we'll plan on seeing you again in about four weeks.
+%
+%While you're here I should tell you about the course that the hospital offers for new parents.
+%It's a great way to learn about what to expect and a chance talk to other new parents about the whole experience. 
+%The teachers are all former maternity ward nurses, and they really do a great job.
+%
+%I know that this can be overwhelming.
+%If you have any concerns, please give us a call at any time. 
+%
+%\newpage
+%
+%\subsection*{The Deluge \setmainfont{URWClassico}\textcolor{black}{ - From The King James Version of the Bible}} \label{subsection:the-deluge}
+%I will destroy man whom I have created from the face of the earth; both man, and beast, and the creeping thing, and the fowls of the air; for it repenteth me that I have made them.\\ 
+%\vspace{0.5ex}\hspace{8cm} - Genesis 6:7
+%
+%And, behold, I, even I, do bring a flood of waters upon the earth, to destroy all flesh, wherein is the breath of life, from under heaven; and every thing that is in the earth shall die. \\
+%\vspace{0.5ex}\hspace{8cm} - Genesis 6:17
+%
+%For yet seven days, and I will cause it to rain upon the earth forty days and forty nights; and every living substance that I have made will I destroy from off the face of the earth.\\
+%\vspace{0.5ex}\hspace{8cm} - Genesis 7:4
+%
+%\subsection*{Unsafe at Any Speed \setmainfont{URWClassico}\textcolor{black}{ - Submitted by Paul Murray}} \label{subsection:unsafe-at-any-speed}
+%You know what this means don't you?
+%That crackpot down in R\&D was right. 
+%Every Faraday Byron that we've sold in the past two years is a ticking time bomb.
+%The first ones off the assembly line are going to start failing soon.
+%After that, every week will be worse than the one before.
+%
+%We're not going to be able to keep this quiet for long.
+%Soon, even your pet politicians are going to have to do something.
+%What then?
+%Eventually they're going to figure out that we knew this might happen.
+%I bet it takes them less than a month.
+%
+%Someone is going down for this, and it's not going to be me.
+%I'm leaving!
+%Maybe I'll go somewhere warm. 
+%Somewhere with white-sand beaches, palm trees,  and no extradition treaty.
+%
+%\newpage
+%
+%\subsection*{Dead Man's Switch  \setmainfont{URWClassico}\textcolor{black}{ - Submitted by Brett Witty}} \label{subsection:dead-mans-switch}
+%If you're hearing this, I am dead.
+%But you probably already know that.
+%I haven't contacted my fail-safe device for a week, and now it has automatically triggered.
+%This message is part of the mechanism.
+%
+%Dead men tell no tales.
+%Except for this one. 
+%In twenty-four hours all your dirty little secrets are going to every press outlet in the country. 
+%Every email, every recording, every video. 
+%The entire trove.
+%
+%See you in hell.
+%
+%\subsection*{R'lyehian Rhapsody \setmainfont{URWClassico}\textcolor{black}{ - Submitted by David McKenzie}} \label{subsection:rlyehian-rhapsody}
+%The time is nigh.
+%Soon the planets will be in alignment and we can harness their celestial power.
+%With just a gentle push, we can release the Great Old One from its prison.
+%
+%Much work remains; three rituals have yet to be performed.
+%Those of you who have been called to serve know who you are and what you must do.  Go! We mustn't let this once-in-a-millennium opportunity go to waste.
+%
+%Now is the time to be strong in your faith.
+%There will be those who oppose us.
+%Those who are afraid.
+%They must not be allowed to interfere.
+%
+%Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!
+%
+%\newpage
+%
+%\thispagestyle{plain}
+%\enlargethispage{3.5\baselineskip} % Move the bottom line down a bit
+%
+%\section*{Acknowledgements} \label{section:acknowledgements}
+%The design of Prophecy has been vastly improved by the influence of ideas and mechanics from other games and the feedback provided by playtesters throughout the design process.  
+%The creation of this booklet was made possible by a plethora of readily available tools for document preparation.
+%
+%\subsection*{Playtesters} \label{subsection:playtesters}
+%The following people helped to refine the design of Prophecy:\vspace{-1.75ex}
+%\begin{multicols}{2}
+%\begin{itemize}
+%  \item Keydan Bruce
+%  \item Farzana Choudhury
+%  \item Michael Cromer
+%  \item Dannielle Harden
+%  \item Andrew Hellyer
+%  \item Sarah Hewat
+%  \item Scott Joblin
+%  \item David McKenzie
+%  \item Paul Murray
+%  \item Kira Purcell
+%  \item Luke Purcell
+%  \item Jo Stephenson
+%  \item Brett Witty
+%\end{itemize}
+%\end{multicols}
+%
+%\subsection*{Influences} \label{subsection:influences}
+%The following games influenced the design of Prophecy:
+%\begin{description}[font=\normalfont\textbullet\space, noitemsep, topsep=-1ex]
+%	\item[Fate:] Aspects and Objects.
+%	\item[Fiasco:] Scenes and scene-level resolution.
+%	\item[Our Last Best Hope:] Theme and narrative focus.
+%	\item[10 Candles:] Session modules.
+%	\item[Microscope:] Non-linear storytelling.
+%\end{description}
+%\vspace{1ex}
+%\hyperref[subsection:safety-tools]{\cinzel \small Safety Tools} is based on the X-Card by John Stavropoulus.
+%
+%\subsection*{Design Tools} \label{subsection:design-tools}
+%The following tools were used to create this booklet:
+%\begin{description}[font=\normalfont\textbullet\space, noitemsep, topsep=-1ex]
+%	\item[XeLaTeX:] Typesetting and layout.
+%	\item[TikZ:] Diagrams and art.
+%\end{description}
+%\vspace{1ex}
+%The fonts used in this booklet are URW Classico and Cinzel.
+%\vspace{0.25\baselineskip}
+%
+%\vfill
+%
+%Contact: \href{mailto:prophecy.ttrpg@gmail.com}{prophecy.ttrpg@gmail.com}\\
+%\vspace{-2.5ex}\doclicenseText \hfill  \Huge{\doclicenseIcon}
+
+\end{document}
