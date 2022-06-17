@@ -41,6 +41,18 @@
 
 \usepackage{eso-pic}
 
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{scalerel}
+\usepackage{array}
+\usepackage{contour}
+\contourlength{0.15pt}
+\contournumber{256}
+
+
+\usepackage{soul}
+
 \usepackage[hidelinks]{hyperref} % Add hyperlinks to the pdf file. This should usually be the last package loaded before \begin{document}
 \usepackage[xspace]{ellipsis} % Properly typeset ellipses. This package is one of the few packages that must be loaded after hyperref
 
@@ -100,6 +112,10 @@
 \subtitle{A PARAGON Playset}
 \author{Michael Purcell}
 \version{0.1}
+
+\newcommand{\tablesep}{\,\,$\Longleftrightarrow$\,\,}
+\newcommand{\AGON}{\textsc{Agon}}%{{\setmainfont{Calluna-Black} AGON}}
+\newcommand{\ENDEAVOUR}{\textsc{Endeavour}}%{{\setmainfont{TTMussels-BoldItalic} ENDEAVOUR}}
 
 \begin{document}
 
@@ -188,29 +204,94 @@
 \setmainfont{TeX Gyre Schola}
 \normalsize
 \raggedright
-\section*{Introduction} \label{section:introduction}
-Prophecy is a GM-less roleplaying game for three to six people that can be played in under three hours.
-During the game, the players receive a prophecy that describes an impending catastrophe for some fictional world and tell a story about characters whose lives will be affected by that catastrophe. 
 
-The players first decide the basic outline of the story, describing events that are fated to occur. 
- They then fill in the details of the story, describing how the characters try to shape their destiny.
+\section*{Premise}
+The year is 2364. The people of Earth, together with their network of far-flung colonies, comprise the Terran Civilization. The Terran Civilization, in turn, is a member of the Interstellar Confederation. The Interstellar Confederation is an organization made up of hundreds of spacefaring civilizations and is populated by dozens of different species.
 
-Throughout these rules, a variety of common words are used as technical terms to describe how the game is played.
-These terms will be \emph{italicised} when they are first introduced.
-References to sections of the rules will be written in the same font as the \hyperref[section:introduction]{\futura Section Headings}.
+You are an officer aboard the Interstellar Confederation Ship (ICS) Endeavour. Your mission is to explore the galaxy. You will travel deep into uncharted space where you will encounter strange natural phenomena, make first contact with alien civilizations, and help those in need.
 
-\subsection*{Materials} \label{subsection:materials}
-To play the game the players will need a few materials that they will use to take notes and determine outcomes.
-They will need:
-\begin{description}
-	\item[Index Cards:] Approximately fifty index cards should be placed within easy reach of all players. 
-	\item[Sticky Notes:] Approximately one hundred sticky notes should be placed within easy reach of all players.
-	\item[Butcher Paper:] One large sheet of butcher paper should be placed in the middle of the play area.  A whiteboard can be used instead if desired. This is the \emph{story board}.
-	\item[Markers:] Each player should have a marker to write on the index cards, sticky notes, and story board.
-	\item[Dice:] Approximately twelve six-sided dice% should be placed within easy reach of all players. 
-\end{description}
+\section*{Tone}
+This is an optimistic science fiction game. That is, it is a game about a future in which humanity has progressed beyond the kinds of internecine conflicts that plague modern society. Advanced technology is commonplace and has helped to create a post-scarcity society throughout the Interstellar Confederation.
+
+The crew of the ICS Endeavour are skilled professionals who know how to work together effectively. While they may disagree at times, they will not let personal biases or animosity affect their work.
+
+Stories in \ENDEAVOUR{} generally involve some kind of moral dilemma. Moreover, the futuristic setting acts as lens through which we can view contemporary social issues. The best such stories are fundamentally about the difficult choices the crew are asked to make and how they are affected by their experiences.  
 
 \newpage
+
+%\section*{Introduction} \label{section:introduction}
+%Prophecy is a GM-less roleplaying game for three to six people that can be played in under three hours.
+%During the game, the players receive a prophecy that describes an impending catastrophe for some fictional world and tell a story about characters whose lives will be affected by that catastrophe. 
+%
+%The players first decide the basic outline of the story, describing events that are fated to occur. 
+% They then fill in the details of the story, describing how the characters try to shape their destiny.
+%
+%Throughout these rules, a variety of common words are used as technical terms to describe how the game is played.
+%These terms will be \emph{italicised} when they are first introduced.
+%References to sections of the rules will be written in the same font as the \hyperref[section:introduction]{\futura Section Headings}.
+%
+%\subsection*{Materials} \label{subsection:materials}
+%To play the game the players will need a few materials that they will use to take notes and determine outcomes.
+%They will need:
+%\begin{description}
+%	\item[Index Cards:] Approximately fifty index cards should be placed within easy reach of all players. 
+%	\item[Sticky Notes:] Approximately one hundred sticky notes should be placed within easy reach of all players.
+%	\item[Butcher Paper:] One large sheet of butcher paper should be placed in the middle of the play area.  A whiteboard can be used instead if desired. This is the \emph{story board}.
+%	\item[Markers:] Each player should have a marker to write on the index cards, sticky notes, and story board.
+%	\item[Dice:] Approximately twelve six-sided dice% should be placed within easy reach of all players. 
+%\end{description}
+%
+%\newpage
+
+\section*{Summary of Differences}
+While \ENDEAVOUR{} uses the same underlying mechanics as \AGON{}, much of the terminology has been changed to reflect the thematic differences between the two games.%
+\small
+\begin{center}
+\begin{tabular}{r@{}c@{}l@{\hskip 4.5ex}r@{}c@{}l} \toprule
+\AGON & \tablesep & \ENDEAVOUR & \AGON & \tablesep & \ENDEAVOUR \\ \midrule
+Island & \tablesep & Planet & Glory & \tablesep & Distinction \\[1.5ex]
+%& & & & & \\
+Epithet & \tablesep & Role & Pathos & \tablesep & Stress \\
+Lineage & \tablesep & Species & Agony & \tablesep & Distress \\
+Honored God & \tablesep & Heritage & Fate & \tablesep & Experience \\[1.5ex]
+%& & & & & \\
+Great Deeds & \tablesep & Discoveries & Battle & \tablesep & Crisis\\ 
+Trophies & \tablesep & Artifacts & Clash & \tablesep & Confrontation \\[1.5ex]
+%& & & & & \\
+Acumen & \tablesep & Curiosity & Epic & \tablesep & Gruelling \\
+Grace & \tablesep & Integrity & Sacred & \tablesep & Sensitive \\
+Passion & \tablesep & Fairness & Mythic & \tablesep & Fraught \\[1.5ex]
+%& & & & & \\ 
+Greek Gods & \tablesep & Civilizations & Sacrifice & \tablesep & Diplomacy \\ 
+Divine Favor & \tablesep & Assistance & & & \\ \bottomrule 
+\end{tabular}
+\end{center}
+\normalsize
+
+\subsection*{Domains}
+There is no mapping between the individual domains used in \AGON{} and those used in \ENDEAVOUR{}. Rather, the mapping applies to the \emph{sets} of domains used in the two games.%
+\small
+\begin{center}
+\begin{tabular}{r@{\hskip 1ex}l@{\hskip 1ex}c@{\hskip 1ex}r@{\hskip 1ex}l} \toprule
+\AGON &  & $\Longleftrightarrow$ & & \ENDEAVOUR \\ \midrule
+Arts \& Oration & & & & Leadership \& Negotiation \\ 
+Blood \& Valor &  & & & Science \& Medicine\\
+Craft \& Reason &  & & & Operations \& Engineering \\
+Resolve \& Spirit & \multirow{-4}{*}[-1.75pt]{\rotatebox{90}{\makebox[9.5ex]{\upbracefill}}} & \multirow{-4}{*}{$\Longleftrightarrow$}& \multirow{-4}{*}[-1.75pt]{\rotatebox{90}{\makebox[9.5ex]{\downbracefill}}} & Strategy \& Tactics \\ \bottomrule
+\end{tabular}
+\end{center}
+\normalsize
+
+\subsection*{The Signs of the Gods}
+\ENDEAVOUR{} does not use The Signs of the Gods. Instead, each adventure is prefaced by a log entry made by one of the crew. See \hyperref[log_entry]{\futura Log Entry} (page \pageref{log_entry}) for details.
+
+\newpage
+
+\section*{Log Entry}\label{log_entry}
+Test
+
+\newpage
+
 \ClearShipoutPicture
 \AddToShipoutPictureBG{
 	\begin{tikzpicture}[remember picture, overlay]

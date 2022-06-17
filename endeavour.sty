@@ -83,6 +83,11 @@
 	\node[attribute_field, fill=none] () at (0.125, 0) {};
 }}
 
+\tikzset{character_description/.pic={
+	\node[short_header_box] () at (-0.125,0) {{\Large #1\,}};
+	\node[aspect_field] () at (0.125cm, 0) {};
+}}
+
 \tikzset{character_aspect/.pic={
 	\node[short_header_box] () at (-0.125,0) {{\Large #1\,}};
 	\node[aspect_field] () at (0.125cm, 0) {};
@@ -141,7 +146,7 @@
 	
   \path (nw) --++ (3.75cm, -5.2cm) pic {character_attribute=Name};
 
-  \path (nw) --++ (3.75cm, -6.45cm) pic {character_aspect=Species};
+  \path (nw) --++ (3.75cm, -6.45cm) pic {character_description=Species};
   \path (nw) --++ (3.75cm, -7.7cm) pic {character_aspect=Heritage};
   
   % Portrait box
@@ -198,7 +203,7 @@
 \draw[very thick] (f4) -- (f5);
 
 % Spacefaring Civilizations
-\path (n) --++ (0cm, -15.95cm) pic {subheader=Spacefaring Civilizations};
+\path (n) --++ (0cm, -15.95cm) pic {subheader=Civilizations};
 
 \path (nw) --++ (3.61cm, -16.45cm) pic {diety=Terran};
 \path (nw) --++ (6.97cm, -16.45cm) pic {diety};
@@ -267,7 +272,7 @@
 }
 
 %Virtues
-\path (n) --++ (0cm, -15.95cm) pic {subheader={\,Core Values\,}};
+\path (n) --++ (0cm, -15.95cm) pic {subheader={Virtues}};
 
 \path (nw) --++ (4.11cm, -16.45cm) pic {value=Curiosity};
 \path (nw) --++ (10.74cm, -16.45cm) pic {value=Integrity};
