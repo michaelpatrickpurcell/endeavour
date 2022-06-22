@@ -2,27 +2,39 @@
 
 \usepackage{endeavour}
 
+%\colorlet{blackfillcolor}{black}
+%\colorlet{darkfillcolor}{LCARS_ORANGE}
+%\colorlet{lightfillcolor}{lightgray!25}
+%\colorlet{borderfillcolor}{lightgray}
+%\colorlet{subheadercolor}{lightfillcolor}
+%\colorlet{starcolor}{LCARS_LIGHTGRAY}
+%\colorlet{bgcolor}{LCARS_DARKGRAY}
+%\colorlet{sectioncolor}{darkfillcolor}
+%\colorlet{headfootcolor}{lightfillcolor}
+%\pagecolor{bgcolor}
+
 \colorlet{blackfillcolor}{black}
-\colorlet{darkfillcolor}{LCARS_ORANGE}
-\colorlet{lightfillcolor}{lightgray!25}
+\colorlet{darkfillcolor}{lightgray}
+\colorlet{lightfillcolor}{white}
 \colorlet{borderfillcolor}{lightgray}
-\colorlet{subheadercolor}{lightfillcolor}
-\colorlet{starcolor}{LCARS_LIGHTGRAY}
-\colorlet{bgcolor}{LCARS_DARKGRAY}
-\colorlet{sectioncolor}{darkfillcolor}
-\colorlet{headfootcolor}{lightfillcolor}
+\colorlet{subheadercolor}{black}
+\colorlet{starcolor}{white}
+\colorlet{bgcolor}{white}
+\colorlet{sectioncolor}{black}
+\colorlet{headfootcolor}{black}
 \pagecolor{bgcolor}
 
-%\colorlet{blackfillcolor}{black}
-%\colorlet{darkfillcolor}{lightgray}
-%\colorlet{lightfillcolor}{white}
-%\colorlet{borderfillcolor}{lightgray}
-%\colorlet{subheadercolor}{black}
-%\colorlet{starcolor}{white}
-%\colorlet{bgcolor}{white}
-%\colorlet{sectioncolor}{black}
-%\colorlet{headfootcolor}{black}
-%\pagecolor{bgcolor}
+\tikzset{starfield/.pic={
+%\pgfmathsetseed{6}%{2000}
+%		\foreach \i in {0,1,...,100}
+%			\path (current page.north west) -- (rand*16cm+0.1cm, rand*22cm+0.15cm) node[circle, fill=starcolor, inner sep=2pt] {};
+%
+%		\foreach \i in {0,1,...,19}
+%			\path (current page.north west) -- (rand*16cm, rand*22cm-0.075cm) node[circle, fill=starcolor, inner sep=3pt] {};
+%
+%		\foreach \i in {0,1,...,1250}
+%			\path (current page.north west) -- (rand*16cm-0.35cm, rand*22cm-0.04cm) node[circle, fill=starcolor, inner sep=1pt] {};
+}}
 
 \usepackage{scrlayer-scrpage} % Manage headers and footers in Koma-Script document classes
 
@@ -124,25 +136,14 @@
 \begin{document}
 
 % Colour Cover
-\thispagestyle{plain}
-\begin{titlepage}
-\begin{tikzpicture}[remember picture, overlay]
-	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/endeavour_cover.png}};
-\end{tikzpicture}
-\end{titlepage}
+%\thispagestyle{plain}
+%\begin{titlepage}
+%\begin{tikzpicture}[remember picture, overlay]
+%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/endeavour_cover.png}};
+%\end{tikzpicture}
+%\end{titlepage}
 
 
-\tikzset{starfield/.pic={
-\pgfmathsetseed{6}%{2000}
-		\foreach \i in {0,1,...,100}
-			\path (current page.north west) -- (rand*16cm+0.1cm, rand*22cm+0.15cm) node[circle, fill=starcolor, inner sep=2pt] {};
-
-		\foreach \i in {0,1,...,19}
-			\path (current page.north west) -- (rand*16cm, rand*22cm-0.075cm) node[circle, fill=starcolor, inner sep=3pt] {};
-
-		\foreach \i in {0,1,...,1250}
-			\path (current page.north west) -- (rand*16cm-0.35cm, rand*22cm-0.04cm) node[circle, fill=starcolor, inner sep=1pt] {};
-}}
 
 \AddToShipoutPictureBG{
 	\begin{tikzpicture}[remember picture, overlay]
@@ -349,7 +350,7 @@ You should work together with the other players to create a diverse group of cha
 \subsection*{Experienced Characters}
 Optionally, you can create an experienced character. To do so, follow the process described above. Then, advance your Experience track as far as you like. Take Boons as usual.
 
-Remember that while each Boon will make you a more capable officer, each mark of \tikz[baseline=-0.75ex, scale=0.85, transform shape]{\pic {experience_box};} (Experience) will bring you one step closer to the end of your tour.
+Remember that while each Boon will make you a more capable officer, each \tikz[baseline=-0.75ex, scale=0.85, transform shape]{\pic {experience_box};} (Experience) you mark will bring you one step closer to the end of your tour of duty.
 
 \newpage
 
