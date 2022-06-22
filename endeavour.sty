@@ -1,5 +1,6 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{tikz}
+%\usetikzlibrary{shapes}
 \usetikzlibrary{shapes.misc}
 \usetikzlibrary{shapes.geometric}
 \usetikzlibrary{tikzmark}
@@ -8,6 +9,18 @@
 \usepackage{fontspec}
 \setmainfont{Futura}
 \Large
+
+\makeatletter
+\newcommand{\minuscule}{\@setfontsize\minuscule{5}{6}}
+\makeatother
+%\ifcase \@ptsize \relax% 10pt
+%  \newcommand{\minuscule}{\@setfontsize\minuscule{4}{5}}% \tiny: 5/6
+%\or% 11pt
+%  \newcommand{\minuscule}{\@setfontsize\minuscule{5}{6}}% \tiny: 6/7
+%\or% 12pt
+%  \newcommand{\minuscule}{\@setfontsize\minuscule{5}{6}}% \tiny: 6/7
+%\fi
+\makeatother
 
 \definecolor{LCARS_GOLD}{HTML}{FFAA00}
 \definecolor{LCARS_BLUE}{HTML}{7190C6}%{8ba4a6}%{577a83}%{7190C6}
@@ -41,6 +54,7 @@
 \tikzstyle{fate}=[draw, very thick, inner sep=0pt, minimum size=0.4cm, fill=lightfillcolor]
 \tikzstyle{fate_dot}=[draw, very thick, inner sep=0pt, minimum size=0.125cm, circle, fill=black]
 \tikzstyle{pathos}=[fate, circle, fill=lightfillcolor]
+\tikzstyle{wrath}=[draw, very thick, regular polygon, regular polygon sides=3, anchor = north, inner sep = 0pt, minimum size=0.45cm, fill=lightfillcolor, shape border rotate=180]
 
 \tikzstyle{endeavour_box}=[draw, very thick, double=borderfillcolor, double distance=0.05cm, fill=lightfillcolor, inner sep=0.1cm, outer sep=0pt, minimum height=1.0cm, chamfered rectangle, chamfered rectangle sep=0.1cm,text height=1.5ex, text depth=-0.5ex]
 
@@ -118,6 +132,27 @@
 	\node[tall_attribute_field] () at (0.125, 0) {};
 }}
 
+\tikzset{blank_divine_favor/.pic={
+\node[divine_favor, anchor=center] () at (0,0) {};
+}}
+
+\tikzset{earned_divine_favor/.pic={
+\node[divine_favor, anchor=center] () at (0,0) {};
+\draw[very thick] (-0.2cm,-0.2cm) -- (0.2cm, 0.2cm);
+}}
+
+\tikzset{stress_circle/.pic={
+	\node[pathos, anchor=center] () at (0,0) {};
+}}
+
+\tikzset{experience_box/.pic={
+	\node[fate, anchor=center] () at (0,0) {};
+}}
+
+\tikzset{wrath_triangle/.pic={
+	\node[wrath, anchor=center] () at (0,0) {};
+}}
+
 \tikzset{character_sheet_1/.pic={
 %  \path (current page.north west) --++ (1.0cm, 0cm) coordinate (tl) {};
 %  \path (current page.south west) --++ (1.0cm, 0cm) coordinate (bl) {};
@@ -168,8 +203,10 @@
 \path (ne) --++ (-4.725cm, -10.2cm) node[endeavour_box, anchor=north, minimum height = 4.75cm, minimum width = 1.25cm] {};
 
 
-\foreach \i in {0,1,...,5}
+\foreach \i in {0,1,...,4}
 	\path (ne) --++ (-4.725cm, -10.7cm - \i*0.75cm) node[pathos] (s\i) {};
+
+\path (ne) --++ (-4.725cm, -14.45cm) node[pathos, fill=borderfillcolor] (s5) {};
 
 \draw[very thick] (s0) -- (s1);
 \draw[very thick] (s1) -- (s2);
@@ -253,9 +290,13 @@
 \foreach \i/\j in {0/1, 1/2, 2/3, 3/4, 4/5, 5/6, 6/7, 7/8, 8/9, 9/10, 10/11}
 	\draw[very thick] (h\i) -- (h\j);
 
-\path (nw) --++ (10.05cm, -1.55cm) node[fate_dot] {};
-\path (nw) --++ (7.05cm, -2.3cm) node[fate_dot] {};
-\path (nw) --++ (13.05cm, -2.3cm) node[fate_dot] {};
+%\path (nw) --++ (10.05cm, -1.55cm) node[fate_dot] {};
+%\path (nw) --++ (7.05cm, -2.3cm) node[fate_dot] {};
+%\path (nw) --++ (13.05cm, -2.3cm) node[fate_dot] {};
+
+\path (nw) --++ (10.05cm, -1.55cm) node {{\minuscule d8}};
+\path (nw) --++ (7.05cm, -2.3cm) node {{\minuscule d10}};
+\path (nw) --++ (13.05cm, -2.3cm) node {{\minuscule d12}};
 
 % Bonds
 \path (nw) --++ (3.2cm, -3.45cm) pic {subheader={Bonds}};

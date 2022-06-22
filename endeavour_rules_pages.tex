@@ -1,6 +1,7 @@
 \documentclass[11pt, a5paper, parskip=half-, DIV=12]{scrartcl}
 
 \usepackage{endeavour}
+
 \colorlet{blackfillcolor}{black}
 \colorlet{darkfillcolor}{LCARS_ORANGE}
 \colorlet{lightfillcolor}{lightgray!25}
@@ -8,6 +9,8 @@
 \colorlet{subheadercolor}{lightfillcolor}
 \colorlet{starcolor}{LCARS_LIGHTGRAY}
 \colorlet{bgcolor}{LCARS_DARKGRAY}
+\colorlet{sectioncolor}{darkfillcolor}
+\colorlet{headfootcolor}{lightfillcolor}
 \pagecolor{bgcolor}
 
 %\colorlet{blackfillcolor}{black}
@@ -17,6 +20,8 @@
 %\colorlet{subheadercolor}{black}
 %\colorlet{starcolor}{white}
 %\colorlet{bgcolor}{white}
+%\colorlet{sectioncolor}{black}
+%\colorlet{headfootcolor}{black}
 %\pagecolor{bgcolor}
 
 \usepackage{scrlayer-scrpage} % Manage headers and footers in Koma-Script document classes
@@ -32,7 +37,7 @@
 \usepackage{fontspec} % Use system fonts.  Not compatible with pdflatex. Use XeLaTeX instead!
 \setmainfont{TeX Gyre Schola}
 \usepackage{cinzel} % I haven't been able to get the cinzel font on my machine to display bold weight. This one works.
-\newcommand{\futura}{\setmainfont{Futura}}
+\newcommand{\futura}[1]{{\setmainfont{Futura} #1}}
 
 \usepackage{enumitem} % Adjust formatting of description environment items
 \usepackage{multicol} % Format list of playtesters in two columns
@@ -67,45 +72,44 @@
 % Set header and footer text
 \clearpairofpagestyles
 \makeatletter
-\chead*{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{lightfillcolor}{Version \@version}}}
+\chead*{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{headfootcolor}{Version \@version}}}
 \makeatother
-\cfoot{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{lightfillcolor}{\arabic{page}}}}
+\cfoot{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{headfootcolor}{\arabic{page}}}}
 
 % Adjust spacing before and after section headings
 \RedeclareSectionCommand[
   runin=false,
-  beforeskip=0.5\baselineskip,
-  afterskip=-0.0\baselineskip
+%  beforeskip=2.0\baselineskip,
+  afterskip=0.25\baselineskip
 ]{section}
 
 % Adjust spacing before and after subsection headings
 \RedeclareSectionCommand[
   runin=false,
-  beforeskip=0.5\baselineskip,
-  afterskip=-0.0\baselineskip
+%  beforeskip=2.0\baselineskip,
+  afterskip=0.25\baselineskip
 ]{subsection}
 
 % Adjust spacing before and after subsubsection headings
 \RedeclareSectionCommand[
   runin=false,
-  beforeskip=0.5\baselineskip,
-  afterskip=-0.0\baselineskip
+%  beforeskip=2.0\baselineskip,
+  afterskip=0.25\baselineskip
 ]{subsubsection}
 
 % Adjust formatting of description environment
+%\renewcommand{\descriptionlabel}[1]{%
+%  \hspace\labelsep \upshape\bfseries #1:%
+%}
 \setlist[description]{labelindent=0.25cm, leftmargin=\widthof{\hspace{0.25cm}\textbullet\space}, font=\normalfont\textbullet\bfseries\space}
 
 % Adjust formatting of itemize environment
 %itemize environments should be followed immediately by a \vspace{1ex} command.
 \setlist[itemize]{noitemsep,nolistsep,  leftmargin=0.68cm,topsep=-1ex}
 
-\setkomafont{section}{\color{LCARS_ORANGE}\setmainfont{Futura}\Large}
-\setkomafont{subsection}{\color{LCARS_ORANGE}\setmainfont{Futura}\large}
-\setkomafont{subsubsection}{\color{LCARS_ORANGE}\setmainfont{Futura}\normalsize}
-
-%\setkomafont{section}{\large\cinzel\bfseries}
-%\setkomafont{subsection}{\cinzel\bfseries}
-%\setkomafont{subsubsection}{\small\cinzel\bfseries}
+\setkomafont{section}{\color{sectioncolor}\setmainfont{Futura}\LARGE}
+\setkomafont{subsection}{\color{sectioncolor}\setmainfont{Futura}\Large}
+\setkomafont{subsubsection}{\color{sectioncolor}\setmainfont{Futura}\large}
 
 % Set some environment variables for use in the title page
 \title{ENDEAVOUR}
@@ -120,66 +124,14 @@
 \begin{document}
 
 % Colour Cover
-%\begin{titlepage}
-%		\makeatletter
-%		\thispagestyle{plain}
-%		\enlargethispage{3.5\baselineskip} % Move the bottom line (author and date) down a bit
-%
-%	\AddToShipoutPictureBG*{
-%		\begin{tikzpicture}[remember picture, overlay]
-%			\draw[fill stretch image=Images/black_marble_texture_vertical.jpg]  (current page.south west) rectangle (current page.north east);
-%		\end{tikzpicture}
-%	}
-%
-%%		\pagecolor{black}		
-%		
-%         \setmainfont{Cinzel Decorative}
-%	    \centering{
-%			{\fontsize{60}{72}\selectfont \textcolor{violet!75}{\@title}}
-%		}
-%
-%		\setmainfont{URWClassico}
-%		\vspace{5mm}
-%		\centering{\Large{{\textcolor{lightgray}{\@subtitle}}}}
-%
-%
-%		\vfill
-%
-%		\includegraphics[scale=3.81]{Images/comet_diagram_violet.pdf}
-%
-%		\vfill
-%		
-%		\Large{{\textcolor{lightgray}{\@author}}}
-%		\makeatother
-%\end{titlepage}
+\thispagestyle{plain}
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/endeavour_cover.png}};
+\end{tikzpicture}
+\end{titlepage}
 
-% BW Cover
-%\begin{titlepage}
-%	\makeatletter
-%	\thispagestyle{plain}
-%		\enlargethispage{3.5\baselineskip} % Move the bottom line (author and date) down a bit
-%		
-%        \setmainfont{TTMussels-BoldItalic}
-%	    \centering{
-%			{\fontsize{50}{60}\selectfont
-%			{\textcolor{black}{\@title}}}
-%		}
-%
-%
-%		\setmainfont{Futura}
-%		\vspace{5mm}
-%%		\centering{\Large{{\textcolor{black}{\@subtitle}}}}
-%
-%		\vfill
-%
-%%		\includegraphics[scale=3.81]{Images/comet_diagram_black.pdf}
-%
-%		\vfill
-%		
-%		\Large{{\textcolor{black}{\@author}}}\\
-%		\makeatother
-%\end{titlepage}
-%
+
 \tikzset{starfield/.pic={
 \pgfmathsetseed{6}%{2000}
 		\foreach \i in {0,1,...,100}
@@ -206,89 +158,198 @@
 \raggedright
 
 \section*{Premise}
-The year is 2364. The people of Earth, together with their network of far-flung colonies, comprise the Terran Civilization. The Terran Civilization, in turn, is a member of the Interstellar Confederation. The Interstellar Confederation is an organization made up of hundreds of spacefaring civilizations and is populated by dozens of different species.
+%The year is AFC 143, one hundred forty-three years after first contact.
+The year is 2364.
+The people of Earth, together with their network of far-flung colonies, comprise the Terran Civilization. The Terran Civilization, in turn, is a member of the Interstellar Confederation, an organization made up of hundreds of spacefaring civilizations and populated by dozens of different species.
 
 You are an officer aboard the Interstellar Confederation Ship (ICS) Endeavour. Your mission is to explore the galaxy. You will travel deep into uncharted space where you will encounter strange natural phenomena, make first contact with alien civilizations, and help those in need.
 
+\subsection*{Influences}
+\ENDEAVOUR{} is based on \textsc{Star Trek}. In particular, its design has been informed by the series that Gene Roddenberry was personally involved with: \textsc{Star Trek} (the original series) and \textsc{Star Trek: The Next Generation}.
+
+It has also been informed by other television shows such as \textsc{Quantum Leap}, \textsc{seaQuest DSV}, and \textsc{Stargate SG-1}.%\textsc{Battlestar Galactica}, \textsc{Farscape}, \textsc{Firefly}, and \textsc{The Orville}.
+
+Other major influences include the works of Isaac~Asimov, Arthur~C.~Clarke, Robert~Heinlein, and Carl~Sagan.
+ 
+The ICS Endeavour is named after the HMS Endeavour, the famed British Royal Navy research vessel that Captain Cook commanded during his first voyage of discovery.
+\newpage
+
 \section*{Tone}
-This is an optimistic science fiction game. That is, it is a game about a future in which humanity has progressed beyond the kinds of internecine conflicts that plague modern society. Advanced technology is commonplace and has helped to create a post-scarcity society throughout the Interstellar Confederation.
+This is an optimistic-science fiction game. That is, it is a game about a future in which humanity has progressed beyond the kinds of internecine conflicts that plague modern society. Advanced technology is commonplace and has helped to create a post-scarcity society throughout the Interstellar Confederation.
 
 The crew of the ICS Endeavour are skilled professionals who know how to work together effectively. While they may disagree at times, they will not let personal biases or animosity affect their work.
 
-Stories in \ENDEAVOUR{} generally involve some kind of moral dilemma. Moreover, the futuristic setting acts as lens through which we can view contemporary social issues. The best such stories are fundamentally about the difficult choices the crew are asked to make and how they are affected by their experiences.  
+Stories in \ENDEAVOUR{} generally involve some kind of moral quandary. Moreover, the futuristic setting acts as lens through which we can view contemporary social issues. The best such stories are fundamentally about the difficult choices the crew are asked to make and how they are affected by their experiences.  
+
+\subsection*{Technology}
+\ENDEAVOUR{} is about people more than it is about technology. That said, there are a few technologies that are commonly assumed to be available in order to make stories about deep-space exploration plausible and relatable.
+\begin{description}
+	\item[Faster Than Light Travel]
+	\item[Artificial Gravity]
+	\item[Universal Translation]
+\end{description}
+Without these technologies, or when these technologies fail, stories tend to focus on the consequences of their absence rather than on the characters.
 
 \newpage
 
-%\section*{Introduction} \label{section:introduction}
-%Prophecy is a GM-less roleplaying game for three to six people that can be played in under three hours.
-%During the game, the players receive a prophecy that describes an impending catastrophe for some fictional world and tell a story about characters whose lives will be affected by that catastrophe. 
-%
-%The players first decide the basic outline of the story, describing events that are fated to occur. 
-% They then fill in the details of the story, describing how the characters try to shape their destiny.
-%
-%Throughout these rules, a variety of common words are used as technical terms to describe how the game is played.
-%These terms will be \emph{italicised} when they are first introduced.
-%References to sections of the rules will be written in the same font as the \hyperref[section:introduction]{\futura Section Headings}.
-%
-%\subsection*{Materials} \label{subsection:materials}
-%To play the game the players will need a few materials that they will use to take notes and determine outcomes.
-%They will need:
-%\begin{description}
-%	\item[Index Cards:] Approximately fifty index cards should be placed within easy reach of all players. 
-%	\item[Sticky Notes:] Approximately one hundred sticky notes should be placed within easy reach of all players.
-%	\item[Butcher Paper:] One large sheet of butcher paper should be placed in the middle of the play area.  A whiteboard can be used instead if desired. This is the \emph{story board}.
-%	\item[Markers:] Each player should have a marker to write on the index cards, sticky notes, and story board.
-%	\item[Dice:] Approximately twelve six-sided dice% should be placed within easy reach of all players. 
-%\end{description}
-%
-%\newpage
+\section*{The Interstellar Confederation}
+The Interstellar Confederation is diverse and multicultural society. Its member civilizations lay claim to thousands of star systems and its population numbers in the quadrillions. 
 
-\section*{Summary of Differences}
+The size and scope of the Interstellar Confederation makes it nearly impossible for any centralized government to manage it all. As such, each member civilization retains a significant amount of autonomy. This has resulted in a complex society with a wide range of social and economic structures.
+
+Members civilizations, however, are united by their belief in the value of education, reason, and individualism. These beliefs are manifest in the Interstellar Confederation's prohibition on interfering with non-spacefaring civilizations and its emphasis on exploration.
+
+\subsection*{Aliens}
+Humans are only one of many species that populate the Interstellar Confederation. Many of these species are humanoids. Furthermore, most of these species have similar environmental requirements which allows them to live and work together without the need for adaptive technologies.
+
+Beyond the Interstellar Confederation, however, there is a bewildering array of alien life forms that the crew might encounter in the course of their adventures. These range from simple one-celled organisms to enormous creatures that live their entire lives in the vacuum of space.
+
+\newpage
+
+\section*{The ICS Endeavour}
+The ICS Endeavour is a ship designed for deep-space exploration and is capable of operating independently for extended periods of time. By collecting raw materials while underway and using efficient recycling systems, it can produce the air, water, and food needed to sustain the crew for up to one solar year.
+
+The Endeavour has a total complement of about five hundred personnel. This crew is comprised of a multidisciplinary team with expertise in fields such as ship's operations, physical and life sciences, and interstellar diplomacy. It also includes representatives of many species and civilizations.
+
+\subsection*{Captain James Darcy}
+The current captain of the Endeavour is James Darcy. He is a human from the Terran Civilization and is forty-three solar years old. This is his first command.
+
+Captain Darcy is one of the Interstellar Confederation Fleet's most highly decorated officers. He is a charismatic leader and a cunning tactician. His past assignments include executive officer of the ICS Discovery, chief of operations for Habitat Three, and junior tactical officer aboard the ICS Adventure.
+
+\begin{description}
+	\item[James Darcy (d10):] Captain of the Endeavour (d10), Charismatic (d10), Cunning (d8), Experienced (d8).
+\end{description}
+
+In this game, Captain Darcy will be a prominent non-player character. As commanding officer, he will not generally face challenges himself. When he does get personally involved, he will do so by giving a copy of his name die (d10) to an officer who used a bond to call upon him while facing a challenge.
+
+\newpage
+
+\section*{Systems}
+\ENDEAVOUR{} uses a modified version of the \textsc{Paragon System}, found in the \AGON{} roleplaying game. You will need a copy of the \AGON{} rulebook to play this game. Refer to \href{http://www.agon-rpg.com}{agon-rpg.com} for more information. Specific changes to the \textsc{Paragon System} as used in \ENDEAVOUR{} are described below.
+
+As with \AGON{}, a pool comprised of polyhedral dice is used to determine the outcome of each challenge. It is best if each player has (at least) \textbf{1d4}, \textbf{3d6}, \textbf{3d8}, \textbf{2d10}, and \textbf{1d12} available for use throughout the game.
+
+\subsection*{Modified Terminology}
 While \ENDEAVOUR{} uses the same underlying mechanics as \AGON{}, much of the terminology has been changed to reflect the thematic differences between the two games.%
 \small
 \begin{center}
 \begin{tabular}{r@{}c@{}l@{\hskip 4.5ex}r@{}c@{}l} \toprule
 \AGON & \tablesep & \ENDEAVOUR & \AGON & \tablesep & \ENDEAVOUR \\ \midrule
-Island & \tablesep & Planet & Glory & \tablesep & Distinction \\[1.5ex]
-%& & & & & \\
-Epithet & \tablesep & Role & Pathos & \tablesep & Stress \\
-Lineage & \tablesep & Species & Agony & \tablesep & Distress \\
-Honored God & \tablesep & Heritage & Fate & \tablesep & Experience \\[1.5ex]
-%& & & & & \\
-Great Deeds & \tablesep & Discoveries & Battle & \tablesep & Crisis\\ 
-Trophies & \tablesep & Artifacts & Clash & \tablesep & Confrontation \\[1.5ex]
-%& & & & & \\
-Acumen & \tablesep & Curiosity & Epic & \tablesep & Gruelling \\
-Grace & \tablesep & Integrity & Sacred & \tablesep & Sensitive \\
-Passion & \tablesep & Fairness & Mythic & \tablesep & Fraught \\[1.5ex]
-%& & & & & \\ 
-Greek Gods & \tablesep & Civilizations & Sacrifice & \tablesep & Diplomacy \\ 
-Divine Favor & \tablesep & Assistance & & & \\ \bottomrule 
+Island & \tablesep & Planet & Contest & \tablesep & Challenge \\
+& & & Battle & \tablesep & Crisis \\
+Gods & \tablesep & Civilizations & Clash & \tablesep & Confrontation \\
+Divine Favor & \tablesep & Assistance & & & \\
+& & & Pathos & \tablesep & Stress \\
+Epithet & \tablesep & Role & Agony & \tablesep & Distress\\
+Lineage & \tablesep & Species & Fate & \tablesep & Experience\\ 
+Honored God & \tablesep & Heritage & & \\
+& & & Glory & \tablesep & Distinction \\
+Exodus & \tablesep & Debriefing & & \\
+Great Deeds & \tablesep & Discoveries & Harm & \tablesep & Complications \\
+Trophies & \tablesep & Artifacts & Perilous & \tablesep & Difficult \\
+& & & Epic & \tablesep & Gruelling \\
+Fellowship & \tablesep & Recreation & Sacred & \tablesep & Sensitive\\ 
+Sacrifice & \tablesep & Diplomacy & Mythic & \tablesep & Fraught \\ \bottomrule 
 \end{tabular}
 \end{center}
 \normalsize
-
-\subsection*{Domains}
-There is no mapping between the individual domains used in \AGON{} and those used in \ENDEAVOUR{}. Rather, the mapping applies to the \emph{sets} of domains used in the two games.%
-\small
-\begin{center}
-\begin{tabular}{r@{\hskip 1ex}l@{\hskip 1ex}c@{\hskip 1ex}r@{\hskip 1ex}l} \toprule
-\AGON &  & $\Longleftrightarrow$ & & \ENDEAVOUR \\ \midrule
-Arts \& Oration & & & & Leadership \& Negotiation \\ 
-Blood \& Valor &  & & & Science \& Medicine\\
-Craft \& Reason &  & & & Operations \& Engineering \\
-Resolve \& Spirit & \multirow{-4}{*}[-1.75pt]{\rotatebox{90}{\makebox[9.5ex]{\upbracefill}}} & \multirow{-4}{*}{$\Longleftrightarrow$}& \multirow{-4}{*}[-1.75pt]{\rotatebox{90}{\makebox[9.5ex]{\downbracefill}}} & Strategy \& Tactics \\ \bottomrule
-\end{tabular}
-\end{center}
-\normalsize
-
-\subsection*{The Signs of the Gods}
-\ENDEAVOUR{} does not use The Signs of the Gods. Instead, each adventure is prefaced by a log entry made by one of the crew. See \hyperref[log_entry]{\futura Log Entry} (page \pageref{log_entry}) for details.
 
 \newpage
 
-\section*{Log Entry}\label{log_entry}
-Test
+\subsection*{Domains}
+Four Domains represent areas of professional expertise for Intersteller Confederation Fleet (ICF) officers. Each challenge falls into one of the four Domains.
+\begin{description}
+	\item[Leadership \& Negotiation:] Working with others.\\Used for challenges that require charisma or empathy.
+	\item[Science \& Medicine:] Explaining observed phenomena.\\Used for challenges that require intelligence or creativity.
+	\item[Operations \& Engineering:] Managing logistics.\\Used for challenges that require discipline or precision.
+	\item[Strategy \& Tactics:] Outmaneuvering opponents.\\Used for challenges that require cunning or misdirection.
+\end{description}
+
+\subsection*{Virtues}
+Four Virtues represent the core values of the Interstellar Confederation. ICF officers are expected to embody these Virtues at all times.
+\begin{description}
+	\item[Curiosity:] The desire to learn more about the universe.
+	\item[Integrity:] Honesty and personal accountability.
+	\item[Fairness:] Impartial and just behavior.
+	\item[Courage:] The ability to act despite being afraid.
+\end{description}
+As you play, you may discover that other virtues better describe the core values of the Interstellar Confederation in your game.  If that happens, feel free to replace the existing Virtues with suitable alternatives.
+
+\newpage
+
+\subsection*{Civilizations}
+\ENDEAVOUR{} uses Civilizations instead of Gods.  Civilizations include both members of the Interstellar Federation and any other spacefaring peoples that the crew encounter during their adventures.
+
+Only the Terran Civilization is a part of every game. Other Civilizations will be added as they are encountered during play. Whenever you encounter a new Civilization, you should add it to the list of Civilizations on your character sheet.
+
+\subsection*{Discoveries}
+\ENDEAVOUR{} uses Discoveries instead of Great Deeds. Discoveries can take many forms.  Some are academic in nature while other are more personal.
+
+Note that if the crew encounter spacefaring aliens who have their own language and culture, then that should be recorded a new Civilization rather than as a Discovery.
+
+\subsection*{Artifacts}
+\ENDEAVOUR{} uses Artifacts instead of Trophies. Artifacts are similar to Discoveries. Most Artifacts are physical objects that either house unusual technology or are imbued with cultural significance.
+
+Note that claiming Artifacts can be problematic. Most will be owned by someone else when they are ``found'' by the crew.  These owners are unlikely to allow the crew to take (or keep) Artifacts without raising some kind of objection.
+
+\newpage
+
+\subsection*{Distinction}
+\ENDEAVOUR{} uses Distinction instead of Glory. The way in which an officer earns points of Distinction in \ENDEAVOUR{} differs slightly from the way heroes earn Glory in \AGON{}.
+
+When you are best in a Challenge, you earn one point of Distinction. Each time you earn eight points of Distinction, you advance your Name die.
+
+\subsection*{Complications}
+\ENDEAVOUR{} uses Complications instead of Harm.
+\begin{description}
+	\item[Difficult:] Mark \tikz[baseline=-0.75ex, scale=0.85, transform shape]{\pic {stress_circle};} (Stress) if you suffer.
+	\item[Grueling:] Mark \tikz[baseline=-0.75ex, scale=0.85, transform shape]{\pic {stress_circle};} (Stress) to face the Challenge.
+	\item[Sensitive:] Spend \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};} (Assistance) if you suffer.
+	\item[Fraught:] Spend \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};} (Assistance) to face the Challenge.
+\end{description}
+
+\subsection*{Log Entry}
+\ENDEAVOUR{} does not use The Signs of the Gods. Instead, each adventure is prefaced by a Log Entry made by one of the crew. The Log Entry serves to establish the setting and provide background information to the players.
+
+Most often, the Log Entry is taken from the captain's log.  This should be prepared in advance and read aloud at the start of the adventure.
+
+The Log Entry should describe where the adventure will take place, what the crew hope to accomplish, and the major characters they expect to encounter.
+
+\newpage
+
+\subsection*{Recreation}
+\ENDEAVOUR{} uses Recreation instead of Fellowship. The officers spend time together while off duty. They often pursue mutual hobbies such as playing music or participating in interactive holo-dramas. As they do so, they get to know one another better. 
+
+Taking turns, each player asks a question of another player's character. That player should describe an activity that the two characters do together while off duty and then answer the question. Both players then take a Bond with each other's characters. 
+
+\subsection*{Diplomacy}
+\ENDEAVOUR{} uses Diplomacy instead of Sacrifice. The officer who has earned the most points of Distinction leads an effort to strengthen ties between Civilizations. This usually takes the form of informal activities such as athletic competitions, academic conferences, or cultural exchanges.
+
+Diplomacy challenges are always Leadership \& Negotiation challenges.  Everyone who participates marks two \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};}~(Assistance) with Civilizations of their choice. If you are best you also earn a Bond with a Civilization of your choice.
+
+\subsection*{Leadership}
+In \ENDEAVOUR{}, the captain is always the leader of the crew. Leadership challenges are used to determine which officer most impresses the captain during each Voyage.
+
+If you are best during a Leadership challenge then you receive a Bond with Captain Darcy. You can use this Bond as usual to ask the captain to Bolster you, Block Complications for you, or Follow your Lead.
+
+\newpage
+
+\section*{Character Creation}
+Most player characters in \ENDEAVOUR{} are ICF officers who are serving aboard the ICS Endeavour. To create a character, you will:
+\begin{enumerate}
+	\item Record your Role. This should describe what you do aboard the ICS Endeavour. Common choices include Executive Officer, Chief Engineer, Helmsman, etc.  Your Role die begins at \textbf{d6}.
+	\item Record your Name. Your Name die begins at \textbf{d6}.
+	\item Record your Species. You may be an alien. If you are, describe your Species to the other players.
+	\item Record your Heritage. This is your home Civilization. Record two marks of \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};}~(Assitance) with your home Civilization. Record three more marks of \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};}~(Assitance) with Civilizations of your choice.
+	\item Choose a favored Domain. Your favored-Domain die begins at \textbf{d8}. Your other three Domain dice begin at \textbf{d6}.
+	\item Record two Bonds with each other player character.
+\end{enumerate}
+You should work together with the other players to create a diverse group of characters.  This will help to ensure that you are prepared to face whatever adventures await you.
+
+\subsection*{Experienced Characters}
+Optionally, you can create an experienced character. To do so, follow the process described above. Then, advance your Experience track as far as you like. Take Boons as usual.
+
+Remember that while each Boon will make you a more capable officer, each mark of \tikz[baseline=-0.75ex, scale=0.85, transform shape]{\pic {experience_box};} (Experience) will bring you one step closer to the end of your tour.
 
 \newpage
 
@@ -318,124 +379,70 @@ Test
 \end{tikzpicture}
 }
 
-%\newpage
-%
-%\section*{Modules} \label{section:modules}
-%The first thing that the players do is \hyperref[subsection:receive-a-prophecy]{\cinzel \small Receive a Prophecy}.  \\
-%This is the inciting incident for everything that happens in the story.
-%%It's important!
-%By describing the catastrophe, the players establish the foundation on which the rest the game will be built.
-%
-%A \emph{module} is a pre-written prophecy designed to help the players get started.
-%Each module describes a catastrophe as it might be presented to characters who are hearing the prophecy for the first time.  The players should read the module aloud and populate the world that it implies with objects and aspects.
-%
-%\subsection*{The Tachyonic Antitelephone} \label{subsection:the-tachyonic-antitelephone}
-%I am, well \ldots I'm you.  That is, I was. Or, you will be.  Or, something like that. Anyway, I'm afraid that I've got some bad news. Really bad. You see, it turns out that the work that you did for DARPA last year was used to create something that we used to think impossible.
-%They built a time machine. 
-%
-%Fortunately, it's pretty limited.  It can only send messages back in time, and then only to times after they turned it on.  That's why I'm talking to you now instead of earlier when it might have done some good.
-%
-%Unfortunately, it turns out that messing around with time is a bad idea.
-%Really bad. It didn't take long before strange things started to happen.
-%Then the Time Eaters came.
-%
-%It's too late for us. 
-%Maybe, though, its not too late for you.
-%If nothing else, you might be able to pass this message along in turn when you get here. 
-%Eventually, one of us is sure to figure a way out of this mess.
-%Right?
-%
-%\newpage
-%
-%\subsection*{Project Spaceguard} \label{subsection:project-spaceguard}
-%My fellow Americans, it is with a heavy heart that I come to you tonight. 
-%As you are doubtless aware, last year the initial survey conducted as a part of Project Spaceguard discovered a large Near Earth Object that was projected to collide with the Earth later this month.
-%Ever since, the primary focus of this administration has been to prevent that from occurring. Earlier this evening, the director of Project Spaceguard informed me that we have failed.
-%
-%Now, we must shift our focus from preventing a collision to surviving its aftermath.
-%Effective immediately, I am declaring a nationwide state of emergency. 
-%National Guard units will be activated and deployed in support of local law enforcement. 
-%
-%Going forward, the Federal Emergency Management Agency will be leading our response.
-%I'll turn the microphone over to the director of that agency now and he can provide details about what you can expect.
-%Goodnight and Godspeed.
-%
-%
-%\subsection*{She's Having a Baby} \label{subsection:shes-having-a-baby}
-%Congratulations! It looks like you're at about eight weeks now.
-%Everything looks great, both mum and bub are doing fine. 
-%So, we'll plan on seeing you again in about four weeks.
-%
-%While you're here I should tell you about the course that the hospital offers for new parents.
-%It's a great way to learn about what to expect and a chance talk to other new parents about the whole experience. 
-%The teachers are all former maternity ward nurses, and they really do a great job.
-%
-%I know that this can be overwhelming.
-%If you have any concerns, please give us a call at any time. 
-%
-%\newpage
-%
-%\subsection*{The Deluge \setmainfont{URWClassico}\textcolor{black}{ - From The King James Version of the Bible}} \label{subsection:the-deluge}
-%I will destroy man whom I have created from the face of the earth; both man, and beast, and the creeping thing, and the fowls of the air; for it repenteth me that I have made them.\\ 
-%\vspace{0.5ex}\hspace{8cm} - Genesis 6:7
-%
-%And, behold, I, even I, do bring a flood of waters upon the earth, to destroy all flesh, wherein is the breath of life, from under heaven; and every thing that is in the earth shall die. \\
-%\vspace{0.5ex}\hspace{8cm} - Genesis 6:17
-%
-%For yet seven days, and I will cause it to rain upon the earth forty days and forty nights; and every living substance that I have made will I destroy from off the face of the earth.\\
-%\vspace{0.5ex}\hspace{8cm} - Genesis 7:4
-%
-%\subsection*{Unsafe at Any Speed \setmainfont{URWClassico}\textcolor{black}{ - Submitted by Paul Murray}} \label{subsection:unsafe-at-any-speed}
-%You know what this means don't you?
-%That crackpot down in R\&D was right. 
-%Every Faraday Byron that we've sold in the past two years is a ticking time bomb.
-%The first ones off the assembly line are going to start failing soon.
-%After that, every week will be worse than the one before.
-%
-%We're not going to be able to keep this quiet for long.
-%Soon, even your pet politicians are going to have to do something.
-%What then?
-%Eventually they're going to figure out that we knew this might happen.
-%I bet it takes them less than a month.
-%
-%Someone is going down for this, and it's not going to be me.
-%I'm leaving!
-%Maybe I'll go somewhere warm. 
-%Somewhere with white-sand beaches, palm trees,  and no extradition treaty.
-%
-%\newpage
-%
-%\subsection*{Dead Man's Switch  \setmainfont{URWClassico}\textcolor{black}{ - Submitted by Brett Witty}} \label{subsection:dead-mans-switch}
-%If you're hearing this, I am dead.
-%But you probably already know that.
-%I haven't contacted my fail-safe device for a week, and now it has automatically triggered.
-%This message is part of the mechanism.
-%
-%Dead men tell no tales.
-%Except for this one. 
-%In twenty-four hours all your dirty little secrets are going to every press outlet in the country. 
-%Every email, every recording, every video. 
-%The entire trove.
-%
-%See you in hell.
-%
-%\subsection*{R'lyehian Rhapsody \setmainfont{URWClassico}\textcolor{black}{ - Submitted by David McKenzie}} \label{subsection:rlyehian-rhapsody}
-%The time is nigh.
-%Soon the planets will be in alignment and we can harness their celestial power.
-%With just a gentle push, we can release the Great Old One from its prison.
-%
-%Much work remains; three rituals have yet to be performed.
-%Those of you who have been called to serve know who you are and what you must do.  Go! We mustn't let this once-in-a-millennium opportunity go to waste.
-%
-%Now is the time to be strong in your faith.
-%There will be those who oppose us.
-%Those who are afraid.
-%They must not be allowed to interfere.
-%
-%Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!
-%
-%\newpage
-%
+\newpage
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+  
+\section*{The Vault of Heaven}
+The Vault of Heaven is what you will use to track your progress over the course of a campaign. During each adventure, your actions can affect the crew's relationships with the Civilizations that you have encountered.
+
+\newlength{\terranlen}
+\setlength{\terranlen}{\widthof{\futura{Terran}}}
+\setul{}{\lightrulewidth}
+
+\newcommand\dunderline[3][-1pt]{{%
+  \sbox0{#3}%
+  \ooalign{\copy0\cr\rule[\dimexpr#1-#2\relax]{\wd0}{#2}}}}
+  
+\begin{center}
+\begin{tabular}{r@{\qquad}c@{\qquad}c} \toprule
+\futura{Civilization} & \futura{Favor} & \futura{Wrath} \\ \midrule \\[-2ex]
+\dunderline{\lightrulewidth}{\phantom{Civilization}}\hspace{-\terranlen}\futura{Terran} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.0ex] \bottomrule
+\end{tabular}
+\end{center}
+
+If you do something that a Civilization approves of, the crew will earn a mark of \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}~(Favor) with that Civilization.  If you do something that a Civilization disapproves of, the crew will earn a mark of \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}~(Wrath) with that Civilization.
+
+\newpage
+
+\section*{Planets}
+\begin{description}
+	\item[Planet Name:] Reproductive rights, political asylum.
+	\item[Planet Name:] Right to privacy, cloaking technology.
+	\item[Planet Name:] Pets, cultural norms, death penalty.
+	\item[Planet Name:] Communicable diseases, quarantine.
+	\item[Planet Name:] Exotic life forms, colonialism.
+	\item[Planet Name:] Sabotage, reliance on technology.
+	\item[Planet Name:] Adversarial machine learning.
+\end{description}
+
 %\thispagestyle{plain}
 %\enlargethispage{3.5\baselineskip} % Move the bottom line down a bit
 %
