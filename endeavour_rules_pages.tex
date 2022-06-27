@@ -2,38 +2,42 @@
 
 \usepackage{endeavour}
 
-%\colorlet{blackfillcolor}{black}
-%\colorlet{darkfillcolor}{LCARS_ORANGE}
-%\colorlet{lightfillcolor}{lightgray!25}
-%\colorlet{borderfillcolor}{lightgray}
-%\colorlet{subheadercolor}{lightfillcolor}
-%\colorlet{starcolor}{LCARS_LIGHTGRAY}
-%\colorlet{bgcolor}{LCARS_DARKGRAY}
-%\colorlet{sectioncolor}{darkfillcolor}
-%\colorlet{headfootcolor}{lightfillcolor}
-%\pagecolor{bgcolor}
-
 \colorlet{blackfillcolor}{black}
-\colorlet{darkfillcolor}{lightgray}
-\colorlet{lightfillcolor}{white}
+\colorlet{darkfillcolor}{LCARS_ORANGE}
+\colorlet{lightfillcolor}{lightgray!25}
 \colorlet{borderfillcolor}{lightgray}
-\colorlet{subheadercolor}{black}
-\colorlet{starcolor}{white}
-\colorlet{bgcolor}{white}
-\colorlet{sectioncolor}{black}
-\colorlet{headfootcolor}{black}
+\colorlet{subheadercolor}{lightfillcolor}
+\colorlet{starcolor}{LCARS_LIGHTGRAY}
+\colorlet{bgcolor}{LCARS_DARKGRAY}
+\colorlet{sectioncolor}{darkfillcolor}
+\colorlet{headfootcolor}{lightfillcolor}
 \pagecolor{bgcolor}
 
+%\colorlet{blackfillcolor}{black}
+%\colorlet{darkfillcolor}{LCARS_ORANGE}
+%\colorlet{lightfillcolor}{white}
+%\colorlet{borderfillcolor}{lightgray}
+%\colorlet{subheadercolor}{black}
+%\colorlet{starcolor}{white}
+%\colorlet{bgcolor}{white}
+%\colorlet{sectioncolor}{darkfillcolor}
+%\colorlet{headfootcolor}{black}
+%\pagecolor{bgcolor}
+
+
+%\colorlet{blackfillcolor}{black}
+%\colorlet{darkfillcolor}{lightgray}
+%\colorlet{lightfillcolor}{white}
+%\colorlet{borderfillcolor}{lightgray}
+%\colorlet{subheadercolor}{black}
+%\colorlet{starcolor}{white}
+%\colorlet{bgcolor}{white}
+%\colorlet{sectioncolor}{black}
+%\colorlet{headfootcolor}{black}
+%\pagecolor{bgcolor}
+
 \tikzset{starfield/.pic={
-%\pgfmathsetseed{6}%{2000}
-%		\foreach \i in {0,1,...,100}
-%			\path (current page.north west) -- (rand*16cm+0.1cm, rand*22cm+0.15cm) node[circle, fill=starcolor, inner sep=2pt] {};
-%
-%		\foreach \i in {0,1,...,19}
-%			\path (current page.north west) -- (rand*16cm, rand*22cm-0.075cm) node[circle, fill=starcolor, inner sep=3pt] {};
-%
-%		\foreach \i in {0,1,...,1250}
-%			\path (current page.north west) -- (rand*16cm-0.35cm, rand*22cm-0.04cm) node[circle, fill=starcolor, inner sep=1pt] {};
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
 }}
 
 \usepackage{scrlayer-scrpage} % Manage headers and footers in Koma-Script document classes
@@ -43,11 +47,13 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta} % Customize arrowheads in in Write the Outline example
 \usetikzlibrary{shapes} % Draw the node in the fancy \pagemark
+\usepackage[skins]{tcolorbox}
 
 %\usepackage[skins]{tcolorbox} % Add background image to tikz node in color cover
 
 \usepackage{fontspec} % Use system fonts.  Not compatible with pdflatex. Use XeLaTeX instead!
 \setmainfont{TeX Gyre Schola}
+\setmonofont{Courier Prime}
 \usepackage{cinzel} % I haven't been able to get the cinzel font on my machine to display bold weight. This one works.
 \newcommand{\futura}[1]{{\setmainfont{Futura} #1}}
 
@@ -67,9 +73,6 @@
 \contourlength{0.15pt}
 \contournumber{256}
 
-
-\usepackage{soul}
-
 \usepackage[hidelinks]{hyperref} % Add hyperlinks to the pdf file. This should usually be the last package loaded before \begin{document}
 \usepackage[xspace]{ellipsis} % Properly typeset ellipses. This package is one of the few packages that must be loaded after hyperref
 
@@ -83,10 +86,14 @@
 
 % Set header and footer text
 \clearpairofpagestyles
+%\makeatletter
+%\chead*{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{headfootcolor}{Version \@version}}}
+%\makeatother
+%\cfoot{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{headfootcolor}{\arabic{page}}}}
 \makeatletter
-\chead*{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{headfootcolor}{Version \@version}}}
+\chead*{\setmainfont{Futura} \normalshape \small {\textcolor{headfootcolor}{Version \@version}}}
 \makeatother
-\cfoot{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{headfootcolor}{\arabic{page}}}}
+\cfoot{\setmainfont{Futura} \normalshape \small {\textcolor{headfootcolor}{\arabic{page}}}}
 
 % Adjust spacing before and after section headings
 \RedeclareSectionCommand[
@@ -105,8 +112,8 @@
 % Adjust spacing before and after subsubsection headings
 \RedeclareSectionCommand[
   runin=false,
-%  beforeskip=2.0\baselineskip,
-  afterskip=0.25\baselineskip
+  beforeskip=0.0\baselineskip,
+  afterskip=-0.4\baselineskip
 ]{subsubsection}
 
 % Adjust formatting of description environment
@@ -117,7 +124,7 @@
 
 % Adjust formatting of itemize environment
 %itemize environments should be followed immediately by a \vspace{1ex} command.
-\setlist[itemize]{noitemsep,nolistsep,  leftmargin=0.68cm,topsep=-1ex}
+\setlist[itemize]{labelindent=0.25cm, leftmargin=*, labelsep=\widthof{\space}}
 
 \setkomafont{section}{\color{sectioncolor}\setmainfont{Futura}\LARGE}
 \setkomafont{subsection}{\color{sectioncolor}\setmainfont{Futura}\Large}
@@ -136,12 +143,12 @@
 \begin{document}
 
 % Colour Cover
-%\thispagestyle{plain}
-%\begin{titlepage}
-%\begin{tikzpicture}[remember picture, overlay]
-%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/endeavour_cover.png}};
-%\end{tikzpicture}
-%\end{titlepage}
+\thispagestyle{plain}
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/endeavour_cover.png}};
+\end{tikzpicture}
+\end{titlepage}
 
 
 
@@ -247,7 +254,7 @@ Honored God & \tablesep & Heritage & & \\
 & & & Glory & \tablesep & Distinction \\
 Exodus & \tablesep & Debriefing & & \\
 Great Deeds & \tablesep & Discoveries & Harm & \tablesep & Complications \\
-Trophies & \tablesep & Artifacts & Perilous & \tablesep & Difficult \\
+Trophies & \tablesep & Artifacts & Perilous & \tablesep & Dangerous \\
 & & & Epic & \tablesep & Gruelling \\
 Fellowship & \tablesep & Recreation & Sacred & \tablesep & Sensitive\\ 
 Sacrifice & \tablesep & Diplomacy & Mythic & \tablesep & Fraught \\ \bottomrule 
@@ -303,7 +310,7 @@ When you are best in a Challenge, you earn one point of Distinction. Each time y
 \subsection*{Complications}
 \ENDEAVOUR{} uses Complications instead of Harm.
 \begin{description}
-	\item[Difficult:] Mark \tikz[baseline=-0.75ex, scale=0.85, transform shape]{\pic {stress_circle};} (Stress) if you suffer.
+	\item[Dangerous:] Mark \tikz[baseline=-0.75ex, scale=0.85, transform shape]{\pic {stress_circle};} (Stress) if you suffer.
 	\item[Grueling:] Mark \tikz[baseline=-0.75ex, scale=0.85, transform shape]{\pic {stress_circle};} (Stress) to face the Challenge.
 	\item[Sensitive:] Spend \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};} (Assistance) if you suffer.
 	\item[Fraught:] Spend \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};} (Assistance) to face the Challenge.
@@ -384,7 +391,7 @@ Remember that while each Boon will make you a more capable officer, each \tikz[b
 \ClearShipoutPicture
 \AddToShipoutPictureBG{
 	\begin{tikzpicture}[remember picture, overlay]
-	\pic () at (current page.center) {starfield};
+		\pic () at (current page.center) {starfield};
 		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
 	\end{tikzpicture}
 }
@@ -394,7 +401,6 @@ The Vault of Heaven is what you will use to track your progress over the course 
 
 \newlength{\terranlen}
 \setlength{\terranlen}{\widthof{\futura{Terran}}}
-\setul{}{\lightrulewidth}
 
 \newcommand\dunderline[3][-1pt]{{%
   \sbox0{#3}%
@@ -443,6 +449,196 @@ If you do something that a Civilization approves of, the crew will earn a mark o
 	\item[Planet Name:] Sabotage, reliance on technology.
 	\item[Planet Name:] Adversarial machine learning.
 \end{description}
+
+\newpage
+
+% Full-page image
+%\thispagestyle{empty}
+%\ClearShipoutPicture
+%\begin{tikzpicture}[remember picture, overlay]
+%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/habitat_six_cover.png}};
+%\end{tikzpicture}
+%
+
+% Inset image
+%\thispagestyle{empty}
+\ClearShipoutPicture
+
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+
+	\node[endeavour_box, minimum width=12.6cm, minimum height=18.8cm,
+           path picture={
+           	  \path (path picture bounding box.south) --++ (0.5cm,-0.66cm) coordinate (x) {};
+               \node at (path picture bounding box.south){
+                   \includegraphics[width=12.8cm, height=19cm]{Images/habitat_six_cover.png}
+               };
+           }] at (current page.center) {};
+\end{tikzpicture}
+}
+\phantom{a}
+
+\newpage
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+		\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\section*{ICF Habitat Six}
+\textit{\textbf{Captain's Log:} We have arrived at ICF Habitat Six. As one of the ICF's first deep-space habitats, this space station is a relic from another age.}
+
+\textit{Years ago, it was decommissioned and ever since has served as an unmanned navigational beacon. Recently, however, the station stopped relaying telemetry. Sensor readings indicate that the habitat's life support systems have been reactivated.}
+
+\textit{We have been unable to establish communications with whoever might be aboard the station. I have dispatched a landing party to investigate.}
+
+\subsection*{Arrival}
+When you arrive at the habitat, you are greeted by a small team of \textbf{Bartan} technicians. They explain that they rely on the telemetry produced by the station and came to investigate the cause of its disruption.
+
+``Thank goodness you're here!'' they say, ``We were starting to worry that the ICF had forgotten about this place. There seems to be a problem with the communications array. Mind if we work together to figure out what's wrong with it?''
+
+\subsubsection*{Covert Communication}
+\begin{itemize}[topsep=0ex, partopsep=0ex]
+	\item \textit{Will you try to fix the communications array?}\\ \textbf{Operations \& Engineering} vs. \textbf{Habitat Six}.
+\end{itemize}
+Regardless of the outcome of the challenge, you discover a message hidden in the log files. It reads ``Attention ICF personnel: I am a member of the salvage team currently aboard this station. I have recently begun \textbf{The~Transition} and I do not want to become a King. As such, this message constitutes my formal written request for political asylum.''
+
+\newpage
+
+\subsection*{Trials}
+\subsubsection*{Finding the Asylum-Seeker}
+\textbf{Surinate}, the member of the Bartan salvage team who requested asylum, was careful to conceal his identity. \textit{Can you convince Surinate to reveal himself?} \textbf{Leadership \& Negotiation} vs. \textbf{Surinate}. \textit{Or will you try to identify Surinate by analyzing his behavior?}
+\textbf{Science \& Medicine} vs. \textbf{Behavioral Cues} (3d6).
+
+\subsubsection*{Hostile Reinforcements Arrive}
+A Bartan cruiser arrives at the station.  Its captain, \textbf{Taridan}, claims ownership of ICF Habitat Six, citing a treaty that classifies any inoperable and unattended spacecraft as salvage. \textit{Can you convince Taridan that his claim is illegitimate?} \textbf{Leadership \& Negotiation} vs. \textbf{Taridan}.
+
+\subsubsection*{Subterfuge Discovered}
+Taridan discovers the Surinate's message and orders the salvage team to return to the Bartan cruiser immediately. \textit{Will you help Surinate evade detection?} \textbf{Strategy \& Tactics} vs. \textbf{Bartan Salvage Team} (2d8).
+
+\subsection*{Crisis}
+\begin{itemize}
+	\item \textit{Will you grant Surinate's request for political asylum?} \textbf{Threats:} Taridan sends a team of soldiers to the station to retrieve Surinate by force. The Bartan cruiser attacks the Endeavour to prevent it from interfering.
+	\item \textit{Or will you concede to Taridan's demands and allow Surinate to be taken into custody?} \textbf{Threats:} Surinate sabotages the habitat's navigation beacon, posing a major threat to ships throughout the region. Surinate refuses to surrender, going so far as to activate the habitat's self destruct mechanism if necessary to avoid being arrested.
+\end{itemize}
+
+
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Habitat Six (d8):] Antiquated (d6), Idiosyncratic (d8). 
+	\item[Surinate (d6):] Asylum-Seeker (d6), Desperate (d6), Communications Technician (d6), Transitioning (d10).
+	\item[Taridan (d8):] Captain of the Baltan Cruiser (d8), Aggressive (d6 \textit{Dangerous}), Honorable (d8).
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[Operations:] The command center of ICF Habitat Six. Viewscreens occupy one entire wall while the rest of the room is filled with rows of workstations.
+	\item[Communications Array:] A complex assortment of antennas and receiver dishes. Accessible only via a series of cramped utility corridors.
+	\item[Bartan Cruiser:] A modern warship with strange and powerful weapons technology. More than a match for the ICS Endeavour in a fair fight.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[Surinate does not want to become a King.]\phantom{a}\\ Bartan Kings are the only members of their species who can reproduce. Very few Bartans can become Kings, and any who are able are required by law to do so. \textit{ What does The Transition entail? What happens to Bartan Kings after they reproduce?}
+
+	\item[Taridan's actions here could lead to war.]\phantom{a}\\
+	The ICF and the Bartan Empire have a long history of friendly relations. \textit{Why are the Bartans being so aggressive? Why is Taridan willing to incite a diplomatic incident over the question of who owns Habitat Six?}
+\end{description}
+
+\newpage
+
+%\thispagestyle{empty}
+\ClearShipoutPicture
+
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+
+	\node[endeavour_box, minimum width=12.6cm, minimum height=18.8cm,
+           path picture={
+           	  \path (path picture bounding box.south) --++ (0.5cm,-0.66cm) coordinate (x) {};
+               \node at (path picture bounding box.south){
+                   \includegraphics[width=12.8cm, height=19cm]{Images/habitat_six_cover.png}
+               };
+           }] at (current page.center) {};
+\end{tikzpicture}
+}
+\phantom{a}
+
+\newpage
+
+\ClearShipoutPicture
+
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+		\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\section*{Planet Template}
+Brief description of the planet.
+
+\textit{\textbf{Log entry:} Get the crew set up for the Arrival challenge.}
+
+\subsection*{Arrival}
+A first challenge that introduces the planet's Strife.
+
+\subsubsection*{Title for the Arrival Challenge}
+\begin{itemize}
+	\item \textit{Will you ... ?} Test
+	\item \textit{Or will you ... ?} Test
+\end{itemize}
+
+\newpage
+
+\subsection*{Trials}
+Some situations and challenges that drive the action towards the Crisis.
+
+\subsubsection*{Name of the first Trial}
+test
+
+\subsubsection*{Name of the second Trial}
+test
+
+\subsubsection*{Name of the third Trial}
+test
+
+\subsection*{Crisis}
+Brief description of the planet's Crisis.
+\begin{itemize}
+	\item \textit{Will you ... ?} Describe some challenges and associated \textbf{Threats}.
+	\item \textit{Or will you ... ?} Describe some challenges and associated \textbf{Threats}.
+\end{itemize}
+
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Character Name (d?):] Epithets and associated epithet die sizes.
+	\item[Character Name (d?):] Epithets and associated epithet die sizes.
+	\item[Character Name (d?):] Epithets and associated epithet die sizes.
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[Place Name:] Brief description of the place.
+	\item[Place Name:] Brief description of the place.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[A fact about what is happening on the planet.] \phantom{a} \\ \textit{A leading question about what might be going on.}
+	\item[A fact about what is happening on the planet.] \phantom{a} \\ \textit{A leading question about what might be going on.}
+\end{description}
+
+
 
 %\thispagestyle{plain}
 %\enlargethispage{3.5\baselineskip} % Move the bottom line down a bit
