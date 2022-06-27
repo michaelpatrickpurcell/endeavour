@@ -232,6 +232,35 @@ In this game, Captain Darcy will be a prominent non-player character. As command
 
 \newpage
 
+%\thispagestyle{empty}
+\ClearShipoutPicture
+
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+
+	\node[endeavour_box, minimum width=12.6cm, minimum height=18.8cm,
+           path picture={
+           	  \path (path picture bounding box.south) --++ (0.5cm,-0.66cm) coordinate (x) {};
+               \node at (path picture bounding box.south){
+                   \includegraphics[width=12.8cm, height=19cm]{Images/lem_cover.png}
+               };
+           }] at (current page.center) {};
+\end{tikzpicture}
+}
+\phantom{a}
+
+\newpage
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+		\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+
 \section*{Systems}
 \ENDEAVOUR{} uses a modified version of the \textsc{Paragon System}, found in the \AGON{} roleplaying game. You will need a copy of the \AGON{} rulebook to play this game. Refer to \href{http://www.agon-rpg.com}{agon-rpg.com} for more information. Changes to the \textsc{Paragon System} as used in \ENDEAVOUR{} are described below.
 
@@ -338,9 +367,39 @@ Diplomacy challenges are always Leadership \& Negotiation challenges.  Everyone 
 \subsection*{Leadership}
 In \ENDEAVOUR{}, the captain is always the leader of the crew. Leadership challenges are used to determine which officer most impresses the captain during each Voyage.
 
-If you are best during a Leadership challenge then you receive a Bond with Captain Darcy. You can use this Bond as usual to ask the captain to Bolster you, Block Complications for you, or Follow your Lead.
+If you are best during a Leadership challenge then you receive a Bond with Captain Darcy. You can use this Bond as usual to ask the captain to Bolster You, Block Complications for You, or Follow Your Lead.
 
 \newpage
+
+%\thispagestyle{empty}
+\ClearShipoutPicture
+
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+
+	\node[endeavour_box, minimum width=12.6cm, minimum height=18.8cm,
+           path picture={
+           	  \path (path picture bounding box.south) --++ (0.5cm,-0.66cm) coordinate (x) {};
+               \node at (path picture bounding box.south){
+                   \includegraphics[width=12.8cm, height=19cm]{Images/sunrise_cover.png}
+               };
+           }] at (current page.center) {};
+\end{tikzpicture}
+}
+\phantom{a}
+
+\newpage
+
+\ClearShipoutPicture
+
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+		\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
 
 \section*{Character Creation}
 Most player characters in \ENDEAVOUR{} are ICF officers who are serving aboard the ICS Endeavour. To create a character, you will:
@@ -388,69 +447,26 @@ Remember that while each Boon will make you a more capable officer, each \tikz[b
 }
 
 \newpage
-\ClearShipoutPicture
-\AddToShipoutPictureBG{
-	\begin{tikzpicture}[remember picture, overlay]
-		\pic () at (current page.center) {starfield};
-		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
-	\end{tikzpicture}
-}
-  
-\section*{The Vault of Heaven}
-The Vault of Heaven is what you will use to track your progress over the course of a campaign. During each adventure, your actions can affect the crew's relationships with the Civilizations that you have encountered.
+%\ClearShipoutPicture
+%\AddToShipoutPictureBG{
+%	\begin{tikzpicture}[remember picture, overlay]
+%		\pic () at (current page.center) {starfield};
+%		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+%	\end{tikzpicture}
+%}
 
-\newlength{\terranlen}
-\setlength{\terranlen}{\widthof{\futura{Terran}}}
-
-\newcommand\dunderline[3][-1pt]{{%
-  \sbox0{#3}%
-  \ooalign{\copy0\cr\rule[\dimexpr#1-#2\relax]{\wd0}{#2}}}}
-  
-\begin{center}
-\begin{tabular}{r@{\qquad}c@{\qquad}c} \toprule
-\futura{Civilization} & \futura{Favor} & \futura{Wrath} \\ \midrule \\[-2ex]
-\dunderline{\lightrulewidth}{\phantom{Civilization}}\hspace{-\terranlen}\futura{Terran} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
-
-\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.0ex] \bottomrule
-\end{tabular}
-\end{center}
-
-If you do something that a Civilization approves of, the crew will earn a mark of \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}~(Favor) with that Civilization.  If you do something that a Civilization disapproves of, the crew will earn a mark of \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}~(Wrath) with that Civilization.
-
-\newpage
-
-\section*{Planets}
-\begin{description}
-	\item[Planet Name:] Reproductive rights, political asylum.
-	\item[Planet Name:] Right to privacy, cloaking technology.
-	\item[Planet Name:] Pets, cultural norms, death penalty.
-	\item[Planet Name:] Communicable diseases, quarantine.
-	\item[Planet Name:] Exotic life forms, colonialism.
-	\item[Planet Name:] Sabotage, reliance on technology.
-	\item[Planet Name:] Adversarial machine learning.
-\end{description}
-
-\newpage
+%\section*{Planets}
+%\begin{description}
+%	\item[ICF Habitat Six:] Reproductive rights, political asylum.
+%	\item[Planet Name:] Right to privacy, cloaking technology.
+%	\item[Planet Name:] Pets, cultural norms, death penalty.
+%	\item[Planet Name:] Communicable diseases, quarantine.
+%	\item[Planet Name:] Exotic life forms, colonialism.
+%	\item[Planet Name:] Sabotage, reliance on technology.
+%	\item[Planet Name:] Adversarial machine learning.
+%\end{description}
+%
+%\newpage
 
 % Full-page image
 %\thispagestyle{empty}
@@ -564,7 +580,7 @@ Taridan discovers the Surinate's message and orders the salvage team to return t
            path picture={
            	  \path (path picture bounding box.south) --++ (0.5cm,-0.66cm) coordinate (x) {};
                \node at (path picture bounding box.south){
-                   \includegraphics[width=12.8cm, height=19cm]{Images/habitat_six_cover.png}
+                   \includegraphics[width=12.8cm, height=19cm]{Images/meteor_shower_cover.png}
                };
            }] at (current page.center) {};
 \end{tikzpicture}
@@ -638,7 +654,138 @@ Brief description of the planet's Crisis.
 	\item[A fact about what is happening on the planet.] \phantom{a} \\ \textit{A leading question about what might be going on.}
 \end{description}
 
+\newpage
 
+%\thispagestyle{empty}
+\ClearShipoutPicture
+
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+
+	\node[endeavour_box, minimum width=12.6cm, minimum height=18.8cm,
+           path picture={
+           	  \path (path picture bounding box.south) --++ (0.5cm,-0.66cm) coordinate (x) {};
+               \node at (path picture bounding box.south){
+                   \includegraphics[width=12.8cm, height=19cm]{Images/city_cover.png}
+               };
+           }] at (current page.center) {};
+\end{tikzpicture}
+}
+\phantom{a}
+
+\newpage
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+		\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\section*{Planet Template}
+Brief description of the planet.
+
+\textit{\textbf{Log entry:} Get the crew set up for the Arrival challenge.}
+
+\subsection*{Arrival}
+A first challenge that introduces the planet's Strife.
+
+\subsubsection*{Title for the Arrival Challenge}
+\begin{itemize}
+	\item \textit{Will you ... ?} Test
+	\item \textit{Or will you ... ?} Test
+\end{itemize}
+
+\newpage
+
+\subsection*{Trials}
+Some situations and challenges that drive the action towards the Crisis.
+
+\subsubsection*{Name of the first Trial}
+test
+
+\subsubsection*{Name of the second Trial}
+test
+
+\subsubsection*{Name of the third Trial}
+test
+
+\subsection*{Crisis}
+Brief description of the planet's Crisis.
+\begin{itemize}
+	\item \textit{Will you ... ?} Describe some challenges and associated \textbf{Threats}.
+	\item \textit{Or will you ... ?} Describe some challenges and associated \textbf{Threats}.
+\end{itemize}
+
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Character Name (d?):] Epithets and associated epithet die sizes.
+	\item[Character Name (d?):] Epithets and associated epithet die sizes.
+	\item[Character Name (d?):] Epithets and associated epithet die sizes.
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[Place Name:] Brief description of the place.
+	\item[Place Name:] Brief description of the place.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[A fact about what is happening on the planet.] \phantom{a} \\ \textit{A leading question about what might be going on.}
+	\item[A fact about what is happening on the planet.] \phantom{a} \\ \textit{A leading question about what might be going on.}
+\end{description}
+
+\newpage
+
+\section*{The Vault of Heaven}
+The Vault of Heaven is what you will use to track your progress over the course of a campaign. During each adventure, your actions can affect the crew's relationships with the Civilizations that you have encountered.
+
+\newlength{\terranlen}
+\setlength{\terranlen}{\widthof{\futura{Terran}}}
+
+\newcommand\dunderline[3][-1pt]{{%
+  \sbox0{#3}%
+  \ooalign{\copy0\cr\rule[\dimexpr#1-#2\relax]{\wd0}{#2}}}}
+  
+\begin{center}
+\begin{tabular}{r@{\qquad}c@{\qquad}c} \toprule
+\futura{Civilization} & \futura{Favor} & \futura{Wrath} \\ \midrule \\[-2ex]
+\dunderline{\lightrulewidth}{\phantom{Civilization}}\hspace{-\terranlen}\futura{Terran} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.5ex]
+
+\dunderline{\lightrulewidth}{\phantom{Civilization}} & \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}\,\,\,\tikz[baseline=-0.75ex]{\pic {blank_divine_favor};} & \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\,\,\,\tikz[baseline=-1.125ex]{\pic {wrath_triangle};}\\[1.0ex] \bottomrule
+\end{tabular}
+\end{center}
+
+If you do something that a Civilization approves of, the crew will earn a mark of \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}~(Favor) with that Civilization.  If you do something that a Civilization disapproves of, the crew will earn a mark of \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}~(Wrath) with that Civilization.
+
+\newpage
+\section*{Acknowlegements}
+test
 
 %\thispagestyle{plain}
 %\enlargethispage{3.5\baselineskip} % Move the bottom line down a bit
