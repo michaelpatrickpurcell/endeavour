@@ -521,7 +521,9 @@ When you arrive at the habitat, you are greeted by a small team of \textbf{Barta
 \begin{itemize}[topsep=0ex, partopsep=0ex]
 	\item \textit{Will you try to fix the communications array?}\\ \textbf{Operations \& Engineering} vs. \textbf{Habitat Six}.
 \end{itemize}
-Regardless of the outcome of the challenge, you discover a message hidden in the log files. It reads ``Attention ICF personnel: I am a member of the salvage team currently aboard this station. I have recently begun \textbf{The~Transition} and I do not want to become a King. As such, this message constitutes my formal written request for political asylum.''
+Regardless of the outcome of the challenge, you discover a message hidden in the log files.% It reads "Attention ICF personnel: I am a member of the salvage team currently aboard this station. I have recently begun \textbf{The~Transition} and I do not want to become a King. As such, this message constitutes my formal written request for political asylum."
+
+\textit{Attention ICF personel: I am a member of the Bartan salvage team currently aboard the station. I have recently begun \textbf{The~Transition} and I do not want to become a King. I am formally requesting political asylum. Please help me.}
 
 \newpage
 
@@ -665,8 +667,8 @@ Brief description of the planet's Crisis.
 
 	\node[endeavour_box, minimum width=12.6cm, minimum height=18.8cm,
            path picture={
-           	  \path (path picture bounding box.south) --++ (0.5cm,-0.66cm) coordinate (x) {};
-               \node at (path picture bounding box.south){
+           	  \path (path picture bounding box.south) --++ (-0.15cm,0.0cm) coordinate (x) {};
+               \node at (x){
                    \includegraphics[width=12.8cm, height=19cm]{Images/city_cover.png}
                };
            }] at (current page.center) {};
@@ -817,7 +819,7 @@ The following tools were used to create this rule book:
 	\item[TikZ:] Diagrams and art.
 \end{description}
 \vspace{1ex}
-The fonts used are {\setmainfont{TT Mussels-BoldItalic} TT~Mussels~Bold~Italic},  \textsf{Futura}, \texttt{Courier~Prime}, and TeX~Gyre~Schola.
+The fonts used are {\setmainfont{TT Mussels-BoldItalic} TT~Mussels~Bold~Italic},  \textsf{Futura}, and TeX~Gyre~Schola (cf. Century Schoolbook).
 
 \vfill
 
