@@ -54,7 +54,7 @@
 \usepackage{fontspec} % Use system fonts.  Not compatible with pdflatex. Use XeLaTeX instead!
 \setmainfont{TeX Gyre Schola}
 \setmonofont{Courier Prime}
-\usepackage{cinzel} % I haven't been able to get the cinzel font on my machine to display bold weight. This one works.
+\setsansfont{Futura}
 \newcommand{\futura}[1]{{\setmainfont{Futura} #1}}
 
 \usepackage{enumitem} % Adjust formatting of description environment items
@@ -811,13 +811,13 @@ The following people helped to create \ENDEAVOUR{} by playing early versions of 
 \end{multicols}
 
 \subsection*{Design Tools} \label{subsection:design-tools}
-The following tools were used to create this booklet:
+The following tools were used to create this rule book:
 \begin{description}[font=\normalfont\textbullet\space, noitemsep, topsep=-1ex]
 	\item[XeLaTeX:] Typesetting and layout.
 	\item[TikZ:] Diagrams and art.
 \end{description}
 \vspace{1ex}
-The fonts used in this rule book are TeX~Gyre~Schola, Courier~Prime, and Futura.
+The fonts used are {\setmainfont{TT Mussels-BoldItalic} TT~Mussels~Bold~Italic},  \textsf{Futura}, \texttt{Courier~Prime}, and TeX~Gyre~Schola.
 
 \vfill
 
@@ -825,58 +825,5 @@ The fonts used in this rule book are TeX~Gyre~Schola, Courier~Prime, and Futura.
 \textbf{Contact:} \href{mailto:endeavour.ttrpg@gmail.com}{endeavour.ttrpg@gmail.com}\newline \phantom{This is a test, only a test.} \newline \footnotesize{For use with the \textsc{Paragon} system, ©2020\newline \textbf{John Harper \& Sean Nittner}. \href{http://agon-rpg.com}{AGON-RPG.com}} & \includegraphics[scale=0.175]{Images/paragon_logo_mark.png} \\[5ex]
 {\footnotesize{\doclicenseLongText}} & \Huge{\doclicenseIcon}
 \end{tabular}
-
-%\thispagestyle{plain}
-%\enlargethispage{3.5\baselineskip} % Move the bottom line down a bit
-%
-%\section*{Acknowledgements} \label{section:acknowledgements}
-%
-%
-%\subsection*{Playtesters} \label{subsection:playtesters}
-%The following people helped to refine the design of Prophecy:\vspace{-1.75ex}
-%\begin{multicols}{2}
-%\begin{itemize}
-%  \item Keydan Bruce
-%  \item Farzana Choudhury
-%  \item Michael Cromer
-%  \item Dannielle Harden
-%  \item Andrew Hellyer
-%  \item Sarah Hewat
-%  \item Scott Joblin
-%  \item David McKenzie
-%  \item Paul Murray
-%  \item Kira Purcell
-%  \item Luke Purcell
-%  \item Jo Stephenson
-%  \item Brett Witty
-%\end{itemize}
-%\end{multicols}
-%
-%\subsection*{Influences} \label{subsection:influences}
-%The following games influenced the design of Prophecy:
-%\begin{description}[font=\normalfont\textbullet\space, noitemsep, topsep=-1ex]
-%	\item[Fate:] Aspects and Objects.
-%	\item[Fiasco:] Scenes and scene-level resolution.
-%	\item[Our Last Best Hope:] Theme and narrative focus.
-%	\item[10 Candles:] Session modules.
-%	\item[Microscope:] Non-linear storytelling.
-%\end{description}
-%\vspace{1ex}
-%\hyperref[subsection:safety-tools]{\cinzel \small Safety Tools} is based on the X-Card by John Stavropoulus.
-%
-%\subsection*{Design Tools} \label{subsection:design-tools}
-%The following tools were used to create this booklet:
-%\begin{description}[font=\normalfont\textbullet\space, noitemsep, topsep=-1ex]
-%	\item[XeLaTeX:] Typesetting and layout.
-%	\item[TikZ:] Diagrams and art.
-%\end{description}
-%\vspace{1ex}
-%The fonts used in this booklet are URW Classico and Cinzel.
-%\vspace{0.25\baselineskip}
-%
-%\vfill
-%
-%Contact: \href{mailto:prophecy.ttrpg@gmail.com}{prophecy.ttrpg@gmail.com}\\
-%\vspace{-2.5ex}\doclicenseText \hfill  \Huge{\doclicenseIcon}
 
 \end{document}
