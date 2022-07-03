@@ -447,37 +447,100 @@ Remember that while each Boon will make you a more capable officer, each \tikz[b
 }
 
 \newpage
-%\ClearShipoutPicture
-%\AddToShipoutPictureBG{
-%	\begin{tikzpicture}[remember picture, overlay]
-%		\pic () at (current page.center) {starfield};
-%		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
-%	\end{tikzpicture}
-%}
 
-%\section*{Planets}
-%\begin{description}
-%	\item[ICF Habitat Six:] Reproductive rights, political asylum.
-%	\item[Planet Name:] Right to privacy, cloaking technology.
-%	\item[Planet Name:] Pets, cultural norms, death penalty.
-%	\item[Planet Name:] Communicable diseases, quarantine.
-%	\item[Planet Name:] Exotic life forms, colonialism.
-%	\item[Planet Name:] Sabotage, reliance on technology.
-%	\item[Planet Name:] Adversarial machine learning.
-%\end{description}
-%
-%\newpage
+\ClearShipoutPicture
 
-% Full-page image
-%\thispagestyle{empty}
-%\ClearShipoutPicture
-%\begin{tikzpicture}[remember picture, overlay]
-%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/habitat_six_cover.png}};
-%\end{tikzpicture}
-%
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
 
-% Inset image
-%\thispagestyle{empty}
+	\node[endeavour_box, minimum width=12.6cm, minimum height=18.8cm,
+           path picture={
+           	  \path (path picture bounding box.south) --++ (0.5cm,-0.66cm) coordinate (x) {};
+               \node at (path picture bounding box.south){
+                   \includegraphics[width=12.8cm, height=19cm]{Images/meteor_shower_cover.png}
+               };
+           }] at (current page.center) {};
+\end{tikzpicture}
+}
+\phantom{a}
+
+\newpage
+
+\ClearShipoutPicture
+
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+		\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\section*{Namarrkon}
+\textit{\textbf{Captains Log:} We have arrived in orbit around Namarrkon, a planet perpetually blanketed by ferocious lightning storms. It is the site of an ambitious mining operation that harnesses the energy of the storms to power their equipment.}
+
+\textit{Recent observations have revealed a complex underlying structure in the storms' electrical activity. These patterns suggest that the storms may not be a natural phenomenon.}
+
+\textit{Currently aboard the Endeavour is a team of civilian researchers tasked with studying the storms. Our orders are to transport them to the planet's surface, support their research efforts, and ensure their safety.}
+
+\subsection*{Arrival}
+The clouds below roil as the Endeavour orbits the planet. Lightning flashes unceasingly and will make descending to the surface extremely hazardous. 
+
+\textbf{Dr. Stevens} organizes the civilian researchers into small teams and asks that they be distributed at regular intervals across the planet. Doing so will require waiting for a convenient break in the storms and then delivering each team to their destination before the opportunity passes.
+
+\subsubsection*{Deploying the Research Teams}
+\begin{itemize}
+	\item \textit{Will you proceed with the plan to widely distribute small teams of researchers?} \textbf{Operations \& Engineering} vs. \textbf{Namarrkon}. This is a \textit{Grueling} challenge \textemdash{} Each transfer will be dangerous and time consuming.
+	\item \textit{Or will you try to convince Dr. Stevens to change her plan?} \textbf{Leadership \& Negotiation} vs. \textbf{Dr. Stevens}. This is a \textit{Sensitive} challenge \textemdash{} many of the researchers are wary of any outside interference in their work.
+\end{itemize}
+
+\newpage
+
+\subsection*{Trials}
+\subsubsection*{Culture Clash}
+\textbf{Maynard Hill} complains that the civilian researchers are interfering with mining operations. He demands that each team be accompanied by his personnel at all times in order to ensure their safety. \textit{Can you convince him to relent?} \\ \textbf{Leadership \& Negotiation} vs. \textbf{Maynard Hill}.
+
+Dr. Stevens complains that the miners are interfering with her research. She demands unrestricted access to the planet. \\ \textit{Will you help the researchers conduct covert operations?} \textbf{Strategy \& Tactics} vs. \textbf{The Miners} (3d6).
+
+\subsubsection*{The Tempest}
+A surge in storm activity damages one of the wind farms. Similar surges then damage several other neighboring wind farms. It looks almost like a coordinated attack on the mine's infrastructure. \textit{Will you help the miners repair the damage?} \textbf{Operations \& Engineering} vs. \textbf{Wind Farms} (3d8).
+
+The miners explain that cascade failures are common and caused by how the wind farms are interconnected. \textit{Can you verify whether the miners' explanation is correct?}
+\\ \textbf{Science \& Medicine} vs. \textbf{Maynard Hill}.
+
+
+\subsection*{Crisis}
+\begin{itemize}
+	\item \textit{Can you find a way to manipulate the storms so that the mine can continue operating?} \textbf{Threats:} The storms attack the mining operation in earnest. Civilian researchers are killed and mining equipment is destroyed. Escape is impossible until the storm recedes.
+	\item \textit{Or will you try to convince the miners to evacuate?} \\ \textbf{Threats:} The mine cannot be shut down remotely. Miners are caught by the storms. Maynard Hill files a formal complaint with ICF Command.
+\end{itemize}
+
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Dr. Stevens (d8):] Lead Civilian Researcher (d10), Creative (d8),  Energetic (d8), Stubborn (d6).
+	\item[Maynard Hill (d6):] Chief of Mining Operations (d8), Prickly (d6), Skeptical (d6), Efficient (d8).	
+	\item[Namarrkon (d12):] Sentient Storms (d8), Ancient (d8), Unique (d8 \textit{Sensitive}), Vengeful (d8 \textit{Grueling}), \textsc{\textbf{Distributed}} (Cannot be affected by local phenomena).
+\end{description}
+
+\subsection*{Places}
+Everywhere on Namarrkon is stormy.  Clouds, high winds, and especially lightning are a constant fact of life here.
+\begin{description}
+	\item[Storm Shelters:] Lightweight and portable. Used as field laboratories by the civilian researchers.
+	\item[Wind Farms:] Neatly organized rows of massive wind turbines, all connected by heavy-duty transmission lines.
+	\item[Mine Headquarters:] An older building, repeatedly upgraded and reinforced over many years of service.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[The storms on Namarrkon are sentient.] \phantom{a} \\ 
+	As inorganic entities, the storms are unlike most other known forms of life. \textit{Were the storms created by some lost civilization? Are the storms able to communicate?}
+	\item[The mine produces extremely rare minerals.] \phantom{a} \\ These resources are used to create some of the Interstellar Confederation's most fantastic technologies. \textit{Do the storms depend on Namarrkon's unusual geology? Could similar kinds of life be found on other planets?}
+\end{description}
+
+\newpage
+
 \ClearShipoutPicture
 
 \AddToShipoutPictureBG{
@@ -580,102 +643,6 @@ Taridan discovers the Surinate's message and orders the salvage team to return t
 
 	\node[endeavour_box, minimum width=12.6cm, minimum height=18.8cm,
            path picture={
-           	  \path (path picture bounding box.south) --++ (0.5cm,-0.66cm) coordinate (x) {};
-               \node at (path picture bounding box.south){
-                   \includegraphics[width=12.8cm, height=19cm]{Images/meteor_shower_cover.png}
-               };
-           }] at (current page.center) {};
-\end{tikzpicture}
-}
-\phantom{a}
-
-\newpage
-
-\ClearShipoutPicture
-
-\AddToShipoutPictureBG{
-	\begin{tikzpicture}[remember picture, overlay]
-		\pic () at (current page.center) {starfield};
-		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
-	\end{tikzpicture}
-}
-
-\section*{Namarrkon}
-\textit{\textbf{Captains Log:} We have arrived in orbit around Namarrkon, a planet perpetually blanketed by ferocious lightning storms. It is the site of an ambitious mining operation that harnesses the energy of the storms to power their equipment.}
-
-\textit{Recent observations have revealed a complex underlying structure in the storms' electrical activity. These patterns suggest that the storms may not be a natural phenomenon.}
-
-\textit{Currently aboard the Endeavour is a team of civilian researchers tasked with studying the storms. Our orders are to transport them to the planet's surface, support their research efforts, and ensure their safety.}
-
-\subsection*{Arrival}
-The clouds below roil as the Endeavour orbits the planet. Lightning flashes unceasingly and will make descending to the surface extremely hazardous. 
-
-\textbf{Dr. Stevens} organizes the civilian researchers into small teams and asks that they be distributed at regular intervals across the planet. Doing so will require waiting for a convenient break in the storms and then delivering each team to their destination before the opportunity passes.
-
-%These conditions will make it impossible to mount rescue operations from the Endeavour.  Each team will be largely on their own if anything goes wrong.
-
-\subsubsection*{Deploying the Research Teams}
-\begin{itemize}
-	\item \textit{Will you proceed with the plan to widely distribute small teams of researchers?} \textbf{Operations \& Engineering} vs. \textbf{Namarrkon}. This is a \textit{Grueling} challenge \textemdash{} Each transfer will be dangerous and time consuming.
-	\item \textit{Or will you try to convince Dr. Stevens to change her plan?} \textbf{Leadership \& Negotiation} vs. \textbf{Dr. Stevens}. This is a \textit{Sensitive} challenge \textemdash{} many of the researchers are wary of any outside interference in their work.
-\end{itemize}
-
-\newpage
-
-\subsection*{Trials}
-\subsubsection*{Culture Clash}
-\textbf{Maynard Hill} complains that the civilian researchers are interfering with mining operations. He demands that each team be accompanied by his personnel at all times in order to ensure their safety. \textit{Can you convince him to relent?} \\ \textbf{Leadership \& Negotiation} vs. \textbf{Maynard Hill}.
-
-Dr. Stevens complains that the miners are interfering with her research. She demands unrestricted access to the planet. \\ \textit{Will you help the researchers conduct covert operations?} \textbf{Strategy \& Tactics} vs. \textbf{The Miners} (3d6).
-
-\subsubsection*{The Tempest}
-A surge in storm activity damages one of the wind farms. Similar surges then damage several other neighboring wind farms. It looks almost like a coordinated attack on the mine's infrastructure. \textit{Will you help the miners repair the damage?} \textbf{Operations \& Engineering} vs. \textbf{Wind Farms} (3d8).
-
-The miners explain that cascade failures are common and caused by how the wind farms are interconnected. \textit{Can you verify whether the miners' explanation is correct?}
-\\ \textbf{Science \& Medicine} vs. \textbf{Maynard Hill}.
-
-
-\subsection*{Crisis}
-\begin{itemize}
-	\item \textit{Can you find a way to manipulate the storms so that the mine can continue operating?} \textbf{Threats:} The storms attack the mining operation in earnest. Civilian researchers are killed and mining equipment is destroyed. Escape is impossible until the storm recedes.
-	\item \textit{Or will you try to convince the miners to evacuate?} \\ \textbf{Threats:} The mine cannot be shut down remotely. Miners are caught by the storms. Maynard Hill files a formal complaint with ICF Command.
-\end{itemize}
-
-\newpage
-
-\subsection*{Characters}
-\begin{description}
-	\item[Dr. Stevens (d8):] Lead Civilian Researcher (d10), Creative (d8),  Energetic (d8), Stubborn (d6).
-	\item[Maynard Hill (d6):] Chief of Mining Operations (d8), Prickly (d6), Skeptical (d6), Efficient (d8).	
-	\item[Namarrkon (d12):] Sentient Storms (d8), Ancient (d8), Unique (d8 \textit{Sensitive}), Vengeful (d8 \textit{Grueling}), \textsc{\textbf{Distributed}} (Cannot be affected by local phenomena).
-\end{description}
-
-\subsection*{Places}
-Everywhere on Namarrkon is stormy.  Clouds, high winds, and especially lightning are a constant fact of life here.
-\begin{description}
-	\item[Storm Shelters:] Lightweight and portable. Used as field laboratories by the civilian researchers.
-	\item[Wind Farms:] Neatly organized rows of massive wind turbines, all connected by heavy-duty transmission lines.
-	\item[Mine Headquarters:] An older building, repeatedly upgraded and reinforced over many years of service.
-\end{description}
-
-\subsection*{Mysteries}
-\begin{description}
-	\item[The storms on Namarrkon are sentient.] \phantom{a} \\ 
-	As inorganic entities, the storms are unlike most other known forms of life. \textit{Were the storms created by some lost civilization? Are the storms able to communicate?}
-	\item[The mine produces extremely rare minerals.] \phantom{a} \\ These resources are used to create some of the Interstellar Confederation's most fantastic technologies. \textit{Do the storms depend on Namarrkon's unusual geology? Could similar kinds of life be found on other planets?}
-\end{description}
-
-\newpage
-
-%\thispagestyle{empty}
-\ClearShipoutPicture
-
-\AddToShipoutPictureBG{
-\begin{tikzpicture}[remember picture, overlay]
-	\pic () at (current page.center) {starfield};
-
-	\node[endeavour_box, minimum width=12.6cm, minimum height=18.8cm,
-           path picture={
            	  \path (path picture bounding box.south) --++ (-0.15cm,0.0cm) coordinate (x) {};
                \node at (x){
                    \includegraphics[width=12.8cm, height=19cm]{Images/city_cover.png}
@@ -696,70 +663,69 @@ Everywhere on Namarrkon is stormy.  Clouds, high winds, and especially lightning
 }
 
 \section*{Sendiv}
-\textit{\textbf{Captain's Log:} We have arrived at Sendiv, an independent city state that was recently admitted to the Interstellar Confederation. Renowned for its natural beauty, the city sits atop an island on a watery moon of a spectacular gas giant.}
+\textit{\textbf{Captain's Log:} We have arrived in a region of space known as the Kerring Expanse. The region itself is uninhabited. It features prominently, however, in the legends of several nearby civilizations as a place of mystery and peril.}
 
-\textit{We are here at the request of the Sendivian city council. A child has been abducted from one of their schools. They have asked us to help find the child and ensure her safe return.}
-
-\textit{Citing privacy concerns, the Sendivians have requested that we not use the Endeavour's sensors to indiscriminately scan the city. We're going to have to do this the old-fashioned way.}
+\textit{One legend in particular tells of a pair of violent storms that rend the sky here once every one hundred solar years.  Anecdotal evidence suggests that this legend may be based in fact.  If so, then the next storm is due to occur any time now.}% We are here to observe and, if anything actually happens, learn what we can about whatever we find.}
 
 \subsection*{Arrival}
-You are directed to Police Headquarters. The building is filled with harried police officers trying to manage the crisis. 
+A flash blinds the Endeavour's main viewscreen and the ship lurches violently to starboard. The ship rocks beneath you and damage reports start coming in from all decks.
 
-\textbf{Garnat}, the police chief, tells you that the city's residents have been directed to return to their homes and remain there until further notice. No justification has been provided.
+As systems come back online, you see a swirling green vortex that grows with alarming speed as it approaches. A mote in the center of the approaching storm glows ever brighter until it outshines even the nearby stars. 
 
-\textbf{Tzalikin}, the missing child's estranged father, also seems to be missing.  Garnat suspects Tzalikin may have kidnapped his daughter. A warrant has been issued for his arrest.
-
-\subsubsection*{Title for the Arrival Challenge}
+\subsubsection*{Navigating the Maelstrom}
 \begin{itemize}
-	\item \textit{Will you help Garnat to secure the city?} \textbf{Operations \& Engineering} vs \textbf{Security} (3d8). If you fail, then Tzalikin gains a 1d10 advantage die on all challenges.
-	\item \textit{Will you try to convince Garnat to allow you to utilize the Endeavour's sensors?} \textbf{Leadership \& Negotiation} vs. \textbf{Garnat}. This is a \textit{Fraught} challenge \textemdash{} The Sendivians care deeply about personal privacy. If you prevail you gain a 1d10 advantage die on all challenges vs. Tzalikin.
+	\item \textit{Will you focus on weathering the storm to minimize the risk to the Endeavour?} \textbf{Operations \& Engineering} vs. \textbf{The Maelstrom}. This is a \textit{Dangerous} challenge. If you fail, the Endeavour is seriously damaged.
+	\item \textit{Or will you focus on studying the storm to learn more about what might have caused it?} \textbf{Science \& Medicine} vs. \textbf{The Maelstrom}. This is a \textit{Grueling} challenge. The Endeavour is seriously damaged. If you prevail, you gain a 1d6 advantage die on all challenges vs \textbf{Sendiv}.
 \end{itemize}
+
+When the storm abates, sensors report that a new city has appeared floating in the ocean on one of the moons of a spectacularly-ringed gas giant nearby.
 \newpage
 
 \subsection*{Trials}
-\subsubsection*{The Invisible Man}
-Garnat calls you to his office He introduces you to a woman who claims that she saw doors opening and furniture moving, apparently on their own, near the school shortly after the child was abducted.  \textit{Can you figure out how to see through Tzalikin's disguise?}  \textbf{Science \& Medicine} vs. \textbf{Tzalikin}.
+\subsubsection*{Cultural Exchange}
+\textbf{Tzarn} contacts you and invites the crew of the Endeavour to join the Sendivians for a night of revelry. The highlight of the evening is a kind of talent show featuring amazing acts of skill and artistry. The Sendivians ask you to contribute something to the event. \textit{Will you perform for your hosts?}
+\textbf{Leadership \& Negotiation} vs. \textbf{Revelers} (3d6).
 
-\subsubsection*{False Alarm}
-A klaxon sounds throughout the city accompanied by flashing lights and an automated announcement.
+\subsubsection*{Effecting Repairs}
+The Endeavour may have been damaged in \textbf{The~Maelstrom}. \textit{Can you repair the ship using only what you have aboard?}
+\textbf{Operations \& Engineering} vs. \textbf{Storm Damage} (3d8). \textit{Can you use Sendivian technology to augment your own?} \textbf{Science \& Medicine} vs. \textbf{Sendiv}.
 
-\textit{Emergency! A radiation leak has been detected. Evacuate the city immediately. Repeat, evacuate the city immediately.}
+\subsubsection*{No Way Out}
+The Sendivians discourage any crew members who enter the city from returning to the Endeavour.  Mechanical failures conspire to keep the crew from leaving the city. \textit{Can you force the Sendivians into a position that reveals why they are trying to keep you here?}
+\textbf{Strategy \& Tactics} vs. \textbf{Tzarn}.
 
-Emergency protocols are activated and the lockdown is lifted. \textit{Can you prevent Tzalikin from escaping in the ensuing confusion?} \textbf{Strategy \& Tactics} vs. \textbf{Tzalikin}
-
-\subsubsection*{Peace Offering}
-Tzalikin contacts the police. He tells them that he has made a terrible mistake and that he has released his daughter. She is waiting to be picked up at the water recycling plant. \textit{Will you try to determine where he is calling from?} \textbf{Operations \& Engineering} vs. \textbf{Tzalikin}.
 
 \subsection*{Crisis}
 \begin{itemize}
-	\item \textit{Will you physically confront Tzalikin?} \phantom{a} \\ \textbf{Threats:} Tzalikin makes a risky getaway via the utility corridors. If cornered, he detonates an explosive device rather than surrender.
-	\item \textit{Or will you try to negotiate with Tzalikin?} \phantom{a} \\ \textbf{Threats:} Tzalikin takes hostages and demands safe passage off of Sendiv. He starts killing hostages if his demands are not met.
+	\item \textit{Will you try to escape from the city prior to launch?} \textbf{Threats:} Tzarn begs you to stay. Sendiv deploys force shields and grappling beams to prevent your escape and discourage outside interference.
+	\item \textit{Or will you try to interrupt the launch sequence and prevent the city from continuing its journey?} \\ \textbf{Threats:} Tzarn refuses to help you. Sendiv denies access to critical systems. The Sendivians actively oppose you.
 \end{itemize}
+\textbf{The Maelstrom} returns when Sendiv departs. Anyone who remains within the city is unharmed but is lost forever.
 
 \newpage
 
 \subsection*{Characters}
 \begin{description}
-	\item[Tzalikin (d8):] Estranged Father (d6), Extremist (d8), Unstable (d6), Violent (d6 \textit{Dangerous}).
-	\item[Garnat (d8):] Police Chief of Sendiv (d8), Principled (d8), Experienced (d6), Dedicated (d6).
+	\item[The Maelstrom (d12):] Turbulent (d8), Confusing (d8), Violent (d8 \textit{Dangerous}), Short-Lived (d8).
+	\item[Tzarn (d8):] Mayor of Sendiv (d6), Beautiful (d10), Charming (d8), Intelligent (d8), Athletic (d6).
+	\item[Sendiv (d10):] Artificial Intelligence (d10), Powerful (d8), Mysterious (d8), Indifferent (d6).
 \end{description}
 
 \subsection*{Places}
 \begin{description}
-	\item[Police Headquarters:] A municipal office building. Each floor is dominated by an open-plan bullpen. Senior officers have private offices around the periphery.
-	\item[Water Reclamation Plant:] A clean and modern industrial area buried deep in the bowels of the city.
+	\item[Auditorium:] Huge and opulent. Tiered seating surrounds a central stage. Windows provide spectacular views of the stars above and the city below.
+	\item[Tzarn's Quarters:] Large and well appointed. The bedroom is dominated by an elaborate stasis chamber.
+	\item[Engine Room:] Clean and well-kept. Filled with the sound of machinery hidden behind sealed access panels.
 \end{description}
-
-\subsection*{Special Rewards}
-\textbf{Tzalikin's Stealth Shield:} A personal-scale stealth shield. This device conceals its user from all forms of detection.
 
 \subsection*{Mysteries}
 \begin{description}
-	\item[Sendivian law emphasizes the right to privacy.] \phantom{a} \\ The Sendivians recently suffered under the rule of an authoritarian surveillance state. \textit{How do the Sendivians prevent their city from becoming hotbed of illicit activity? Has it already happened?  How would they know?}
-	\item[Tzalikin is using a personal-scale stealth sheild.] \phantom{a} \\ Stealth shields consume huge amounts of energy. Until now, stealth shields only existed as ship-scale devices. \textit{Who designed Tzalikin's personal-scale stealth shield? What does it use as a power source?}
+	\item[Sendiv is a city-sized spaceship.] \phantom{a} \\ It travels a galaxy-spanning circuit, preserving the Sendivians in stasis while it is underway. Each leg of this journey takes many years. \textit{Does the civilization that built Sendiv still exist? It Sendiv something more than just an extravagant luxury liner?}
+	\item[Tzarn did not intend to trap you.] \phantom{a} \\ Throughout their journey, the Sendivians have welcomed people into their city, shared a night of revelry, and then parted as friends. \textit{Why is Sendiv so reluctant to let you go? Does it need your protection? Is it trying to protect the crew of the Endeavour from some unknown threat?}
 \end{description}
 
 \newpage
+
 
 %\section*{Planet Template}
 %Brief description of the planet.
