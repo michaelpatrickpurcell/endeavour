@@ -2,94 +2,13 @@
 
 \usepackage{endeavour}
 
-\colorlet{blackfillcolor}{black}
-\colorlet{darkfillcolor}{LCARS_ORANGE}
-\colorlet{lightfillcolor}{lightgray!25}
-\colorlet{borderfillcolor}{lightgray}
-\colorlet{subheadercolor}{lightfillcolor}
-\colorlet{starcolor}{LCARS_LIGHTGRAY}
-\colorlet{bgcolor}{LCARS_DARKGRAY}
-\colorlet{sectioncolor}{darkfillcolor}
-\colorlet{headfootcolor}{lightfillcolor}
-\pagecolor{bgcolor}
-
-%\colorlet{blackfillcolor}{black}
-%\colorlet{darkfillcolor}{LCARS_ORANGE}
-%\colorlet{lightfillcolor}{white}
-%\colorlet{borderfillcolor}{lightgray}
-%\colorlet{subheadercolor}{black}
-%\colorlet{starcolor}{white}
-%\colorlet{bgcolor}{white}
-%\colorlet{sectioncolor}{darkfillcolor}
-%\colorlet{headfootcolor}{black}
-%\pagecolor{bgcolor}
-
-
-%\colorlet{blackfillcolor}{black}
-%\colorlet{darkfillcolor}{lightgray}
-%\colorlet{lightfillcolor}{white}
-%\colorlet{borderfillcolor}{lightgray}
-%\colorlet{subheadercolor}{black}
-%\colorlet{starcolor}{white}
-%\colorlet{bgcolor}{white}
-%\colorlet{sectioncolor}{black}
-%\colorlet{headfootcolor}{black}
-%\pagecolor{bgcolor}
-
-\tikzset{starfield/.pic={
-	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
-}}
-
 \usepackage{scrlayer-scrpage} % Manage headers and footers in Koma-Script document classes
 
 \usepackage[bmargin=1.66cm, lmargin=1.97cm, rmargin=1.97cm, tmargin=1.66cm, footskip=1.33cm]{geometry} % Set margins and footer placement
 
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta} % Customize arrowheads in in Write the Outline example
-\usetikzlibrary{shapes} % Draw the node in the fancy \pagemark
-\usepackage[skins]{tcolorbox}
-
-%\usepackage[skins]{tcolorbox} % Add background image to tikz node in color cover
-
-\usepackage{fontspec} % Use system fonts.  Not compatible with pdflatex. Use XeLaTeX instead!
-\setmainfont{TeX Gyre Schola}
-\setmonofont{Courier Prime}
-\setsansfont{Futura}
-\newcommand{\futura}[1]{{\setmainfont{Futura} #1}}
-
-\usepackage{enumitem} % Adjust formatting of description environment items
-\usepackage{multicol} % Format list of playtesters in two columns
-
-\usepackage[type={CC}, version={4.0}, modifier={by-sa}]{doclicense} % Add text and icons for creative commons license
-
-\usepackage{eso-pic}
-
-\usepackage{booktabs}
-\usepackage{caption}
-\usepackage{multirow}
-\usepackage{scalerel}
-\usepackage{array}
-\usepackage{contour}
-\contourlength{0.15pt}
-\contournumber{256}
-
-\usepackage[hidelinks]{hyperref} % Add hyperlinks to the pdf file. This should usually be the last package loaded before \begin{document}
-\usepackage[xspace]{ellipsis} % Properly typeset ellipses. This package is one of the few packages that must be loaded after hyperref
-
-
-% Define command to set value of a variable that contains the version number
-% This is meant to mimic the syntax used for the built-in \title{} and \author{} commands.
-\makeatletter
-\newcommand{\version}[1]{\newcommand{\@version}{#1}}
-\makeatother
-
 
 % Set header and footer text
 \clearpairofpagestyles
-%\makeatletter
-%\chead*{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{headfootcolor}{Version \@version}}}
-%\makeatother
-%\cfoot{\setmainfont{Futura} \normalshape \small \colorbox{bgcolor}{\textcolor{headfootcolor}{\arabic{page}}}}
 \makeatletter
 \chead*{\setmainfont{Futura} \normalshape \small {\textcolor{headfootcolor}{Version \@version}}}
 \makeatother
@@ -117,14 +36,16 @@
 ]{subsubsection}
 
 % Adjust formatting of description environment
-%\renewcommand{\descriptionlabel}[1]{%
-%  \hspace\labelsep \upshape\bfseries #1:%
-%}
 \setlist[description]{labelindent=0.25cm, leftmargin=\widthof{\hspace{0.25cm}\textbullet\space}, font=\normalfont\textbullet\bfseries\space}
 
 % Adjust formatting of itemize environment
-%itemize environments should be followed immediately by a \vspace{1ex} command.
 \setlist[itemize]{labelindent=0.25cm, leftmargin=*, labelsep=\widthof{\space}}
+
+% Set fonts
+\setmainfont{TeX Gyre Schola}
+\setmonofont{Courier Prime}
+\setsansfont{Futura}
+\newcommand{\futura}[1]{{\setmainfont{Futura} #1}}
 
 \setkomafont{section}{\color{sectioncolor}\setmainfont{Futura}\LARGE}
 \setkomafont{subsection}{\color{sectioncolor}\setmainfont{Futura}\Large}
@@ -136,9 +57,46 @@
 \author{Michael Purcell}
 \version{0.1}
 
-\newcommand{\tablesep}{\,\,$\Longleftrightarrow$\,\,}
-\newcommand{\AGON}{\textsc{Agon}}%{{\setmainfont{Calluna-Black} AGON}}
-\newcommand{\ENDEAVOUR}{\textsc{Endeavour}}%{{\setmainfont{TTMussels-BoldItalic} ENDEAVOUR}}
+
+\colorlet{blackfillcolor}{black}
+\colorlet{darkfillcolor}{LCARS_ORANGE}
+\colorlet{lightfillcolor}{lightgray!25}
+\colorlet{borderfillcolor}{lightgray}
+\colorlet{subheadercolor}{lightfillcolor}
+\colorlet{starcolor}{LCARS_LIGHTGRAY}
+\colorlet{bgcolor}{LCARS_DARKGRAY}
+\colorlet{sectioncolor}{darkfillcolor}
+\colorlet{headfootcolor}{lightfillcolor}
+\pagecolor{bgcolor}
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+%\colorlet{blackfillcolor}{black}
+%\colorlet{darkfillcolor}{LCARS_ORANGE}
+%\colorlet{lightfillcolor}{white}
+%\colorlet{borderfillcolor}{lightgray}
+%\colorlet{subheadercolor}{black}
+%\colorlet{starcolor}{white}
+%\colorlet{bgcolor}{white}
+%\colorlet{sectioncolor}{darkfillcolor}
+%\colorlet{headfootcolor}{black}
+%\pagecolor{bgcolor}
+%\tikzset{starfield/.pic={
+%}}
+
+%\colorlet{blackfillcolor}{black}
+%\colorlet{darkfillcolor}{lightgray}
+%\colorlet{lightfillcolor}{white}
+%\colorlet{borderfillcolor}{lightgray}
+%\colorlet{subheadercolor}{black}
+%\colorlet{starcolor}{white}
+%\colorlet{bgcolor}{white}
+%\colorlet{sectioncolor}{black}
+%\colorlet{headfootcolor}{black}
+%\pagecolor{bgcolor}
+%\tikzset{starfield/.pic={
+%}}
 
 \begin{document}
 
@@ -150,8 +108,6 @@
 \end{tikzpicture}
 \end{titlepage}
 
-
-
 \AddToShipoutPictureBG{
 	\begin{tikzpicture}[remember picture, overlay]
 	\pic () at (current page.center) {starfield};
@@ -159,14 +115,12 @@
 	\end{tikzpicture}
 }
 
-
-\setcounter{page}{1}
+\setcounter{page}{2}
 \setmainfont{TeX Gyre Schola}
 \normalsize
 \raggedright
 
 \section*{Premise}
-%The year is AFC 143, one hundred forty-three years after first contact.
 The year is 2364.
 The people of Earth, together with their network of far-flung colonies, comprise the Terran Civilization. The Terran Civilization, in turn, is a member of the Interstellar Confederation, an organization made up of hundreds of spacefaring civilizations and populated by dozens of different species.
 
@@ -175,11 +129,12 @@ You are an officer aboard the Interstellar Confederation Ship (ICS) Endeavour. Y
 \subsection*{Influences}
 \ENDEAVOUR{} is based on \textsc{Star Trek}. In particular, its design has been informed by the series that Gene Roddenberry was personally involved with: \textsc{Star Trek} (the original series) and \textsc{Star Trek: The Next Generation}.
 
-It has also been informed by other television shows such as \textsc{Quantum Leap}, \textsc{seaQuest DSV}, and \textsc{Stargate SG-1}.%\textsc{Battlestar Galactica}, \textsc{Farscape}, \textsc{Firefly}, and \textsc{The Orville}.
+It has also been informed by other television shows such as \textsc{Quantum Leap}, \textsc{seaQuest DSV}, and \textsc{Stargate SG-1}.
 
 Other major influences include the works of Isaac~Asimov, Arthur~C.~Clarke, Robert~Heinlein, and Carl~Sagan.
  
 The ICS Endeavour is named after the HMS Endeavour, the famed British Royal Navy research vessel that Captain Cook commanded during his first voyage of discovery.
+
 \newpage
 
 \section*{Tone}
@@ -232,7 +187,6 @@ In this game, Captain Darcy will be a prominent non-player character. As command
 
 \newpage
 
-%\thispagestyle{empty}
 \ClearShipoutPicture
 
 \AddToShipoutPictureBG{
@@ -371,7 +325,6 @@ If you are best during a Leadership challenge then you receive a Bond with Capta
 
 \newpage
 
-%\thispagestyle{empty}
 \ClearShipoutPicture
 
 \AddToShipoutPictureBG{
@@ -586,7 +539,7 @@ When you arrive at the habitat, you are greeted by a small team of \textbf{Barta
 \begin{itemize}[topsep=0ex, partopsep=0ex]
 	\item \textit{Will you try to fix the communications array?}\\ \textbf{Operations \& Engineering} vs. \textbf{Habitat Six}.
 \end{itemize}
-Regardless of the outcome of the challenge, you discover a message hidden in the log files.% It reads "Attention ICF personnel: I am a member of the salvage team currently aboard this station. I have recently begun \textbf{The~Transition} and I do not want to become a King. As such, this message constitutes my formal written request for political asylum."
+Regardless of the outcome of the challenge, you discover a message hidden in the log files.
 
 \textit{Attention ICF personel: I am a member of the Bartan salvage team currently aboard the station. I have recently begun \textbf{The~Transition} and I do not want to become a King. I am formally requesting political asylum. Please help me.}
 
@@ -636,7 +589,6 @@ Taridan discovers the Surinate's message and orders the salvage team to return t
 
 \newpage
 
-%\thispagestyle{empty}
 \ClearShipoutPicture
 
 \AddToShipoutPictureBG{
@@ -667,7 +619,7 @@ Taridan discovers the Surinate's message and orders the salvage team to return t
 \section*{Sendiv}
 \textit{\textbf{Captain's Log:} We have arrived in a region of space known as the Kerring Expanse. The region itself is uninhabited. It features prominently, however, in the legends of several nearby civilizations as a place of mystery and peril.}
 
-\textit{One legend in particular tells of a pair of violent storms that rend the sky here once every one hundred solar years.  Anecdotal evidence suggests that this legend may be based in fact.  If so, then the next storm is due to occur any time now.}% We are here to observe and, if anything actually happens, learn what we can about whatever we find.}
+\textit{One legend in particular tells of a pair of violent storms that rend the sky here once every one hundred solar years.  Anecdotal evidence suggests that this legend may be based in fact.  If so, then the next storm is due to occur any time now.}
 
 \subsection*{Arrival}
 A flash blinds the Endeavour's main viewscreen and the ship lurches violently to starboard. The ship rocks beneath you and damage reports start coming in from all decks.
@@ -728,65 +680,6 @@ The Sendivians discourage any crew members who enter the city from returning to 
 
 \newpage
 
-
-%\section*{Planet Template}
-%Brief description of the planet.
-%
-%\textit{\textbf{Log entry:} Get the crew set up for the Arrival challenge.}
-%
-%\subsection*{Arrival}
-%A first challenge that introduces the planet's Strife.
-%
-%\subsubsection*{Title for the Arrival Challenge}
-%\begin{itemize}
-%	\item \textit{Will you ... ?} Test
-%	\item \textit{Or will you ... ?} Test
-%\end{itemize}
-%
-%\newpage
-%
-%\subsection*{Trials}
-%Some situations and challenges that drive the action towards the Crisis.
-%
-%\subsubsection*{Name of the first Trial}
-%test
-%
-%\subsubsection*{Name of the second Trial}
-%test
-%
-%\subsubsection*{Name of the third Trial}
-%test
-%
-%\subsection*{Crisis}
-%Brief description of the planet's Crisis.
-%\begin{itemize}
-%	\item \textit{Will you ... ?} Describe some challenges and associated \textbf{Threats}.
-%	\item \textit{Or will you ... ?} Describe some challenges and associated \textbf{Threats}.
-%\end{itemize}
-%
-%\newpage
-%
-%\subsection*{Characters}
-%\begin{description}
-%	\item[Character Name (d?):] Epithets and associated epithet die sizes.
-%	\item[Character Name (d?):] Epithets and associated epithet die sizes.
-%	\item[Character Name (d?):] Epithets and associated epithet die sizes.
-%\end{description}
-%
-%\subsection*{Places}
-%\begin{description}
-%	\item[Place Name:] Brief description of the place.
-%	\item[Place Name:] Brief description of the place.
-%\end{description}
-%
-%\subsection*{Mysteries}
-%\begin{description}
-%	\item[A fact about what is happening on the planet.] \phantom{a} \\ \textit{A leading question about what might be going on.}
-%	\item[A fact about what is happening on the planet.] \phantom{a} \\ \textit{A leading question about what might be going on.}
-%\end{description}
-%
-%\newpage
-
 \section*{The Vault of Heaven}
 The Vault of Heaven is what you will use to track your progress over the course of a campaign. During each adventure, your actions can affect the crew's relationships with the Civilizations that you have encountered.
 
@@ -829,6 +722,7 @@ The Vault of Heaven is what you will use to track your progress over the course 
 If you do something that a Civilization approves of, the crew will earn a mark of \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}~(Favor) with that Civilization.  If you do something that a Civilization disapproves of, the crew will earn a mark of \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}~(Wrath) with that Civilization.
 
 \newpage
+\thispagestyle{empty}
 \section*{Acknowlegements}
 Much of the look and feel of \ENDEAVOUR{} is derived from its art, all of which was created by \textbf{svekloid}. This art was assembled from multiple collections available online at \href{http://shutterstock.com}{shutterstock.com} and then modified by Michael Purcell.  
 
@@ -871,4 +765,19 @@ The fonts used are {\setmainfont{TT Mussels-BoldItalic} TT~Mussels~Bold~Italic},
 \footnotesize{This work is licensed under a Creative Commons \newline ``Attribution-ShareAlike 4.0 International'' license.} & \Huge{\doclicenseIcon}
 \end{tabular}
 
+\newpage
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
 \end{document}

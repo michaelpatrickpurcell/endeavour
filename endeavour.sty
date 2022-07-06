@@ -1,26 +1,38 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{tikz}
-%\usetikzlibrary{shapes}
+\usetikzlibrary{shapes}
 \usetikzlibrary{shapes.misc}
 \usetikzlibrary{shapes.geometric}
 \usetikzlibrary{tikzmark}
 \usetikzlibrary{calc}
 
-\usepackage{fontspec}
-\setmainfont{Futura}
-\Large
+\usepackage[skins]{tcolorbox}
 
+\usepackage{enumitem} % Adjust formatting of description environment items
+\usepackage{multicol} % Format list of playtesters in two columns
+
+\usepackage[type={CC}, version={4.0}, modifier={by-sa}]{doclicense} % Add text and icons for creative commons license
+
+\usepackage{eso-pic}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+\usepackage[hidelinks]{hyperref} % Add hyperlinks to the pdf file. This should usually be the last package loaded
+
+\usepackage{fontspec}
+
+% Define a few handy utility commands
+\newcommand{\tablesep}{\,\,$\Longleftrightarrow$\,\,}
+\newcommand{\AGON}{\textsc{Agon}}
+\newcommand{\ENDEAVOUR}{\textsc{Endeavour}}
+
+% Define command to set value of a variable that contains the version number
 \makeatletter
-\newcommand{\minuscule}{\@setfontsize\minuscule{5}{6}}
+\newcommand{\version}[1]{\newcommand{\@version}{#1}}
 \makeatother
-%\ifcase \@ptsize \relax% 10pt
-%  \newcommand{\minuscule}{\@setfontsize\minuscule{4}{5}}% \tiny: 5/6
-%\or% 11pt
-%  \newcommand{\minuscule}{\@setfontsize\minuscule{5}{6}}% \tiny: 6/7
-%\or% 12pt
-%  \newcommand{\minuscule}{\@setfontsize\minuscule{5}{6}}% \tiny: 6/7
-%\fi
-\makeatother
+
 
 \definecolor{LCARS_GOLD}{HTML}{FFAA00}
 \definecolor{LCARS_BLUE}{HTML}{7190C6}%{8ba4a6}%{577a83}%{7190C6}
@@ -48,6 +60,10 @@
 %\colorlet{starcolor}{LCARS_LIGHTGRAY}
 %\colorlet{bgcolor}{LCARS_DARKGRAY}
 %\pagecolor{bgcolor}
+
+
+\setmainfont{Futura}
+\Large
 
 % Define tikz styles
 \tikzstyle{divine_favor}=[draw, very thick, diamond, anchor = north, inner sep = 0pt, minimum size=0.4cm, fill=lightfillcolor]
@@ -84,9 +100,6 @@
 	\node[inner sep=0pt] at (0,0) {{\setmainfont[Scale=2.5]{TT Mussels-BoldItalic} \Huge #1}};
 }}
 
-%\tikzset{subheader/.pic={
-%	\node[text height=1.5ex, text depth=0ex, fill=bgcolor, inner sep=9pt] at (0,0) {{\setmainfont{Futura} \Large \textcolor{subheadercolor}{#1}}};
-%}}
 \tikzset{subheader/.pic={
 	\node[text height=1.5ex, text depth=0ex, inner sep=9pt] at (0,0) {{\setmainfont{Futura} \Large \textcolor{subheadercolor}{#1}}};
 }}
@@ -157,27 +170,10 @@
 }}
 
 \tikzset{character_sheet_1/.pic={
-%  \path (current page.north west) --++ (1.0cm, 0cm) coordinate (tl) {};
-%  \path (current page.south west) --++ (1.0cm, 0cm) coordinate (bl) {};
-%  \path (current page.north east) --++ (-1.0cm, 0cm) coordinate (tr) {};
-%  \path (current page.south east) --++ (-1.0cm, 0cm) coordinate (br) {};
-%
-%  \path (current page.north west) --++ (0cm, -1.0cm) coordinate (lt) {};
-%  \path (current page.south west) --++ (0cm, 1.0cm) coordinate (lb) {};
-%  \path (current page.north east) --++ (0cm, -1.0cm) coordinate (rt) {};
-%  \path (current page.south east) --++ (0cm, 1.0) coordinate (rb) {};
-%
-%  \draw (tl) -- (bl);
-%  \draw (tr) -- (br);
-%  \draw (lt) -- (rt);
-%  \draw (lb) -- (rb);
-
 \path (0cm,0cm) --++ (0cm, 0cm) coordinate (nw) {};
 \path (nw) --++ (7.4cm, 0cm) coordinate (n) {};
 \path (nw) --++ (14.8cm, 0cm) coordinate (ne) {};
   
-%  \path (current page.north) --++ (0cm, -1.05cm) node[endeavour_box, text height=1.25cm, text depth=0pt, anchor=north, minimum width=12.6cm, minimum height=1.75cm, fill=darkfillcolor] {\setmainfont[Scale=2.5]{TT Mussels-BoldItalic} \huge ENDEAVOUR};
-
   \path (n) --++ (0cm, -1.05cm) node[endeavour_box, text height=1.25cm, text depth=0pt, anchor=north, minimum width=12.6cm, minimum height=1.75cm, fill=darkfillcolor] {\setmainfont[Scale=2.5]{TT Mussels-BoldItalic} \huge ENDEAVOUR};
 
 	\path (nw) --++ (3.75cm, -3.95cm) pic {character_attribute=Role};
@@ -262,21 +258,6 @@
 }}
 
 \tikzset{character_sheet_2/.pic={
-%  \path (nw) --++ (1.0cm, 0cm) coordinate (tl) {};
-%  \path (current page.south west) --++ (1.0cm, 0cm) coordinate (bl) {};
-%  \path (ne) --++ (-1.0cm, 0cm) coordinate (tr) {};
-%  \path (current page.south east) --++ (-1.0cm, 0cm) coordinate (br) {};
-%
-%  \path (nw) --++ (0cm, -1.0cm) coordinate (lt) {};
-%  \path (current page.south west) --++ (0cm, 1.0cm) coordinate (lb) {};
-%  \path (ne) --++ (0cm, -1.0cm) coordinate (rt) {};
-%  \path (current page.south east) --++ (0cm, 1.0) coordinate (rb) {};
-%
-%  \draw (tl) -- (bl);
-%  \draw (tr) -- (br);
-%  \draw (lt) -- (rt);
-%  \draw (lb) -- (rb);
-  
   \path (0cm,0cm) --++ (0cm, 0cm) coordinate (nw) {};
 \path (nw) --++ (7.4cm, 0cm) coordinate (n) {};
 \path (nw) --++ (14.8cm, 0cm) coordinate (ne) {};
@@ -296,10 +277,6 @@
 \path (nw) --++ (10.05cm, -1.55cm) node[fate_dot] {};
 \path (nw) --++ (7.05cm, -2.3cm) node[fate_dot] {};
 \path (nw) --++ (13.05cm, -2.3cm) node[fate_dot] {};
-
-%\path (nw) --++ (10.05cm, -1.55cm) node {{\minuscule d8}};
-%\path (nw) --++ (7.05cm, -2.3cm) node {{\minuscule d10}};
-%\path (nw) --++ (13.05cm, -2.3cm) node {{\minuscule d12}};
 
 % Bonds
 \path (nw) --++ (3.2cm, -3.45cm) pic {subheader={Bonds}};
