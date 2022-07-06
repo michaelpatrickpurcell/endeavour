@@ -765,19 +765,19 @@ The fonts used are {\setmainfont{TT Mussels-BoldItalic} TT~Mussels~Bold~Italic},
 \footnotesize{This work is licensed under a Creative Commons \newline ``Attribution-ShareAlike 4.0 International'' license.} & \Huge{\doclicenseIcon}
 \end{tabular}
 
-\newpage
-\thispagestyle{empty}
-
-\tikzset{starfield/.pic={
-	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
-}}
-
-\ClearShipoutPicture
-\AddToShipoutPictureBG{
-	\begin{tikzpicture}[remember picture, overlay]
-	\pic () at (current page.center) {starfield};
-	\end{tikzpicture}
-}
-
-\phantom{a}
+%\newpage
+%\thispagestyle{empty}
+%
+%\tikzset{starfield/.pic={
+%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+%}}
+%
+%\ClearShipoutPicture
+%\AddToShipoutPictureBG{
+%	\begin{tikzpicture}[remember picture, overlay]
+%	\pic () at (current page.center) {starfield};
+%	\end{tikzpicture}
+%}
+%
+%\phantom{a}
 \end{document}
