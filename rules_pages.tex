@@ -57,7 +57,7 @@
 \author{Michael Purcell}
 \version{0.1}
 
-
+% "Full-color" colour scheme
 \colorlet{blackfillcolor}{black}
 \colorlet{darkfillcolor}{LCARS_ORANGE}
 \colorlet{lightfillcolor}{lightgray!25}
@@ -72,6 +72,7 @@
 	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
 }}
 
+% "Half-color" colour scheme
 %\colorlet{blackfillcolor}{black}
 %\colorlet{darkfillcolor}{LCARS_ORANGE}
 %\colorlet{lightfillcolor}{white}
@@ -99,15 +100,24 @@
 %}}
 
 \begin{document}
-
 % Colour Cover
 \thispagestyle{plain}
-\begin{titlepage}
+%\begin{titlepage}
+\AddToShipoutPictureBG{
 \begin{tikzpicture}[remember picture, overlay]
 	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/endeavour_cover.png}};
 \end{tikzpicture}
-\end{titlepage}
+}
+%\end{titlepage}
+{
+\colorlet{headfootcolor}{LCARS_ORANGE}%{lightgray!25}
+\phantom{a}
 
+
+\newpage
+}
+
+\ClearShipoutPicture
 \AddToShipoutPictureBG{
 	\begin{tikzpicture}[remember picture, overlay]
 	\pic () at (current page.center) {starfield};
@@ -186,6 +196,7 @@ Captain Darcy is one of the Interstellar Confederation Fleet's most highly decor
 In this game, Captain Darcy will be a prominent non-player character. As commanding officer, he will not generally face challenges himself. When he does get personally involved, he will do so by giving a copy of his name die (d10) to an officer who used a bond to call upon him while facing a challenge.
 
 \newpage
+%\thispagestyle{plain}
 
 \ClearShipoutPicture
 
@@ -324,6 +335,7 @@ In \ENDEAVOUR{}, the captain is always the leader of the crew. Leadership challe
 If you are best during a Leadership challenge then you receive a Bond with Captain Darcy. You can use this Bond as usual to ask the captain to Bolster You, Block Complications for You, or Follow Your Lead.
 
 \newpage
+%\thispagestyle{plain}
 
 \ClearShipoutPicture
 
@@ -402,6 +414,7 @@ Remember that while each Boon will make you a more capable officer, each \tikz[b
 }
 
 \newpage
+%\thispagestyle{plain}
 
 \ClearShipoutPicture
 
@@ -495,6 +508,7 @@ Everywhere on Namarrkon is stormy.  Clouds, high winds, and especially lightning
 \end{description}
 
 \newpage
+%\thispagestyle{plain}
 
 \ClearShipoutPicture
 
@@ -588,6 +602,7 @@ Taridan discovers the Surinate's message and orders the salvage team to return t
 \end{description}
 
 \newpage
+%\thispagestyle{plain}
 
 \ClearShipoutPicture
 
@@ -722,7 +737,8 @@ The Vault of Heaven is what you will use to track your progress over the course 
 If you do something that a Civilization approves of, the crew will earn a mark of \tikz[baseline=-0.75ex]{\pic {blank_divine_favor};}~(Favor) with that Civilization.  If you do something that a Civilization disapproves of, the crew will earn a mark of \tikz[baseline=-1.125ex]{\pic {wrath_triangle};}~(Wrath) with that Civilization.
 
 \newpage
-\thispagestyle{empty}
+%\setcounter{page}{1}
+%\thispagestyle{plain}
 \section*{Acknowlegements}
 Much of the look and feel of \ENDEAVOUR{} is derived from its art, all of which was created by \textbf{svekloid}. This art was assembled from multiple collections available online at \href{http://shutterstock.com}{shutterstock.com} and then modified by Michael Purcell.  
 
