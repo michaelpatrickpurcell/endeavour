@@ -55,36 +55,36 @@
 \title{ENDEAVOUR}
 \subtitle{A PARAGON Playset}
 \author{Michael Purcell}
-\version{0.1}
+\version{0.2}
 
 % "Full-color" colour scheme
-%\colorlet{blackfillcolor}{black}
-%\colorlet{darkfillcolor}{LCARS_ORANGE}
-%\colorlet{lightfillcolor}{lightgray!25}
-%\colorlet{borderfillcolor}{lightgray}
-%\colorlet{subheadercolor}{lightfillcolor}
-%\colorlet{starcolor}{LCARS_LIGHTGRAY}
-%\colorlet{bgcolor}{LCARS_DARKGRAY}
-%\colorlet{sectioncolor}{darkfillcolor}
-%\colorlet{headfootcolor}{lightfillcolor}
-%\pagecolor{bgcolor}
-%\tikzset{starfield/.pic={
-%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
-%}}
-
-% "Half-color" colour scheme
 \colorlet{blackfillcolor}{black}
 \colorlet{darkfillcolor}{LCARS_ORANGE}
-\colorlet{lightfillcolor}{white}
+\colorlet{lightfillcolor}{lightgray!25}
 \colorlet{borderfillcolor}{lightgray}
-\colorlet{subheadercolor}{black}
-\colorlet{starcolor}{white}
-\colorlet{bgcolor}{white}
+\colorlet{subheadercolor}{lightfillcolor}
+\colorlet{starcolor}{LCARS_LIGHTGRAY}
+\colorlet{bgcolor}{LCARS_DARKGRAY}
 \colorlet{sectioncolor}{darkfillcolor}
-\colorlet{headfootcolor}{black}
+\colorlet{headfootcolor}{lightfillcolor}
 \pagecolor{bgcolor}
 \tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
 }}
+
+% "Half-color" colour scheme
+%\colorlet{blackfillcolor}{black}
+%\colorlet{darkfillcolor}{LCARS_ORANGE}
+%\colorlet{lightfillcolor}{white}
+%\colorlet{borderfillcolor}{lightgray}
+%\colorlet{subheadercolor}{black}
+%\colorlet{starcolor}{white}
+%\colorlet{bgcolor}{white}
+%\colorlet{sectioncolor}{darkfillcolor}
+%\colorlet{headfootcolor}{black}
+%\pagecolor{bgcolor}
+%\tikzset{starfield/.pic={
+%}}
 
 %\colorlet{blackfillcolor}{black}
 %\colorlet{darkfillcolor}{lightgray}
@@ -139,8 +139,6 @@ The following people helped to create \ENDEAVOUR{} by playing early versions of 
 \begin{multicols}{2}
 \begin{itemize}[noitemsep]
   \item Keydan Bruce
-  \item Farzana Choudhury
-  \item Michael Cromer
   \item Dannielle Harden
   \item Andrew Hellyer
   \item Sarah Hewat
@@ -148,12 +146,16 @@ The following people helped to create \ENDEAVOUR{} by playing early versions of 
   \item David McKenzie
   \item Holly Moore
   \item Paul Murray
+  \item David Purcell
+  \item Heidi Purcell
   \item Kira Purcell
   \item Luke Purcell
+  \item Meagan Purcell
   \item Steve Purcell
+  \item Jason Stark
   \item Jo Stephenson
+  \item Pieter Vismans
   \item Brett Witty
-  \item Bevis Worchester
 \end{itemize}
 \end{multicols}
 
@@ -184,7 +186,7 @@ The people of Earth, together with their network of far-flung colonies, comprise
 You are an officer aboard the Interstellar Confederation Ship (ICS) Endeavour. Your mission is to explore the galaxy. You will travel deep into uncharted space where you will encounter strange natural phenomena, make first contact with alien civilizations, and help those in need.
 
 \subsection*{Influences}
-\ENDEAVOUR{} is based on \textsc{Star Trek}. In particular, its design has been informed by the series that Gene Roddenberry was personally involved with: \textsc{Star Trek} (the original series) and \textsc{Star Trek: The Next Generation}.
+\ENDEAVOUR{} is inspired by \textsc{Star Trek}. In particular, its design has been informed by the series that Gene Roddenberry was personally involved with: \textsc{Star Trek} (the original series) and \textsc{Star Trek: The Next Generation}.
 
 It has also been informed by other television shows such as \textsc{Quantum Leap}, \textsc{seaQuest DSV}, and \textsc{Stargate SG-1}.
 
@@ -195,11 +197,11 @@ The ICS Endeavour is named after the HMS Endeavour, the famed British Royal Navy
 \newpage
 
 \section*{Tone}
-This is an optimistic-science fiction game. It is a game about a future in which humanity has progressed beyond the kinds of internecine conflicts that plague modern society. Advanced technology is common and has created a post-scarcity society throughout the Interstellar Confederation.
+This is an optimistic-science-fiction game. It is a game about a future in which humanity has progressed beyond the kinds of internecine conflicts that plague modern society. Advanced technology is common and has created a post-scarcity society throughout the Interstellar Confederation.
 
 The crew of the ICS Endeavour are skilled professionals who know how to work together effectively. While they may disagree at times, they will not let personal biases or animosity affect their work.
 
-Stories in \ENDEAVOUR{} generally involve some kind of moral quandary. Moreover, the futuristic setting acts as lens through which we can view contemporary social issues. The best such stories are fundamentally about the difficult choices the crew are asked to make and how they are affected by their experiences.  
+Stories in \ENDEAVOUR{} generally involve some kind of moral quandary. Moreover, the futuristic setting acts as a lens through which we can view contemporary social issues. The best such stories are fundamentally about the difficult choices the crew are asked to make and how they are affected by their experiences.  
 
 \subsection*{Technology}
 \ENDEAVOUR{} is about people more than it is about technology. That said, there are a few technologies that are commonly assumed to be available in order to make stories about deep-space exploration plausible and relatable.
@@ -217,7 +219,7 @@ The Interstellar Confederation is a diverse and multicultural society. Its membe
 
 The size and scope of the Interstellar Confederation makes it nearly impossible for any centralized government to manage it all. As such, each member civilization retains a significant amount of autonomy. This has resulted in a complex society with a wide range of social and economic structures.
 
-Members civilizations, however, are united by their belief in the value of education, reason, and individualism. These beliefs are manifest in the Interstellar Confederation's prohibition on interfering with non-spacefaring civilizations and its emphasis on exploration.
+Member civilizations, however, are united by their belief in the value of education, reason, and individualism. These beliefs are manifest in the Interstellar Confederation's prohibition on interfering with non-spacefaring civilizations and its emphasis on exploration.
 
 \subsection*{Aliens}
 Humans are only one of many species that populate the Interstellar Confederation. Many of these species are humanoids. Furthermore, most of these species have similar environmental requirements which allows them to live and work together without the need for adaptive technologies.
@@ -421,7 +423,7 @@ To create a character, you will:
 	\item Record your Role. This should describe what you do aboard the ICS Endeavour. Common choices include Executive Officer, Chief Engineer, Helmsperson, etc.  Your Role die begins at \textbf{d6}.
 	\item Record your Name. Your Name die begins at \textbf{d6}.
 	\item Record your Species. You may be an alien. If you are, describe your Species to the other players.
-	\item Record your Heritage. This is your home Civilization. Record two marks of \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};}~(Assitance) with your home Civilization. Record three more marks of \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};}~(Assitance) with Civilizations of your choice.
+	\item Record your Heritage. This is your home Civilization. Record two marks of \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};}~(Assistance) with your home Civilization. Record three more marks of \tikz[baseline=-0.75ex]{\pic {earned_divine_favor};}~(Assistance) with Civilizations of your choice.
 	\item Choose a favored Domain. Your favored-Domain die begins at \textbf{d8}. Your other three Domain dice begin at \textbf{d6}.
 	\item Record two Bonds with each other player character.
 \end{enumerate}
@@ -513,7 +515,7 @@ The clouds below roil as the Endeavour orbits the planet. Lightning flashes unce
 
 \subsection*{Trials}
 \subsubsection*{Culture Clash}
-\textbf{Maynard Hill} complains that the civilian researchers are interfering with mining operations. He demands that each team be accompanied by his personnel at all times in order to ensure their safety. \textit{Can you convince him to relent?} \\ \textbf{Leadership \& Negotiation} vs. \textbf{Maynard Hill}.
+\textbf{Maynard Hill, the mining chief} complains that the researchers are interfering with mining operations. He demands that they be accompanied by his personnel at all times in order to ensure their safety. \textit{Can you convince him to relent?} \textbf{Leadership \& Negotiation} vs. \textbf{Maynard Hill}.
 
 Dr. Stevens complains that the miners are interfering with her research. She demands unrestricted access to the planet. \\ \textit{Will you help the researchers conduct covert operations?} \textbf{Strategy \& Tactics} vs. \textbf{The Miners} (3d6).
 
@@ -630,7 +632,7 @@ Taridan discovers the Surinate's message and orders the salvage team to return t
 \begin{description}
 	\item[Habitat Six (d8):] Antiquated (d6), Idiosyncratic (d8). 
 	\item[Surinate (d6):] Asylum-Seeker (d6), Desperate (d6), Communications Technician (d6), Transitioning (d10).
-	\item[Taridan (d8):] Captain of the Baltan Cruiser (d8), Aggressive (d6 \textit{Dangerous}), Honorable (d8).
+	\item[Taridan (d8):] Captain of the Bartan Cruiser (d8), Aggressive (d6 \textit{Dangerous}), Honorable (d8).
 \end{description}
 
 \subsection*{Places}
@@ -699,7 +701,7 @@ When the storm abates, sensors report that a new city has appeared floating in t
 
 \subsection*{Trials}
 \subsubsection*{Cultural Exchange}
-\textbf{Tzaarn} contacts you and invites the crew of the Endeavour to join the Sendivians for a night of revelry. The highlight of the evening is a kind of talent show featuring amazing acts of skill and artistry. The Sendivians ask you to contribute something to the event. \textit{Will you perform for your hosts?}
+\textbf{Tzaarn, mayor of Sendiv} contacts you and invites the crew of the Endeavour to join the Sendivians for a night of revelry. The highlight of the evening is a talent show featuring amazing acts of skill and artistry. The Sendivians ask you to contribute something to the event. \textit{Will you perform for your hosts?}
 \textbf{Leadership \& Negotiation} vs. \textbf{Revelers} (3d6).
 
 \subsubsection*{Effecting Repairs}
