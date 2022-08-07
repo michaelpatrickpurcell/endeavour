@@ -744,6 +744,97 @@ The Sendivians discourage any crew members who enter the city from returning to 
 
 \newpage
 
+%\thispagestyle{plain}
+
+\ClearShipoutPicture
+
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+
+	\node[endeavour_box, minimum width=12.6cm, minimum height=18.8cm,
+           path picture={
+           	  \path (path picture bounding box.south) --++ (-0.15cm,0.0cm) coordinate (x) {};
+               \node at (x){
+                   \includegraphics[width=12.8cm, height=19cm]{Images/mines_cover.png}
+               };
+           }] at (current page.center) {};
+\end{tikzpicture}
+}
+\phantom{a}
+
+\newpage
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+		\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\section*{Hansen's World}
+\textit{\textbf{Captain's Log:} While en route to the Ceti system, we received a distress signal originating from a a nearby planet known as Hansen's World. As per ICF regulations, we responded immediately to render whatever aid might be required.}
+
+\textit{Little is known about Hansen's World other than that its inhabitants are famously insular. They eschew all contact with outsiders, going so far as to deploy mines around their planet to discourage any prospective visitors.}
+
+\textit{The source of the distress signal appears to be a ship that was damaged while trying to navigate the minefield. Sensor readings indicate that there are five life forms on board and that the ship's environmental systems have failed.}% Whatever we do here, we'll have to do it quickly.} 
+
+\subsection*{Arrival}
+The damaged ship, a small shuttle designated \textbf{RX-87}, is adrift within the minefield. Evidence of multiple impacts mar its hull, several of which are venting what remains of the ships' atmosphere. As the Endeavour approaches, the nearest mines reorient themselves to attack.  
+
+\subsubsection*{Rescue Operation}
+\begin{itemize}
+	\item \textit{Will you send a shuttle to rescue the survivors?} \\ \textbf{Strategy \& Tactics} vs. \textbf{The Mines}. If you fail, the shuttle is disabled by a mine and the crew are forced to abandon the vessel and take refuge aboard RX-87.
+	\item \textit{Or will you take the Endeavour itself into the minefield?} \textbf{Operations \& Engineering} vs. \textbf{The Mines}. If you prevail, you are able to recover RX-87 as well as the survivors. The Endeavour is damaged by the mines.  
+\end{itemize}
+
+Of the five people you find aboard RX-87, only \textbf{Armauer} survives the rescue operation.
+
+\newpage
+
+\subsection*{Trials}
+\subsubsection*{Infection}
+The first four members of the crew that come into contact with Armauer are infected with \textbf{viral symbionts}. Any crew member so afflicted becomes violently ill. \textit{Can you find a way to treat the symptoms of the infection?} \textbf{Science \& Medicine} vs. \textbf{Vanir}. If you fail, all remaining challenges will be Grueling for the infected crew members.
+
+\subsubsection*{The Quintet}
+Each infected crew member becomes one of Vanir's hosts. They find that they can communicate telepathically with Vanir and with each other. \textit{How do these abilities manifest?} They also find that their personalities have been altered. \textit{How can you tell that something is wrong?}
+
+\subsubsection*{First Contact}
+\AE{}sir, the ruler of Hansen's World, asks to speak with Captain Darcy. They demand that Vanir be destroyed. \\ \textit{Will you try to convince them that you have the situation under control?} \textbf{Leadership \& Negotiation} vs. \textbf{\AE{}sir}.
+
+\subsection*{Crisis}
+
+\begin{itemize}
+	\item \textit{Will you try to find a way to cure the infected members of the crew?} \textbf{Threats:} Vanir actively resists any attempts to study the viral symbionts.  Armauer is killed in an accident while trying to escape.
+	\item \textit{Or will you ask the infected crew members to sacrifice themselves in order to preserve Vanir's life?} \\ \textbf{Threats:} \AE{}sir declares war on the Interstellar Confederation. Vanir reproduces asexually and infects more crew members with their offspring.
+\end{itemize}
+
+If \AE{}sir suspects that you do not intend to destroy Vanir, they use the mines to attack the Endeavour.
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Armauer (d6):] Sole Survivor (d6), Zealous (d6). \\
+	\textbf{\textsc{Host}} (Uses their symbiont's name die in all challenges).
+	\item[Vanir (d8):] Tough (d8), Rebellious (d8), Frightened (d6). \textbf{\textsc{Viral Symbiont}} (Can act through any of its hosts).
+	\item[\AE{}sir (d10):] Ruler of Hansen's World (d8), Quintet (d8), Xenophobic (d6), Demanding (d6).% \\ \textbf{\textsc{Viral Symbiont}} (Can act through any of its hosts).
+	\item[The Mines (d10):] Armed (d8 Dangerous), Vigilant (d8). \textbf{\textsc{Indiscriminate}} (Leadership \& Negotiation has no effect).
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[RX-87:] An antique shuttle, filled with control panels populated by analog switches and buttons. The lights flicker constantly and alarms sound every few minutes.% as more of the ship's systems fail.
+	\item[Sick Bay:] A modern and well-equipped medical facility aboard the Endeavour. Clean and utilitarian, this compartment bustles with activity as the ship's medical officers tend to any sick or injured members of the crew.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[Each viral symbiont has multiple hosts.] \phantom{a} \\ Most are distributed across a \textbf{Quintet} of five hosts. All viral symbionts require at least three hosts to survive. \textit{How do different parts of a viral symbiont communicate? Did this strategy evolve naturally or was is engineered?}
+	\item[RX-87 was trying to leave Hansen's World.] \phantom{a} \\ The mines are intended to prevent both incoming and outgoing traffic. \textit{Who originally deployed the mines?  \\ Who maintains them? Why do they want to ensure that Hansen's World remains isolated?}
+\end{description}
+
+\newpage
+
 \section*{The Vault of Heaven}
 The Vault of Heaven is what you will use to track your progress over the course of a campaign. During each adventure, your actions can affect the crew's relationships with the Civilizations that you have encountered.
 
