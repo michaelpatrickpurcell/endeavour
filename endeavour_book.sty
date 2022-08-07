@@ -1,0 +1,95 @@
+\usepackage{scrlayer-scrpage} % Manage headers and footers in Koma-Script document classes
+
+\usepackage[bmargin=1.66cm, lmargin=1.97cm, rmargin=1.97cm, tmargin=1.66cm, footskip=1.33cm]{geometry} % Set margins and footer placement
+
+
+% Set header and footer text
+\clearpairofpagestyles
+\makeatletter
+\chead*{\setmainfont{Futura} \normalshape \small {\textcolor{headfootcolor}{Version \@version}}}
+\makeatother
+\cfoot{\setmainfont{Futura} \normalshape \small {\textcolor{headfootcolor}{\arabic{page}}}}
+
+% Adjust spacing before and after section headings
+\RedeclareSectionCommand[
+  runin=false,
+%  beforeskip=2.0\baselineskip,
+  afterskip=0.25\baselineskip
+]{section}
+
+% Adjust spacing before and after subsection headings
+\RedeclareSectionCommand[
+  runin=false,
+%  beforeskip=2.0\baselineskip,
+  afterskip=0.25\baselineskip
+]{subsection}
+
+% Adjust spacing before and after subsubsection headings
+\RedeclareSectionCommand[
+  runin=false,
+  beforeskip=0.0\baselineskip,
+  afterskip=-0.4\baselineskip
+]{subsubsection}
+
+% Adjust formatting of description environment
+\setlist[description]{labelindent=0.25cm, leftmargin=\widthof{\hspace{0.25cm}\textbullet\space}, font=\normalfont\textbullet\bfseries\space}
+
+% Adjust formatting of itemize environment
+\setlist[itemize]{labelindent=0.25cm, leftmargin=*, labelsep=\widthof{\space}}
+
+% Set fonts
+\setmainfont{TeX Gyre Schola}
+\setmonofont{Courier Prime}
+\setsansfont{Futura}
+\newcommand{\futura}[1]{{\setmainfont{Futura} #1}}
+
+\setkomafont{section}{\color{sectioncolor}\setmainfont{Futura}\LARGE}
+\setkomafont{subsection}{\color{sectioncolor}\setmainfont{Futura}\Large}
+\setkomafont{subsubsection}{\color{sectioncolor}\setmainfont{Futura}\large}
+
+% Set some environment variables for use in the title page
+\title{ENDEAVOUR}
+\subtitle{A PARAGON Playset}
+\author{Michael Purcell}
+
+% "Full-color" colour scheme
+\colorlet{blackfillcolor}{black}
+\colorlet{darkfillcolor}{LCARS_ORANGE}
+\colorlet{lightfillcolor}{lightgray!25}
+\colorlet{borderfillcolor}{lightgray}
+\colorlet{subheadercolor}{lightfillcolor}
+\colorlet{starcolor}{LCARS_LIGHTGRAY}
+\colorlet{bgcolor}{LCARS_DARKGRAY}
+\colorlet{sectioncolor}{darkfillcolor}
+\colorlet{headfootcolor}{lightfillcolor}
+\pagecolor{bgcolor}
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+% "Half-color" colour scheme
+%\colorlet{blackfillcolor}{black}
+%\colorlet{darkfillcolor}{LCARS_ORANGE}
+%\colorlet{lightfillcolor}{white}
+%\colorlet{borderfillcolor}{lightgray}
+%\colorlet{subheadercolor}{black}
+%\colorlet{starcolor}{white}
+%\colorlet{bgcolor}{white}
+%\colorlet{sectioncolor}{darkfillcolor}
+%\colorlet{headfootcolor}{black}
+%\pagecolor{bgcolor}
+%\tikzset{starfield/.pic={
+%}}
+
+%\colorlet{blackfillcolor}{black}
+%\colorlet{darkfillcolor}{lightgray}
+%\colorlet{lightfillcolor}{white}
+%\colorlet{borderfillcolor}{lightgray}
+%\colorlet{subheadercolor}{black}
+%\colorlet{starcolor}{white}
+%\colorlet{bgcolor}{white}
+%\colorlet{sectioncolor}{black}
+%\colorlet{headfootcolor}{black}
+%\pagecolor{bgcolor}
+%\tikzset{starfield/.pic={
+%}}
