@@ -4,9 +4,9 @@
 \usepackage{../endeavour_book}
 
 % Hack to allow relative path here
-\tikzset{starfield/.pic={
-	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/starfield.png}};
-}}
+%\tikzset{starfield/.pic={
+%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/starfield.png}};
+%}}
 
 \version{0.1}
 
@@ -15,11 +15,11 @@
 \thispagestyle{plain}
 \AddToShipoutPictureBG{
 \begin{tikzpicture}[remember picture, overlay]
-	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/rover2.png}};
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/artemia_cover.png}};
 \end{tikzpicture}
 }
 {
-\colorlet{headfootcolor}{LCARS_ORANGE}
+\colorlet{headfootcolor}{LCARS_DARKGRAY}
 \phantom{a}
 
 \newpage
@@ -60,7 +60,7 @@ You will not have access to resources from the colony or the Endeavour until you
 \subsection*{Trials}
 
 \subsubsection*{Message in a Bottle}
-Among the specimens in The Vault is a collection of artifacts that describe the language and technology used by the ancient Artemiidae. \textit{Can you decipher enough of their language to discover what happened to the Artemiidae?} \textbf{Science \& Medicine} vs. \textbf{The Vault}.% It appears that some artifacts are missing. \textit{Can you find the missing items?} \textbf{Strategy \& Tactics} vs. \textbf{Wyatt Adams}.
+Among the specimens in The Vault is a collection of artifacts that describe the language and technology used by the ancient Artemiidae. \textit{Can you decipher enough of their language to discover what happened to the Artemiidae?} \textbf{Science \& Medicine} vs. \textbf{The Vault}.
 
 \subsubsection*{Terraforming}
 The colonists are eager to distribute their new seed stock. \textbf{Evelyn Garza} suggests that the Endeavour's shuttles could be modified to help with the operation. \textit{Will you delay your departure so that you can help the colonists sow their seeds?}
@@ -95,7 +95,7 @@ The power goes out in The Vault. It had been running on emergency batteries sinc
 
 \subsection*{Mysteries}
 \begin{description}
-	\item[The Artemiidae died millions of years ago.] \phantom{a} \\ They preserved their genetic information in The Vault in the hopes that future alien explorers might be able to reconstitute them. \textit{What happened to the Artemiidea? Why were they unable to save themselves?}
+	\item[The Artemiidae died millions of years ago.] \phantom{a} \\ They preserved their genetic information in The Vault in the hopes that future alien explorers might be able to reconstitute them. \textit{What happened to the Artemiidae? Why were they unable to save themselves?}
 	\item[The colonists have been terraforming Artemia.] \phantom{a} \\ When the colony was established, Artemia was lifeless. Now, Terran plants and animals can survive outside of the colony's biodomes. The Artemiidae cannot cope with the new environment. \textit{Why did the colonists come here? What do they know about the Artemiidae?}
 \end{description}
 
