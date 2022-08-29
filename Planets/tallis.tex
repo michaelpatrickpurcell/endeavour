@@ -1,0 +1,106 @@
+\documentclass[11pt, a5paper, parskip=half-, DIV=12]{scrartcl}
+
+\usepackage{../endeavour}
+\usepackage{../endeavour_book}
+
+% Hack to allow relative path here
+%\tikzset{starfield/.pic={
+%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/starfield.png}};
+%}}
+
+\version{0.1}
+
+\begin{document}
+% Colour Cover
+\thispagestyle{plain}
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/tallis_cover.png}};
+\end{tikzpicture}
+}
+{
+\colorlet{headfootcolor}{LCARS_DARKGRAY}
+\phantom{a}
+
+\newpage
+}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\setcounter{page}{1}
+\setmainfont{TeX Gyre Schola}
+\normalsize
+\raggedright
+
+\section*{Tallis}
+\textit{\textbf{Captain's Log:} We are in orbit around Tallis, where we have been invited to represent the ICF as honored guests at the upcoming Royal Tallis Military Tattoo.}
+
+\textit{Also representing the ICF at the Tattoo are the ICF Flight Demonstration Squadron. They have been training with their Tallist counterparts in preparation for a joint performance, which they will use to showcase a novel stealth technology.}
+
+
+\subsection*{Arrival}
+The Royal Tallis Military Tattoo is held at Royal Stadium. The sun is shining and the crowd are in high spirits.%in a large open-air stadium. Tens of thousands  of spectators attend the event.
+
+The demonstration team's performance is an impressive display of the pilots' skill. They use cloaking devices to create a dazzling display as their ships appear and disappear while performing high-speed maneuvers over the stadium.
+
+Then, an explosion sounds and four of the demonstration team's ships spiral out of control. One ship crashes into the stadium, leaving hundreds people of dead or injured.
+
+\subsubsection*{Disaster Response}
+\begin{itemize}
+	\item \textit{Will you help the Tallists treat the wounded spectators?} \\ \textbf{Science \& Medicine} vs. \textbf{Emergency Medicine (3d8)}. \\ Mark \textit{Experience} if you face this challenge \textendash{} you will not soon forget what you see in the ruins of the stadium.
+	\item \textit{Or will you lead the effort to recover the pilots/ships?} \textbf{Operations \& Engineering} vs \textbf{Rescue Effort (3d8)}.  \\ This is a \textit{Fraught} challenge \textendash{} Ignoring the plight of the spectators will not endear you to your hosts.
+\end{itemize}
+
+The sole surviving member of the joint demonstration team is \textbf{Ensign Sparke}. His ship was undamaged in the accident.
+
+\newpage
+
+\subsection*{Trials}
+
+\subsubsection*{Preliminary Hearing}
+\textbf{Gouyen, the Tallist Magistrate} convenes a hearing to determine the cause of the accident. She rules that Ensign Sparke should be detained and his ship impounded pending the outcome of a more thorough investigation. \textit{Can you convince her to release Ensign Sparke into your custody?} \textbf{Strategy \& Tactics} vs. \textbf{Gouyen}.
+
+\subsubsection*{Missing Evidence}
+The demonstration team's ships were cloaked intermittently throughout the show. As such, the Tallists have been unable to completely reconstruct the events immediately prior to the accident. \textit{Can you find a way to reconstruct what happened?} \textbf{Science \& Medicine} vs. \textbf{Cloaking Technology (2d10)}. 
+
+%\subsubsection*{A Confession}
+%Ensign Sparke privately confesses that he was unwell before the show, but that Lieutenant Phillips ordered him to fly anyway. He fears that he lost consciousness during a high-g maneuver shortly before the accident occurred. \textit{Can you surreptitiously access his flight recorder to determine whether he caused the accident?} \textbf{Strategy \& Tactics} vs. \textbf{Gouyen}.
+
+\subsubsection*{Survivor Guilt}
+Ensign Sparke's behavior in the aftermath of the accident is concerning. He clearly blames himself for what happened. \textit{Can you get Ensign Sparke to talk to you about how he feels?} \textbf{Leadership \& Negotiation} vs. \textbf{Ensign Sparke}. \\ If you prevail, he confesses that he was unwell before the show, but that Lieutenant Phillips ordered him to fly anyway.% He cannot recall what happened immediately before% the accident occurred.
+
+\subsection*{Crisis}
+\begin{itemize}
+	\item \textit{Will you, on behalf of the ICF, assume responsibility for the accident?} \textbf{Threats:} Gouyen finds Ensign Sparke guilty of negligent homicide. The Tallists withdraw from all future joint military exercises. ICF Command disbands the Flight Demonstration Squadron.
+	\item \textit{Or will you try hold the Tallist pilots responsible?} \\ \textbf{Threats:} Ensign Sparke resigns his commission and leaves the ICF. The Tallist military withholds benefits from the families of the Tallist pilots.
+\end{itemize}
+
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Ensign Sparke (d8):] Fighter Pilot (d8), Honest (d6), Trusting (d6), Young (d6), Inexperienced (d6).
+	\item[Lieutenant Phillips (d8):] Fighter Pilot (d10), Aggressive (d8), Ambitious (d8), Maverick (d8).
+	\item[Gouyen (d10):] Tallist Magistrate (d10), Wise (d8), Insightful (d8), Deliberative (d8), Skeptical (d8).
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[Royal Stadium (Before the Accident):] A huge open-air stadium that completely encloses an airfield. The many rows of tiered seating are filled with tens of thousands of spectators. 
+	\item[Royal Stadium (After the Accident):] The grandstand at one end of the airfield has collapsed. Hundreds of spectators have been buried in the rubble.
+	\item[Courtroom:] An imposing theater-style auditorium filled with antique wood furniture. The magistrate's chair sits in an elevated position in the center of the room.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[Ensign Sparke indirectly caused the accident.] \phantom{a} \\ %Lieutenant Phillips ordered Ensign Sparke to fly despite his having reported that he was unwell before the show.
+	 Ensign Sparke lost consciousness during a high-g maneuver and his ship drifted out of formation.  The Tallist flight commander swerved to avoid a collision, but in so doing she lost control of her ship. \textit{Why were they performing such a dangerous program? Why didn't any automated safeguards prevent this tragedy?}
+\end{description}
+
+\end{document}
