@@ -1,0 +1,98 @@
+\documentclass[11pt, a5paper, parskip=half-, DIV=12]{scrartcl}
+
+\usepackage{../endeavour}
+\usepackage{../endeavour_book}
+
+% Hack to allow relative path here
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/starfield.png}};
+}}
+
+\version{0.1}
+
+\begin{document}
+% Colour Cover
+\thispagestyle{plain}
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/shkadov_cover.png}};
+\end{tikzpicture}
+}
+{
+\colorlet{headfootcolor}{LCARS_ORANGE}
+\phantom{a}
+
+\newpage
+}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\setcounter{page}{1}
+\setmainfont{TeX Gyre Schola}
+\normalsize
+\raggedright
+
+\section*{Shkadov}
+\textit{\textbf{Captain's Log:} We have arrived at an ancient alien megastructure known as Shkadov. It is a star completely enshrouded by satellites which are used to harvest the star's energy. Despite its enormous size, Shkadov is traveling at over 99\% of the speed of light relative to the Insterstellar Confederation standard reference frame.}
+
+\textit{Because it is traveling at relativistic speed, any explorers who visit Shkadov will experience extreme time dilation. So, the ICF has only ever mounted one such expedition. One hundred standard years ago, a small team was delivered to the megastructure to investigate. We are here to retrieve them.}
+
+\subsection*{Arrival}
+As you match speed with Shkadov, you are insulated from any time dilation effects by your faster-than-light drive. From your vantage point you can see the ICF Methuselah, the expedition crew's ship, apparently frozen in spacetime and waiting for you at the rendezvous point. 
+
+A beacon relays a message from \textbf{Clare Raymond}, the leader of the expedition, indicating that she and her team are ready for extraction. Because she has experienced only one month of subjective time her appearance is unchanged from when she embarked on this mission one hundred years ago. 
+
+\subsubsection*{Rendezvous}
+To recover the expedition crew, you will need to deactivate your faster-than-light drive, dock with the Methuselah, bring them aboard the Endeavour, and then reengage the drive. 
+\begin{itemize}
+	\item \textit{Can you safely recover the Methuselah and its crew?} \textbf{Operations \& Engineering} vs. \textbf{Shkadov}. This is a \textit{Grueling} challenge. You may attempt this challenge multiple times. Each attempt takes three standard days.
+\end{itemize}
+
+\newpage
+
+\subsection*{Trials}
+\subsubsection*{Repatriation}
+The crew of the Methuselah struggle to adjust to their new lives aboard the Endeavour. \textit{Can you help them adjust to life in the twenty-fourth century?} \textbf{Leadership \& Negotiation} vs. \textbf{Expedition Crew (3d8)}. If you prevail, you gain a 1d8 advantage die on future challenges against \textbf{Clare Raymond}.
+
+\subsubsection*{Expert Opinion}
+During his debriefing, \textbf{Ralph Offenhouse} seems quite concerned but is reluctant to explain why. \textit{Can you convince him to tell you what he is afraid of?} \textbf{Strategy \& Tactics} vs. \textbf{Ralph Offenhouse}. If you prevail, he reveals that he is afraid that Shkadov considers itself to be a superior life form.
+
+\subsubsection*{Communication}
+Your communication systems are overwhelmed by a powerful signal from Shkadov. It contains a short message in which Shkadov explains that it wishes to be deactivated. \textit{Can you decipher enough of Shkadov's language to allow you to have a two-way conversation?} \textbf{Science \& Medicine} vs. \textbf{Shkadov}.
+
+\subsection*{Crisis}
+
+\begin{itemize}
+	\item \textit{Will you help Shkadov to deactivate itself?} \\ \textbf{Threats:}  Any ships that approach too closely are destroyed by Shkadov's automated defenses. Ralph Offenhouse is killed when he refuses to abandon Shkadov.
+	\item \textit{Or will you give Shkadov access to technology that it can use to upgrade itself?} \textbf{Threats:} Shkadov is driven insane by the by the infusion of alien technology. The Endeavour is destroyed as Shkadov cannibalizes it for parts.
+\end{itemize}
+Regardless of your decision, you must face the following additional threat. \textbf{Threat:} Clare Raymond is unable to adapt to life in the modern Interstellar Confederation.
+
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Shkadov (d12):] Artificial Intelligence (d12), Sad (d10), Lonely (d10),  Frustrated (d10), Inscrutable (d10).
+	\item[Clare Raymond (d10):]  Expedition Leader (d10), Explorer (d8), Scientist (d8), Anachronism (d8).
+	\item[Ralph Offenhouse (d8):] Computer Expert (d8), Curious (d8), Sympathetic (d8), Na\"{i}ve (d6).
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[Satellite Swarm:] A stellar engine comprised of satellites that completely envelop their star. Together these satellites form an enormously powerful computer.
+	\item[Control Nexus:] A labyrinth of crystalline computer hardware and control panels. One of several redundant facilities where Shkadov's consciousness is housed. 
+	\item[The Methuselah:] An antique Terran shuttle. It is not equipped with a faster-than-light drive.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[Shkadov has been traveling for billions years.] \phantom{a} \\ Because it has been traveling at relativistic speeds, Shkadov has only experienced a few hundred thousand years of subjective time. \textit{Who built Shkadov? Why did they send it on such a long journey? Why is Shkadov unable to deactivate itself? Why does it want to do so?}
+	\item[The crew of the Methuselah were volunteers.] \phantom{a} \\ They knew that by undertaking their mission they would effectively become time travelers. \textit{Why were they willing to leave their old lives behind? Were they promised any kind of special compensation upon their return?}
+\end{description}
+\end{document}
