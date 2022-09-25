@@ -138,6 +138,13 @@
 	\node[divine_favor] () at (-0.0cm, -0.5cm) {};
 }}
 
+\tikzset{bond/.pic={
+	\node[short_header_box, fill=lightfillcolor, minimum height = 1cm, minimum width = 4.25cm] {};
+	\node[divine_favor] () at (-0.0cm, -0.05cm) {};
+	\node[divine_favor] () at (-0.0cm, -0.5cm) {};
+
+}}
+
 \tikzset{value/.pic={
 	\node[medium_header_box] () at (-0.125,0) {{\Large #1\,}};
 	\node[virtue_field] () at (0.125, 0cm) {};
@@ -281,8 +288,13 @@
 % Bonds
 \path (nw) --++ (3.2cm, -3.45cm) pic {subheader={Bonds}};
 
-\foreach \i in {0,1,...,8}
-	\path (nw) --++ (3.2cm, -3.95cm - \i*1.25cm) node[endeavour_box, anchor=north, minimum height = 1cm, minimum width = 4.25cm] {};
+\foreach \i in {0,1,...,8} {
+	\path (nw) --++ (5.325cm, -3.95cm - \i*1.25cm) pic {bond};
+%	\path (nw) --++ (3.2cm, -3.95cm - \i*1.25cm) node[endeavour_box, anchor=north, minimum height = 1cm, minimum width = 4.25cm] {};
+}
+
+%\path (nw) --++ (1.075cm, -4.45cm) pic {bond};%node[short_header_box, fill=lightfillcolor, anchor=west, minimum height = 1cm, minimum width = 4.25cm] {};
+%\path (nw) --++ (5.325cm, -3.95cm) pic {bond};
 
 % Discoveries
 \path (ne) --++ (-4.95cm, -3.45cm) pic {subheader=Artifacts and Discoveries};
