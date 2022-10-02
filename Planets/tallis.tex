@@ -3,12 +3,8 @@
 \usepackage{../endeavour}
 \usepackage{../endeavour_book}
 
-% Hack to allow relative path here
-%\tikzset{starfield/.pic={
-%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/starfield.png}};
-%}}
 
-\version{0.1}
+\version{0.2}
 
 \begin{document}
 % Colour Cover
@@ -102,5 +98,26 @@ Ensign Sparke's behavior in the aftermath of the accident is concerning. He clea
 	\item[Ensign Sparke indirectly caused the accident.] \phantom{a} \\ %Lieutenant Phillips ordered Ensign Sparke to fly despite his having reported that he was unwell before the show.
 	 Ensign Sparke lost consciousness during a high-g maneuver and his ship drifted out of formation.  The Tallist flight commander swerved to avoid a collision, but in so doing she lost control of her ship. \textit{Why were they performing such a dangerous program? Why didn't any automated safeguards prevent this tragedy?}
 \end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
 
 \end{document}

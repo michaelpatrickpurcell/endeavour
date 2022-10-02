@@ -3,12 +3,7 @@
 \usepackage{../endeavour}
 \usepackage{../endeavour_book}
 
-% Hack to allow relative path here
-%\tikzset{starfield/.pic={
-%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/starfield.png}};
-%}}
-
-\version{0.1}
+\version{0.2}
 
 \begin{document}
 % Colour Cover
@@ -98,5 +93,26 @@ The power goes out in The Vault. It had been running on emergency batteries sinc
 	\item[The Artemiidae died millions of years ago.] \phantom{a} \\ They preserved their genetic information in The Vault in the hopes that future alien explorers might be able to reconstitute them. \textit{What happened to the Artemiidae? Why were they unable to save themselves?}
 	\item[The colonists have been terraforming Artemia.] \phantom{a} \\ When the colony was established, Artemia was lifeless. Now, Terran plants and animals can survive outside of the colony's biodomes. The Artemiidae cannot cope with the new environment. \textit{Why did the colonists come here? What do they know about the Artemiidae?}
 \end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
 
 \end{document}

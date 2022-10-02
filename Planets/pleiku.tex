@@ -3,12 +3,7 @@
 \usepackage{../endeavour}
 \usepackage{../endeavour_book}
 
-% Hack to allow relative path here
-\tikzset{starfield/.pic={
-	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/starfield.png}};
-}}
-
-\version{0.1}
+\version{0.2}
 
 \begin{document}
 % Colour Cover
@@ -100,4 +95,26 @@ The terrorists that killed Po are determined to prevent you from delivering Bo T
 	\item[Po was murdered by Pleikuan terrorists.] \phantom{a} \\ A minority group of Pleikuans oppose the current government. This group used illicitly acquired ICF weapons to kill Po. \textit{How did this group acquire ICF weapons? Why do they want to disrupt the negotiations?}
 	\item[Most Pleikuan villages have a resident Kraken.] \phantom{a} \\ Kraken are intelligent animals and can be quite dangerous. They ensure that the (other) large fauna of Pleiku's oceans do not disturb the undersea farms. \textit{How do the Pleikuans usually attract a Kraken? How do they keep the Kraken from wreaking havoc on their villages?}
 \end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
+
 \end{document}

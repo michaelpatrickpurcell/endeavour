@@ -3,12 +3,7 @@
 \usepackage{../endeavour}
 \usepackage{../endeavour_book}
 
-% Hack to allow relative path here
-\tikzset{starfield/.pic={
-%	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/starfield.png}};
-}}
-
-\version{0.1}
+\version{0.2}
 
 \begin{document}
 % Colour Cover
@@ -96,4 +91,26 @@ The Others want to permanently disrupt faster-than-light travel. To do so, they 
 	\item[There are many parallel universes.] \phantom{a} \\ The laws of physics vary from one universe to another. Faster-than-light travel is possible in just two of these universes, The Others' and your own. \textit{Is this peculiarity a result of random chance? Are there other similarities between the two universes? How are they different?}
 	\item[Faster-than-light travel damages other universes.] \phantom{a} \\ The Exhaust Universe is on the brink of destruction. Its inhabitants are aware of their predicament but unable to save themselves. \textit{Can you communicate with them? How did The Others learn about the Exhaust Universe? Is it possible to travel between universes?}
 \end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
+
 \end{document}

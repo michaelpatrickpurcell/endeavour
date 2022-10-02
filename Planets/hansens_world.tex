@@ -3,11 +3,7 @@
 \usepackage{../endeavour}
 \usepackage{../endeavour_book}
 
-\tikzset{starfield/.pic={
-	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/starfield.png}};
-}}
-
-\version{0.2}
+\version{0.3}
 
 \begin{document}
 % Colour Cover
@@ -97,4 +93,26 @@ If \AE{}sir suspects that you do not intend to destroy Vanir, they use the mines
 	\item[Each viral symbiont has multiple hosts.] \phantom{a} \\ Most are distributed across a \textbf{Quintet} of five hosts. All viral symbionts require at least three hosts to survive. \textit{How do different parts of a viral symbiont communicate? Did this strategy evolve naturally or was is engineered?}
 	\item[RX-87 was trying to leave Hansen's World.] \phantom{a} \\ The mines are intended to prevent both incoming and outgoing traffic. \textit{Who originally deployed the mines?  \\ Who maintains them? Why do they want to ensure that Hansen's World remains isolated?}
 \end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
+
 \end{document}
