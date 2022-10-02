@@ -3,12 +3,7 @@
 \usepackage{../endeavour}
 \usepackage{../endeavour_book}
 
-% Hack to allow relative path here
-\tikzset{starfield/.pic={
-	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{../Images/starfield.png}};
-}}
-
-\version{0.1}
+\version{0.2}
 
 \begin{document}
 % Colour Cover
@@ -72,7 +67,7 @@ Your communication systems are overwhelmed by a powerful signal from Shkadov. It
 	\item \textit{Will you help Shkadov to deactivate itself?} \\ \textbf{Threats:}  Any ships that approach too closely are destroyed by Shkadov's automated defenses. Ralph Offenhouse is killed when he refuses to abandon Shkadov.
 	\item \textit{Or will you give Shkadov access to technology that it can use to upgrade itself?} \textbf{Threats:} Shkadov is driven insane by the by the infusion of alien technology. The Endeavour is destroyed as Shkadov cannibalizes it for parts.
 \end{itemize}
-Regardless of your decision, you must face the following additional threat. \textbf{Threat:} Clare Raymond is unable to adapt to life in the modern Interstellar Confederation.
+Regardless of your decision, you must face the following additional \textbf{Threat:} Clare Raymond is unable to adapt to life in the modern Interstellar Confederation.
 
 \newpage
 
@@ -95,4 +90,26 @@ Regardless of your decision, you must face the following additional threat. \tex
 	\item[Shkadov has been traveling for billions years.] \phantom{a} \\ Because it has been traveling at relativistic speeds, Shkadov has only experienced a few hundred thousand years of subjective time. \textit{Who built Shkadov? Why did they send it on such a long journey? Why is Shkadov unable to deactivate itself? Why does it want to do so?}
 	\item[The crew of the Methuselah were volunteers.] \phantom{a} \\ They knew that by undertaking their mission they would effectively become time travelers. \textit{Why were they willing to leave their old lives behind? Were they promised any kind of special compensation upon their return?}
 \end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
+
 \end{document}

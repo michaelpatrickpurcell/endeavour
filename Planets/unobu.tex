@@ -1,0 +1,116 @@
+\documentclass[11pt, a5paper, parskip=half-, DIV=12]{scrartcl}
+
+\usepackage{../endeavour}
+\usepackage{../endeavour_book}
+
+\version{0.1}
+
+\begin{document}
+% Colour Cover
+\thispagestyle{plain}
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/unobu_cover.png}};
+\end{tikzpicture}
+}
+{
+\colorlet{headfootcolor}{LCARS_ORANGE}
+\phantom{a}
+
+\newpage
+}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\setcounter{page}{1}
+\setmainfont{TeX Gyre Schola}
+\normalsize
+\raggedright
+
+\section*{Unobu}
+\textit{\textbf{Captain's Log:} While returning to the Endeavour after several weeks of leave, I detected a transmission coming from the planet Unobu. I stopped to investigate and was attacked by an unidentified ship. I don't remember what happened after that; I must have crashed. If so, I'm lucky to be alive.}
+
+\textit{Now, I find myself in what looks like a hospital. I don't recognize any of the technology here. Wherever I am, it's not an ICF facility. I've activated my emergency transponder and, with little else I can do, I'm going to have a look around.}
+
+\subsection*{Arrival}
+You detect Captain Darcy's distress call coming from an underground facility on Unobu. When you contact him, he explains that he has something that he needs to show you. He leads you to a room that contains a recovery chamber. Inside is what appears to be a second Captain Darcy.
+
+\textbf{Gichin, an emergency auto-doc} enters the room. It approaches the recovery chamber without acknowledging you other than to say ``Administering euthanasia serum now.''
+
+\subsubsection*{Medical Intervention}
+\begin{itemize}
+	\item \textit{Will you use force to stop Gichin from killing the man in the recovery chamber?} \textbf{Strategy \& Tactics} vs. \textbf{Gichin}. \\ If you suffer, you cannot stop Gichin without destroying it.
+	\item \textit{Or will you try to stop Gichin by reasoning with it?} \textbf{Leadership \& Negotiation} vs. \textbf{Gichin}. Gichin is an \textbf{\textsc{Expert System}} (Leadership \& Negotiation has no effect). You must mark \tikz[baseline=-0.75ex, scale=0.85, transform shape]{\pic {stress_circle};} (Stress) to push yourself  and use a different domain to effectively face this challenge.  
+\end{itemize}
+The man in the recovery chamber awakens. He suggests that you call him \textbf{Jim Darcy} to help minimize confusion.
+\newpage
+
+\subsection*{Trials}
+\subsubsection*{And Then There Were Two}
+James Darcy and Jim Darcy are nearly identical copies of one another. Both men claim to feel like they are the original Captain Darcy. \textit{Can you discover which version of Captain Darcy is the original?} \textbf{Science \& Medicine} vs. \textbf{Gichin}.
+
+\subsubsection*{Mirror, Mirror}
+Both James Darcy and Jim Darcy are eager to return to duty. \textit{Can you help them reach an agreement regarding what each of their roles within the ICF will be going forward?} \textbf{Leadership \& Negotiation} vs. \textbf{Captain Darcy}.
+
+\subsubsection*{The Sentinel}
+The Sentinel reappears and attacks the Endeavour. \textit{Can you repel its assault?} \textbf{Strategy \& Tactics} vs. \textbf{The Sentinel}. \\ If you prevail, you gain a 1d8 advantage die on challenges to repair any damage done to the Endeavour. 
+
+\subsection*{Crisis}
+The Sentinel lashes out and punctures the Endeavour's reactor core. A reactor meltdown is imminent. Both James Darcy and Jim Darcy volunteer to enter the reactor core and use the manual override to shut it down. 
+\begin{itemize}
+	\item \textit{Will you send someone into the reactor to shut it down?} \textbf{Threats:} Anyone who enters the reactor core is fatally irradiated. Gichin's clinic is destroyed by falling debris. 
+	\item \textit{Or will you find a way to avert the impending disaster without sacrificing anyone?} \textbf{Threats:} Dozens of crew members are killed when the reactor meltdown occurs. Jim Darcy is killed in a targeted strike by The Sentinel.
+\end{itemize}
+Regardless of your decision, you must face the following \textbf{Threat:} The Endeavour is disabled and crashes on Unobu.
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Gichin (d10):] Emergency Auto-Doc (d10), Relic (d10)\\\textbf{\textsc{Expert System}} (Leadership \& Negotiation has no effect).
+	\item[Jim Darcy (d10):] Captain of the Endeavour (d10), Charismatic (d10), Cunning (d8), Experienced (d8).
+	\item[The Sentinel (d10):] Automated Defense Drone (d10), Relentless (d10 \textit{Grueling}), Powerful (d10 \textit{Dangerous}).
+
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[Gichin's Clinic:] A cluster of examination and treatment rooms. Filled with unfamiliar medical equipment.
+	\item[Crash Site:] A large impact crater. Mangled debris from Captain Darcy's shuttle litter the surrounding area.
+	\item[Reactor Core:] The compartment that houses the Endeavour's power source. Dominated by a large sphere of exotic matter contained within a magnetic bottle.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[Gichin created a copy of Captain Darcy.] \phantom{a} \\ When Captain Darcy was injured in the shuttle crash, Gichin responded and tried to save his life. Gichin created a backup copy in case it was unable to do so. \textit{What did Gichin intend to do with the backup capy if/when Captain Darcy recovered? What other marvels can Gichin perform?}
+	\item[Jim Darcy is the original Captain Darcy.] \phantom{a} \\
+	Jim Darcy suffered a stroke shortly after being copied by Gichin. Gichin was able to repair the resulting damage, but Jim Darcy's personality was permanently affected. \textit{How are James Darcy and Jim Darcy different? Do either of them know which is the original Captain Darcy?} 
+\end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
+
+\end{document}
