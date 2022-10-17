@@ -1,0 +1,115 @@
+\documentclass[11pt, a5paper, parskip=half-, DIV=12]{scrartcl}
+
+\usepackage{../endeavour}
+\usepackage{../endeavour_book}
+
+\version{0.1}
+
+\begin{document}
+% Colour Cover
+\thispagestyle{plain}
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+\end{tikzpicture}
+}
+{
+\colorlet{headfootcolor}{LCARS_ORANGE}
+\phantom{a}
+
+\newpage
+}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\setcounter{page}{1}
+\setmainfont{TeX Gyre Schola}
+\normalsize
+\raggedright
+
+\section*{Juventas}
+\textit{\textbf{Captain's Log:} Whilst returning from deep space, our engineers have identified rare, systemic damage to the Endeavour’s energy calibration matrix. ICF Command have identified Juventas, a moonlet orbiting Edda II, as a source of expertise and equipment to rectify this problem.}
+
+\textit{ Juventas, however, is outside of Interstellar Confederation space and is well-known for its anarchic community of engineers, poets, makers, writers, and tinkers. As official representatives of the ICF, we are unlikely to be welcome. Nevertheless, we must find someone willing to help us here.}
+
+\subsection*{Arrival}
+You dock with the hollowed-out moonlet which is ablaze in clashing neon
+lighting and densely interconnected habitation modules. Shortly after you arrive, the power drops out temporarily before a secondary backup brings most systems back online. The Endeavour desperately needs repairs.
+
+As you disembark, two hovering robots approach and demand to know who you are and why you are here. They accept your answers and disappear into a tunnel nearby. The locals take little notice of you and continue on with their own business in what feels like an endless marketplace and artists' commune.
+
+\subsubsection*{At Loose Ends}
+\begin{itemize}
+	\item \textit{Will you try to convince the locals to help you find someone who can help you repair the energy calibration matrix?} \\ \textbf{Leadership \& Negotiation} vs. \textbf{The Commune}.
+	\item \textit{Or will you try to navigate the marketplace on your own?} \textbf{Operations \& Engineering} vs. \textbf{Matrix Lacers}.
+\end{itemize}
+The atmosphere here is quite tense and you see several fights break out while you explore the labyrinthine space.
+\newpage
+
+\subsection*{Trials}
+\subsubsection*{First Trial}
+A situation that advances the story. \textit{Ask a leading question that suggests a possible challenge.} \textbf{Domain} vs. \textbf{Opponent}.
+
+\subsubsection*{Second Trial}
+A situation that advances the story. \textit{Ask a leading question that suggests a possible challenge.} \textbf{Domain} vs. \textbf{Opponent}.
+
+\subsubsection*{Third Trial}
+A situation that advances the story. \textit{Ask a leading question that suggests a possible challenge.} \textbf{Domain} vs. \textbf{Opponent}.
+
+\subsection*{Crisis}
+
+\begin{itemize}
+	\item \textit{Will you \ldots?} \textbf{Threats:} Two or three threats.
+	\item \textit{Or will you \ldots?} \textbf{Threats:} Two or three threats.
+\end{itemize}
+
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Character Name (d?):] Epithet (d?), \ldots
+	\item[Character Name (d?):] Epithet (d?), \ldots
+	\item[Character Name (d?):] Epithet (d?), \ldots
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[Place Name:] Brief description.
+	\item[Place Name:] Brief description.
+	\item[Place Name:] Brief description.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[A fact about the planet.] \phantom{a} \\ A few related facts. \textit{One or two related questions.}
+	\item[A fact about the planet.] \phantom{a} \\ A few related facts. \textit{One or two related questions.}
+\end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
+
+\end{document}
