@@ -1,0 +1,128 @@
+\documentclass[11pt, a5paper, parskip=half-, DIV=12]{scrartcl}
+
+\usepackage{../endeavour}
+\usepackage{../endeavour_book}
+
+\version{0.1}
+
+\begin{document}
+% Colour Cover
+\thispagestyle{plain}
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/menat_cover.png}};
+\end{tikzpicture}
+}
+{
+\colorlet{headfootcolor}{LCARS_DARKGRAY}
+\phantom{a}
+
+\newpage
+}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\setcounter{page}{1}
+\setmainfont{TeX Gyre Schola}
+\normalsize
+\raggedright
+
+\section*{Menat}
+\textit{\textbf{Captain's Log:} We have arrived at Menat,
+%a small planet that orbits a binary star in a densely populated part of the galaxy.
+a large moon that orbits a gas giant in a densely populated part of the galaxy.  
+We are here to arbitrate a dispute between three different species that all claim sovereignty over the planet.}
+
+\textit{All three groups have applied for Interstellar Confederation membership. In their applications, all three have claimed to be the exclusive representatives of Menat. Fortunately, they have agreed to settle their dispute peacefully. So, we will hear their case and decide who will ultimately represent Menat.}
+
+\subsection*{Arrival}
+The arbitration hearing will be held at the \textbf{House of Peace}. When you arrive, you are greeted by a crowd of diplomats.  
+
+\textbf{Neolin} leads the Menating delegation. This is his first time on Menat and he is quite overwhelmed by the experience.
+
+\textbf{Ortegas} leads the Uri delegation. All members of her delegation wear sophisticated environment suits. 
+
+\textbf{Khatem} leads the Harvana delegation. Several juvenile Harvana accompany Khatem throughout the hearing.
+
+\subsubsection*{Opening Argument}
+Unsurprisingly, the situation quickly devolves into a chaotic shouting match between the ambassadors.
+\begin{itemize}
+	\item \textit{Will you try to intervene and defuse the argument quickly?} \textbf{Leadership \& Negotiation} vs. \textbf{Ambassadors (2d10)}.
+	\item \textit{Or will you let the diplomats vent their anger on one another before you begin the hearing in earnest?} \\ \textbf{Strategy \& Tactics} vs. \textbf{Ambassadors (2d10)}.
+\end{itemize}
+In either case, if you prevail you gain a 1d10 Advantage die for the Seize challenge during the Crisis.
+\newpage
+
+\subsection*{Trials}
+\subsubsection*{Alas, Babylon}
+Neolin describes his people's departure from Menat as a traumatic event from which they have never fully recovered. He avoids the questions of why they decided to leave and why they never returned. \textit{Can you convince Neolin to discuss his ancestors' motivations?} \textbf{Strategy \& Tactics} vs. \textbf{Neolin}.
+
+\subsubsection*{Virtue Signaling}
+Ortegas argues that, by restricting themselves to habitation domes, the Uri have acted as responsible environmental stewards. The Harvana clearly cannot make a similar claim. \\ \textit{Can you determine the extent of the Uri's impact on Menat?} \textbf{Operations \& Engineering} vs. \textbf{Ortegas}.
+
+\subsubsection*{Diplomatic Archaeology}
+Khatem claims the Harvana have always lived on Menat. Ortegas claims the moon was uninhabited when the Uri arrived, but cannot recall when the Harvana first appeared. \textit{Can you use physical evidence to reconstruct the Harvana's colonization history?} \textbf{Science \& Medicine} vs. \textbf{Khatem}.
+
+\subsection*{Crisis}
+
+\begin{itemize}
+	\item \textit{Will you support one party's claim to sovereignty?} \\
+	The remaining parties face the following \textbf{Threats:}  
+	\begin{itemize}[noitemsep, topsep=-\baselineskip]
+	\item \textbf{The Menating} are forbidden from visiting Menat.
+	\item \textbf{The Uri} are forced to abandon Menat when they can no longer maintain their life support systems.
+	\item \textbf{The Harvana} population plummets when their previously unlimited access to resources is curtailed.
+	\end{itemize}
+	\item \textit{Or will you refuse to award sovereignty to any one party?} \textbf{Threats:} All three parties declare war on one another. Captain Darcy is charged with dereliction of duty. All parties are barred from the Interstellar Confederation.
+\end{itemize}
+
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Neolin (d10):] Menating Ambassador (d10), Quiet (d8),  Nostaligic (d8), Sentimental (d8), Stubborn (d8)
+	\item[Ortegas (d10):] Uri Ambassador (d10), Patient (d8), Conservative (d8),  Thoughtful (d8), Stubborn (d8).
+	\item[Khatem (d10):] Harvana Ambassador (d10), Kind (d8), Assertive (d8), Energetic (d8), Stubborn (d8).
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[House of Peace:] An open-air pavilion situated on unoccupied land between the Uri and Harvana territories. Dominated by a large three-sided negotiating table.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[The Menating abandoned Menat long ago.] \phantom{} \\ The Menating have long been a spacefaring civilization. After leaving Menat, they established many colonies in nearby star systems. \textit{Why did the Menating leave Menat?}
+	\item[The Uri have lived on Menat for millennia.] \phantom{} \\ The Uri are long-lived; individuals can live to be several thousand years old. Most of the Uri are one generation removed from the original colonists. They still depend on their technology to survive on Menat. \textit{Why did the Uri colonize Menat? How do they feel about the Harvana?}
+	\item[The Harvana have lived on Menat for generations.] \phantom{} \\ The Harvana are short-lived; individuals rarely live past the age of ten. Despite having arrived on Menat a few hundred years ago, they have evolved to live on the moon without the need for any adaptive technology. \textit{Why did the Harvana colonize Menat? How do they feel about the Uri?}
+
+\end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
+
+\end{document}
