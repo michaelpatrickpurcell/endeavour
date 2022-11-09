@@ -1,0 +1,118 @@
+\documentclass[11pt, a5paper, parskip=half-, DIV=12]{scrartcl}
+
+\usepackage{../endeavour}
+\usepackage{../endeavour_book}
+
+\version{0.1}
+
+\begin{document}
+% Colour Cover
+\thispagestyle{plain}
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/baskil3_cover.png}};
+\end{tikzpicture}
+}
+{
+\colorlet{headfootcolor}{LCARS_DARKGRAY}
+\phantom{a}
+
+\newpage
+}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\setcounter{page}{1}
+\setmainfont{TeX Gyre Schola}
+\normalsize
+\raggedright
+
+\section*{Baskil III}
+\textit{\textbf{Captain's Log:} Having delivered relief supplies to Nanurjuk Station, we are now en route to Baskil III. With us aboard the Endeavour is a group of refugees who have requested asylum from systematic oppression on their home planet.}
+
+\textit{I am delighted to report that the crew have been performing excellently of late. In fact, the engines are operating at above peak efficiency; we now expect to arrive at Baskil III well ahead of schedule. I'm told that our new cadet, Lars Modock, is largely responsible for this impressive performance.}
+
+\subsection*{Arrival}
+The government of Baskil III insists that the Endeavour be thoroughly inspected before landing. They dispatch a team of \textbf{Biosecurity Inspectors} to the ship to verify that the refugees are healthy and free from any dangerous diseases.
+
+During their inspection, they discover that the Endeavour's systems, in particular its engines, are infested with a lifeform they call \textbf{The Zecto}. They immediately declare a state of emergency and place the ship under strict quarantine.
+
+\textbf{Uriah Clay}, de facto leader of the refugees, objects to being detained and demands that they be allowed to disembark.
+
+\subsubsection*{Pest Control}
+\begin{itemize}
+	\item \textit{Will you study the Zecto and try to learn more about them?} \textbf{Science \& Medicine} vs. \textbf{The Zecto}. This is a \textit{Fraught} challenge \textemdash{} the biosecurity inspectors demand that you act quickly. If you prevail, gain a bond with The Zecto.  
+	\item \textit{Or will you try to prevent the infestation from spreading?} \textbf{Operations \& Engineering} vs. \textbf{The Zecto}. This is a \textit{Dangerous} challenge \textemdash{} the Zecto are highly volatile. If you prevail, gain an Advantage die for use vs. The Zecto.
+\end{itemize}
+
+\newpage
+
+\subsection*{Trials}
+\subsubsection*{Internal Investigation}
+The biosecurity investigators find evidence that Lars Modock brought the Zecto aboard the Endeavour at Nanurjuk Station. He vehemently denies their accusations that he is at fault for the current crisis. \textit{Can you determine how the Zecto got onto the ship?} \textbf{Strategy \& Tactics} vs. \textbf{Uriah Clay}.
+%If you prevail, you discover that Uriah Clay is the guilty party.
+
+\subsubsection*{Cleaning Up A Mess}
+Frustrated by their inability to return to Baskil III, the biosecurity inspectors begin needling members of the crew. After much provocation, Lars Modock snaps and starts a fight with them in the mess hall. \textit{Can you find a non-judicial way to handle the incident and relieve the mounting tension?}
+\textbf{Leadership \& Negotiation} vs. \textbf{Biosecurity Inspectors}.
+
+\subsubsection*{Whack-A-Mole}
+The Zecto continually disrupt shipboard operations. This primarily manifests as minor malfunctions that are each little more than annoyances. Taken together, however, they amount to a major nuisance that threatens your ability to effectively operate the ship. \textit{Can you solve the problems as they arise and keep the situation from getting out of hand?} \textbf{Operations \& Engineeering} vs. \textbf{The Zecto}.
+
+\subsection*{Crisis}
+
+\begin{itemize}
+	\item \textit{Will you allow the Zecto to remain aboard the Endeavour?} \textbf{Threats:} The Zecto completely disrupt shipboard operations. The government of Baskil III refuses to accept the refugees. The infestation spreads to other ICF ships.
+	\item \textit{Or will you evict the Zecto and surrender them to the biosecurity inspectors?} \textbf{Threats:} The Zecto defend themselves, injuring anyone who tries to remove them. Uriah Clay steals an infested shuttle and flees.
+\end{itemize}
+
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Uriah Clay (d8):] Merchant (d8), Charismatic (d8), Talkitive (d8), Pursuasive (d6), Tricky (d6).
+	\item[Lars Modock (d6):] ICF Cadet (d6), Sensitive (d6), Straight-Laced (d6), Honest (d6), Awkward (d6).
+	\item[Biosecurity Inspectors (d10):] Humorless (d8), Thorough (d8), Strict (d8 \textit{Sensitive}), Unforgiving (d8).  
+	\item[The Zecto (d10):] Instinctual (d8), Prolific (d8), \\Volatile (d8 \textit{Dangerous}), Magnetic (d6), Beautiful (d6).
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[Mess Hall:] A cafeteria where the crew take their meals. Filled with a variety of tables, chairs, and appliances.
+	\item[Maintenance Conduits:] A network of small corridors that are used to provide crew access to ship's systems.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[The Zecto are Magnetovores.] \phantom{a} \\ The Zecto feed on the energy fields emitted by high-tech devices. Their waste is a cocktail of exotic materials which dramatically increases the efficiency of reactors like that which powers the Endeavour. \textit{Did the Zecto evolve naturally? Who else knows about their existence?}
+	\item[Uriah Clay smuggled the Zecto off of Baskil III.] \phantom{} \\ The Zecto are critically endangered. Uriah Clay wants to preserve the species by spreading them to other planets besides their native homeworld. He tricked Lars Modock into bringing the Zecto aboard the Endeavour for him. \textit{Why is Uriah Clay so invested in the fate of the Zecto? How did he manage to manipulate Lars Modock so effectively?}
+\end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
+
+\end{document}
