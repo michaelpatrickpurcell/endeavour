@@ -1,0 +1,116 @@
+\documentclass[11pt, a5paper, parskip=half-, DIV=12]{scrartcl}
+
+\usepackage{../endeavour}
+\usepackage{../endeavour_book}
+
+\version{0.1}
+
+\begin{document}
+% Colour Cover
+\thispagestyle{plain}
+\AddToShipoutPictureBG{
+\begin{tikzpicture}[remember picture, overlay]
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/nazahin_cover.png}};
+\end{tikzpicture}
+}
+{
+\colorlet{headfootcolor}{LCARS_ORANGE}
+\phantom{a}
+
+\newpage
+}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+		\node[endeavour_box, minimum width=12.6cm, minimum height=18.8 cm] at (current page.center) {};
+	\end{tikzpicture}
+}
+
+\setcounter{page}{1}
+\setmainfont{TeX Gyre Schola}
+\normalsize
+\raggedright
+
+\section*{Nazahin}
+\textit{\textbf{Captain's Log:} The end of an era. While endings are always bittersweet, today's has affected me more than most. After nearly thirty years, I find myself reunited with friends and colleagues with whom I served during our tours of duty aboard the Endeavour. We are here as guests of honor at the decommissioning ceremony for that storied ship.} 
+
+\textit{We were not her first crew, nor her last. In fact, many of those other officers who have called the Endeavour home are being recognized alongside us here today as well. Still, I've always thought of the Endeavour as our ship.}
+
+\textit{We've been invited on board to observe as the Endeavour is brought into dock. I'm looking forward to seeing the bridge again. Who knows? Maybe I'll even get a chance to sit in my old chair one last time.}
+
+
+\subsection*{Arrival}
+During the ceremony, alarms sound. The Endeavour's reactor core has malfunctioned and a catastrophic explosion is imminent. The ship must be evacuated immediately. Captain Darcy programs the autopilot to take the ship to a safe distance before all hands abandon the ship to its fate.
+
+A team of \textbf{Binturi Soldiers}, led by \textbf{Colonel Asha}, have infiltrated the ceremony disguised as members of the decommissioning crew. As the ship is evacuated, they move into position and hijack the Endeavour.
+
+\subsubsection*{One Last Job}
+\begin{itemize}
+	\item \textit{Will you try to stow away aboard the Endeavour?} \textbf{Strategy \& Tactics} vs. \textbf{Binturi Soldiers}.
+	\item \textit{Or will you try to follow the Endeavour in another ship?} \textbf{Operations \& Engineering} vs. \textbf{Colonel Asha}.
+\end{itemize}
+
+\newpage
+
+\subsection*{Trials}
+\subsubsection*{Smoke and Mirrors}
+The Binturi fly the Endeavour to a rendezvous with another ship in deep space. They activate the self destruct on the second ship and flee the scene, thus creating a convincing illusion that the Endeavour has been lost. \textit{Can you find a way to plant some forensic evidence that will expose the ruse?} \textbf{Science \& Medicine} vs. \textbf{Debris Field (3d8)}.
+
+\subsubsection*{Infiltration}
+Believing that they have successfully made their escape, the Binturi relax the lockdown abord the Endeavour so that they can more easily move about the ship.  \textit{Can you find a way to access the bridge or main engineering without being detected?} \textbf{Strategy \& Tactics} vs. \textbf{Binturi Soldiers}.
+
+\subsubsection*{A Reasonable Man}
+Inevitably, the Binturi become aware that they are being pursued. When this happens, Colonel Asha reaches out and tries to convince you not to interfere with his team's mission. \\ \textit{Can you convince Colonel Asha to tell you what the Binturi are really trying to accomplish by hijacking the Endeavour?} \textbf{Leaderhsip \& Negotiation} vs. \textbf{Colonel Asha}.
+
+\subsection*{Crisis}
+
+\begin{itemize}
+	\item \textit{Will you help the Binturi to perpetrate their caper and rescue their captured comrades?} \textbf{Threats:} Colonel Asha is killed during the operation. The Naza discover the crew's involvement and terminate diplomatic relations with the Interstellar Confederation.
+	\item \textit{Or will you refuse to help and instead try to retake the Endeavour by force?} \textbf{Threats:} The Binturi Soldiers kill anyone who actively resists them. Ebtekar is captured and arrested on Nazahin.
+\end{itemize}
+
+\newpage
+
+\subsection*{Characters}
+\begin{description}
+	\item[Colonel Asha (d10):] Soldier (d10), Dedicated (d10), Disciplined (d8), Experienced (d8), Principled (d8).
+	\item[Binturi Soldiers (d10):]  Loyal (d8), Organized (d8), Aggressive (d8 \textit{Dangerous}), Thorough (d8). 
+	\item[Ebtekar (d8):] Binturi Fugitive (d8), Politician (d8), Revolutionary (d8 \textit{Sensitive}), Firebrand (d8).
+\end{description}
+
+\subsection*{Places}
+\begin{description}
+	\item[Spaceship Boneyard:] A storage area for spaceships that are retired from service. It is staffed by many of salvage crews and hazardous waste disposal teams.
+	\item[Officers Lounge:] A small lounge aboard the Endeavour where the ship's officers can relax between shifts. It is Colonel Asha's makeshift headquarters aboard the ship.
+\end{description}
+
+\subsection*{Mysteries}
+\begin{description}
+	\item[The Binturi are political dissidents.] \phantom{a} \\ Colonel Asha plans to hijack an ICF ship and then take advantage of its diplomatic immunity rescue Ebtekar, his comrade who is currently in hiding on Nazahin. \textit{Why do the Binturi oppose the current government of Nazahin? What will happen to the Binturi if they are captured?}
+	\item[The ICF cannot afford to antagonize the Naza.] \phantom{} \\ Naza is the home planet to a powerful civilization. Despite several recent high-profile incidents, the Interstellar Confederation maintains a diplomatic presence on Nazahin. \textit{Why is the relationship between the Naza and the Interstellar Confederation so strained?}
+\end{description}
+
+\newpage
+
+\input{../acknowledgements.tex}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tikzset{starfield/.pic={
+	\node () at (current page.center) {\includegraphics[width=\pagewidth, height=\pageheight]{Images/starfield.png}};
+}}
+
+\ClearShipoutPicture
+\AddToShipoutPictureBG{
+	\begin{tikzpicture}[remember picture, overlay]
+	\pic () at (current page.center) {starfield};
+	\end{tikzpicture}
+}
+
+\phantom{a}
+
+\end{document}
